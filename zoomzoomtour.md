@@ -166,6 +166,7 @@ WiseTracker.setOrderQuantityArray([상품수량]);
 WiseTracker.setOrderAmountArray([결제금액]); // 사용자가 실제 결제한 금액
 WiseTracker.setOrderConversionDataArray("g3", [쿠폰금액]); // 쿠폰 사용 금액, 0 또는 positive value 입력
 WiseTracker.setOrderConversionDataArray("g4", [마일리지]); // 마일리지 사용 금액, 0 또는 positive value 입력
+WiseTracker.setPageIdentity("ODR");
 WiseTracker.sendTransaction();
 </script>
 ```
@@ -178,6 +179,7 @@ WiseTracker.setOrderQuantityArray([1]);
 WiseTracker.setOrderAmountArray([95]);
 WiseTracker.setOrderConversionDataArray("g3" [5.5]);
 WiseTracker.setOrderConversionDataArray("g4" [0]);
+WiseTracker.setPageIdentity("ODR");
 WiseTracker.sendTransaction();
 </script>
 ```
