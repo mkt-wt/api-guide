@@ -1,5 +1,7 @@
 # Wisetracker Integration Guide
-'줌줌투어'앱에 와이즈트래커를 연동하는데 필요한 기술문서입니다. 연동 중 발생하는 문의사항은 tech@wisetracker.co.kr로 보내 주세요.
+'줌줌투어'앱에 와이즈트래커를 연동하는데 필요한 기술문서입니다. 연동 중 발생하는 문의사항은 아래 담당자에게 연락 주시기 바랍니다.
+
+> 정주온, humblejohn@wisetracker.co.kr
 
 # Index
 * [SDK 삽입 (AOS & iOS)](./zoomzoomtour.md#SDK-삽입)
@@ -163,9 +165,9 @@ WiseTracker.sendGoalData();
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setOrderQuantityArray([상품수량]);
-WiseTracker.setOrderAmountArray([결제금액]); // 사용자가 실제 결제한 금액
-WiseTracker.setOrderConversionDataArray("g3", [쿠폰금액]); // 쿠폰 사용 금액, 0 또는 positive value 입력
-WiseTracker.setOrderConversionDataArray("g4", [마일리지]); // 마일리지 사용 금액, 0 또는 positive value 입력
+WiseTracker.setOrderAmountArray([결제금액]); // 사용자가 실제 결제한 금액, 호주달러 기준
+WiseTracker.setOrderConversionDataArray("g3", [쿠폰금액]); // 쿠폰 사용 금액, 호주달러 기준, 0 또는 positive value 입력
+WiseTracker.setOrderConversionDataArray("g4", [마일리지]); // 마일리지 사용 금액, 호주달러 기준, 0 또는 positive value 입력
 WiseTracker.setPageIdentity("ODR");
 WiseTracker.sendTransaction();
 </script>
