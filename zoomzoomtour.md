@@ -166,13 +166,13 @@ WiseTracker.sendTransaction();
 ```
 
 #### 분석 코드 적용 예시
-사용자가 30만원짜리 여행 상품에 쿠폰할인 5천원을 적용하여 295,000원을 결제하는 경우
+사용자가 100 AUD(호주달러)짜리 여행 상품에 쿠폰할인 5 AUD를 적용하여 95 AUD를 결제하는 경우
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setOrderQuantityArray([1]);
-WiseTracker.setOrderAmountArray([295000]);
-WiseTracker.setOrderConversionDataArray("g11", [5000]);
-	// WiseTracker.setOrderConversionDataArray("g12", [마일리지]); 마일리지 할인이 없으므로 API 미적용
+WiseTracker.setOrderAmountArray([95]);
+WiseTracker.setOrderConversionDataArray("g11", [5]);
+WiseTracker.setOrderConversionDataArray("g12", [0]);
 WiseTracker.sendTransaction();
 </script>
 ```
