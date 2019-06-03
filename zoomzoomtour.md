@@ -177,8 +177,8 @@ WiseTracker.sendTransaction();
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setOrderQuantityArray([1]);
 WiseTracker.setOrderAmountArray([95]);
-WiseTracker.setOrderConversionDataArray("g3" [5.5]);
-WiseTracker.setOrderConversionDataArray("g4" [0]);
+WiseTracker.setOrderConversionDataArray("g3", [5.5]);
+WiseTracker.setOrderConversionDataArray("g4", [0]);
 WiseTracker.setPageIdentity("ODR");
 WiseTracker.sendTransaction();
 </script>
