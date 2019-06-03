@@ -22,6 +22,7 @@
 	* [후기 등록](./zoomzoomtour.md#후기-등록)
 		* [분석 코드](./zoomzoomtour.md#분석-코드-4)
 	* [결제 & 매출 분석](./zoomzoomtour.md#결제--매출-분석)
+		* [주의사항](./zoomzoomtour.md#주의사항-2)
 		* [분석 코드](./zoomzoomtour.md#분석-코드-5)
 		* [분석 코드 적용 예시](./zoomzoomtour.md#분석-코드-적용-예시)
 * [적용 후 데이터 검증](./zoomzoomtour.md#적용-후-데이터-검증)
@@ -154,24 +155,28 @@ WiseTracker.sendGoalData();
 ### 결제 & 매출 분석
 결제 금액, 횟수, 쿠폰 & 마일리지 사용 관련한 데이터 분석을 위해 결제 완료 페이지에 분석 코드를 삽입합니다.
 
+#### 주의사항
+1. 모든 금액(결제금액, 쿠폰금액, 마일리지)은 호주달러(AUD) 기준으로 입력해야 합니다.
+2. 모든 금액(결제금액, 쿠폰금액, 마일리지)은 소수점 이하 두 자리 까지 입력 가능합니다.
+
 #### 분석 코드
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setOrderQuantityArray([상품수량]);
 WiseTracker.setOrderAmountArray([결제금액]); // 사용자가 실제 결제한 금액
-WiseTracker.setOrderConversionDataArray("g3", [쿠폰금액]); // 쿠폰으로 할인된 금액 positive value로 입력
-WiseTracker.setOrderConversionDataArray("g4", [마일리지]); // 마일리지로 할인된 금액 positive value로 입력
+WiseTracker.setOrderConversionDataArray("g3", [쿠폰금액]); // 쿠폰 사용 금액, 0 또는 positive value 입력
+WiseTracker.setOrderConversionDataArray("g4", [마일리지]); // 마일리지 사용 금액, 0 또는 positive value 입력
 WiseTracker.sendTransaction();
 </script>
 ```
 
 #### 분석 코드 적용 예시
-사용자가 100 AUD(호주달러)짜리 여행 상품에 쿠폰할인 5 AUD를 적용하여 95 AUD를 결제하는 경우
+사용자가 100.5 AUD(호주달러)짜리 여행 상품에 쿠폰할인 5.5 AUD를 적용하여 95 AUD를 결제하는 경우
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setOrderQuantityArray([1]);
 WiseTracker.setOrderAmountArray([95]);
-WiseTracker.setOrderConversionDataArray("g3" [5]);
+WiseTracker.setOrderConversionDataArray("g3" [5.5]);
 WiseTracker.setOrderConversionDataArray("g4" [0]);
 WiseTracker.sendTransaction();
 </script>
