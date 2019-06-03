@@ -171,7 +171,7 @@ WiseTracker.sendTransaction();
 ```
 
 #### 분석 코드 적용 예시
-사용자가 100.5 AUD(호주달러)짜리 여행 상품에 쿠폰할인 5.5 AUD를 적용하여 95 AUD를 결제하는 경우
+사용자가 100.5 AUD짜리 여행 상품에 쿠폰할인 5.5 AUD를 적용하여 95 AUD를 결제하는 경우
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setOrderQuantityArray([1]);
