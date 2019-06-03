@@ -190,7 +190,7 @@ SDK와 API가 올바르게 적용 되었는지 확인하기 위해서는 아래 
 ### AOS
 AndroidManifest.xml 파일에 아래 메타 데이터 태그를 추가합니다.
 ``` kotlin
-<meta-data android:name="WiseTrackerLogState" android:value="true"></meta-data>
+<meta-data android:name="WiseTrackerLogState" android:value="true" />
 ```
 
 ### iOS
