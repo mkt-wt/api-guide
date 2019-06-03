@@ -56,8 +56,8 @@ Hybrid 영역에 태깅한 분석 API가 Native에 있는 SDK를 참조할 수 �
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setPageIdentity("RGR");
 WiseTracker.setGoal("g1", 1);
-WiseTracker.setGoal("g3", 1);
-WiseTracker.sendGoalData();
+WiseTracker.setGoal("g6", 1);
+WiseTracker.sendTransaction();
 </script>
 ```
 
@@ -67,8 +67,8 @@ WiseTracker.sendGoalData();
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setPageIdentity("RGR");
 WiseTracker.setGoal("g1", 1);
-WiseTracker.setGoal("g4", 1);
-WiseTracker.sendGoalData();
+WiseTracker.setGoal("g7", 1);
+WiseTracker.sendTransaction();
 </script>
 ```
 
@@ -78,8 +78,8 @@ WiseTracker.sendGoalData();
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setPageIdentity("RGR");
 WiseTracker.setGoal("g1", 1);
-WiseTracker.setGoal("g5", 1);
-WiseTracker.sendGoalData();
+WiseTracker.setGoal("g8", 1);
+WiseTracker.sendTransaction();
 </script>
 ```
 
@@ -96,7 +96,7 @@ WiseTracker.sendGoalData();
 #### 분석 코드
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-WiseTracker.setGoal("g6", 1);
+WiseTracker.setGoal("g9", 1);
 WiseTracker.sendGoalData();
 </script>
 ```
@@ -109,7 +109,7 @@ WiseTracker.sendGoalData();
 #### 분석 코드
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-WiseTracker.setGoal("g7", 1);
+WiseTracker.setGoal("g10", 1);
 WiseTracker.sendGoalData();
 </script>
 ```
@@ -122,7 +122,7 @@ WiseTracker.sendGoalData();
 #### 분석 코드
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-WiseTracker.setGoal("g8", 1);
+WiseTracker.setGoal("g11", 1);
 WiseTracker.sendGoalData();
 </script>
 ```
@@ -135,7 +135,7 @@ WiseTracker.sendGoalData();
 #### 분석 코드
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-WiseTracker.setGoal("g9", 1);
+WiseTracker.setGoal("g12", 1);
 WiseTracker.sendGoalData();
 </script>
 ```
@@ -146,7 +146,7 @@ WiseTracker.sendGoalData();
 #### 분석 코드
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-WiseTracker.setGoal("g10", 1);
+WiseTracker.setGoal("g13", 1);
 WiseTracker.sendGoalData();
 </script>
 ```
@@ -159,8 +159,8 @@ WiseTracker.sendGoalData();
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setOrderQuantityArray([상품수량]);
 WiseTracker.setOrderAmountArray([결제금액]); // 사용자가 실제 결제한 금액
-WiseTracker.setOrderConversionDataArray("g11", [쿠폰금액]); // 쿠폰으로 할인된 금액 positive value로 입력
-WiseTracker.setOrderConversionDataArray("g12", [마일리지]); // 마일리지로 할인된 금액 positive value로 입력
+WiseTracker.setOrderConversionDataArray("g3", [쿠폰금액]); // 쿠폰으로 할인된 금액 positive value로 입력
+WiseTracker.setOrderConversionDataArray("g4"[마일리지]); // 마일리지로 할인된 금액 positive value로 입력
 WiseTracker.sendTransaction();
 </script>
 ```
@@ -171,8 +171,8 @@ WiseTracker.sendTransaction();
 <script type="wisetracker/text" id="wiseTracker">
 WiseTracker.setOrderQuantityArray([1]);
 WiseTracker.setOrderAmountArray([95]);
-WiseTracker.setOrderConversionDataArray("g11", [5]);
-WiseTracker.setOrderConversionDataArray("g12", [0]);
+WiseTracker.setOrderConversionDataArray("g3" [5]);
+WiseTracker.setOrderConversionDataArray("g4" [0]);
 WiseTracker.sendTransaction();
 </script>
 ```
