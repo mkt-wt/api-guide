@@ -27,7 +27,7 @@
 
 
 # SDK 삽입
-아래 가이드에서 '필수연동 API' 부분 까지 설정해 주시면 되는데, '필수연동 API'에서 '주문/매출 분석'을 제외하고 적용해 주시기 바랍니다. 그 외에 'Facebook 광고성과 분석' 설정은 OTM 앱에 Facebook SDK가 포함되어 있는 경우에 진행해 주시기 바랍니다.
+아래 가이드에서 '필수연동 API' 부분 까지 설정해 주시면 됩니다. iOS 가이드의 '필수연동 API'에서는 **'주문/매출 분석'을 제외**하고 적용해 주시기 바랍니다. 그 외에 'Facebook 광고성과 분석' 설정은 OTM 앱에 Facebook SDK가 포함되어 있는 경우에 진행해 주시기 바랍니다.
 #### -[AOS](https://bintray.com/beta/#/tracker/maven/SDK_V1?tab=readme)
 #### -[iOS](https://cocoapods.org/pods/WiseTracker)
 
