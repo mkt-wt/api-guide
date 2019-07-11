@@ -100,13 +100,13 @@ WiseTracker.sendGoalData()
 
 
 #### 분석 코드 - AOS
-**예시** 사용자가 컨텐츠 상세화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
+**[예시]** 사용자가 컨텐츠 상세화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` java
 WiseTracker.setPageIdentity("PDV");
 ```
 
 #### 분석 코드 - iOS Objective-C
-**예시** 사용자가 회원가입에 필요한 정보를 입력하는 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
+**[예시]** 사용자가 회원가입에 필요한 정보를 입력하는 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` objc
 [WiseTracker setPageIdentity:@"RGF"];
 ```
@@ -119,11 +119,11 @@ WiseTracker.setPageIdentity("MYPAGE")
 ```
 
 #### 분석 코드 - Hybrid
-**예시** 사용자가 홈 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
+**[예시]** 사용자가 홈 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("HOME");
-	// 홈 화면에 대해 커스텀 정의한 화면코드인 HOME를 value로 입력함
+	// 홈 화면에 대해 커스텀 정의한 화면코드인 HOME을 value로 입력함
 </script>
 ```
 
