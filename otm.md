@@ -15,18 +15,12 @@
 		* [분석 코드 - iOS Objective-C](./otm.md#분석-코드---iOS-Objective-C)
 		* [분석 코드 - iOS Swift](./otm.md#분석-코드---iOS-Swift)
 		* [분석 코드 - Hybrid](./otm.md#분석-코드---Hybrid)
-	* [특정 화면의 화면별 페이지뷰 분석](./otm.md#특정-화면의-화면별-페이지뷰-분석)
+	* [화면별 페이지뷰 분석](./otm.md#화면별-페이지뷰-분석)
 		* [주의사항](./otm.md#주의사항-1)
 		* [분석 코드 - AOS](./otm.md#분석-코드---AOS-1)
 		* [분석 코드 - iOS Objective-C](./otm.md#분석-코드---iOS-Objective-C-1)
 		* [분석 코드 - iOS Swift](./otm.md#분석-코드---iOS-Swift-1)
 		* [분석 코드 - Hybrid](./otm.md#분석-코드---Hybrid-1)
-	* [화면별 페이지뷰 분석](./otm.md#화면별-페이지뷰-분석)
-		* [주의사항](./otm.md#주의사항-2)
-		* [분석 코드 - AOS](./otm.md#분석-코드---AOS-2)
-		* [분석 코드 - iOS Objective-C](./otm.md#분석-코드---iOS-Objective-C-2)
-		* [분석 코드 - iOS Swift](./otm.md#분석-코드---iOS-Swift-2)
-		* [분석 코드 - Hybrid](./otm.md#분석-코드---Hybrid-2)
 * [적용 후 데이터 검증](./otm.md#적용-후-데이터-검증)
 	* [AOS](./otm.md#AOS)
 	* [iOS](./otm.md#iOS)
@@ -57,18 +51,21 @@ Hybrid 영역에 태깅한 분석 API가 Native에 있는 SDK를 참조할 수 �
 
 #### 분석 코드 - AOS
 ``` java
+WiseTracker.setPageIdentity("LIR");
 WiseTracker.setGoal("g2", 1);
 WiseTracker.sendGoalData();
 ```
 
 #### 분석 코드 - iOS Objective-C
 ``` objc
+[WiseTracker setPageIdentity:@"LIR"];
 [WiseTracker setGoal:@"g2" value: 1];
 [WiseTracker sendGoalData];
 ```
 
 #### 분석 코드 - iOS Swift
 ``` swift
+WiseTracker.setPageIdentity("LIR")
 WiseTracker.setGoal("g2", 1)
 WiseTracker.sendGoalData()
 ```
@@ -76,75 +73,57 @@ WiseTracker.sendGoalData()
 #### 분석 코드 - Hybrid
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
+	WiseTracker.setPageIdentity("LIR");
 	WiseTracker.setGoal("g2", 1);
 	WiseTracker.sendGoalData();
 </script>
 ```
 
-### 특정 화면의 화면별 페이지뷰 분석
-특정 화면이란, 해당 화면을 가리키는 화면코드가 와이즈트래커 시스템 상에 사전 정의되어 있는 화면들을 의미합니다. 상품 상세 화면, 주문 완료 화면 등 데이터 분석 상 중요한 화면들은 사전 정의되어 있습니다. 이런 화면들의  페이지뷰를 측정하기 위해, 각 화면 안에 아래 분석 코드를 설정합니다.
+### 화면별 페이지뷰 분석
+화면별 페이지뷰를 분석하기 위해서는 화면 식별용 API가 각 화면마다 태깅 되어야 합니다. 그리고 API에 각 화면에 대한 `화면코드`값을 입력해야 합니다. 상품 상세 화면, 주문 완료 화면 등 대부분의 앱에 공통적으로 존재하는 화면들에 대한 `화면코드`는 와이즈트래커 시스템 상에 사전 정의되어 있으며 아래 표를 참고해 입력해 주시면 됩니다. 표에 포함되지 않은 화면들은 시스템에 사전 정의되어 있지 않으므로 커스텀한 `화면코드`를 사용해 주시면 되는데, 이 커스텀 코드는 반드시 알파-뉴메릭 8자리 이하여야 합니다.
 
 #### 주의사항
-각 화면의 목록과 `화면코드`는 아래 표를 참고해 입력해 주시기 바랍니다.
+사전 정의된 화면의 목록과 `화면코드`는 아래 표를 참고해 입력해 주시기 바랍니다.
 
-화면 이름 | 화면코드
+화면이름 | 화면코드
 -------- | --------
 컨텐츠 상세 | PDV
-주문 완료 | ODR
+컨텐츠 리스트 | PLV
+로그인 정보 입력 | LIF
+로그인 완료 | LIR
 장바구니 보기 | OCV
+주문 완료 | ODR
+주문서 | ODF
+회원가입안내 | RGI
+회원가입 정보입력 | RGF
+회원가입완료 | RGR
+
 
 #### 분석 코드 - AOS
+**예시** 사용자가 컨텐츠 상세화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` java
-WiseTracker.setPageIdentity("화면코드");
-// 컨텐츠 상세 화면인 경우 화면코드에 PDV를, 주문 완료 화면인 경우 화면코드에 ODR을 입력
+WiseTracker.setPageIdentity("PDV");
 ```
 
 #### 분석 코드 - iOS Objective-C
+**예시** 사용자가 회원가입에 필요한 정보를 입력하는 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` objc
-[WiseTracker setPageIdentity:@"화면코드"];
-// 컨텐츠 상세 화면인 경우 화면코드에 PDV를, 주문 완료 화면인 경우 화면코드에 ODR을 입력
+[WiseTracker setPageIdentity:@"RGF"];
 ```
 
 #### 분석 코드 - iOS Swift
+**예시** 사용자가 마이 페이지 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` swift
-WiseTracker.setPageIdentity("화면코드")
-// 컨텐츠 상세 화면인 경우 화면코드에 PDV를, 주문 완료 화면인 경우 화면코드에 ODR을 입력
+WiseTracker.setPageIdentity("MYPAGE")
+// 마이 페이지 화면에 대해 커스텀 정의한 화면코드인 MYPAGE를 value로 입력함
 ```
 
 #### 분석 코드 - Hybrid
+**예시** 사용자가 홈 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-	WiseTracker.setPageIdentity("화면코드");
-	// 컨텐츠 상세 화면인 경우 화면코드에 PDV를, 주문 완료 화면인 경우 화면코드에 ODR을 입력
-</script>
-```
-
-### 화면별 페이지뷰 분석
-사전 정의되지 않은 화면들의 페이지뷰를 측정하기 위해, 각 화면 안에 아래 분석 코드를 설정합니다.
-
-#### 주의사항
-각 화면을 식별하는 `화면코드`는 알파-뉴메릭 8자리까지 입력해야 합니다.
-그리고 와이즈트래커 시스템에 사전 정의된 화면코드가 있습니다. 상품 상세 화면은 PDV, 
-
-#### 분석 코드 - AOS
-``` java
-WiseTracker.setPageIdentity("화면코드");
-```
-
-#### 분석 코드 - iOS Objective-C
-``` objc
-[WiseTracker setPageIdentity:@"화면코드"];
-```
-
-#### 분석 코드 - iOS Swift
-``` swift
-WiseTracker.setPageIdentity("화면코드")
-```
-
-#### 분석 코드 - Hybrid
-``` html
-<script type="wisetracker/text" id="wiseTracker">
-	WiseTracker.setPageIdentity("화면코드");
+	WiseTracker.setPageIdentity("HOME");
+	// 홈 화면에 대해 커스텀 정의한 화면코드인 HOME를 value로 입력함
 </script>
 ```
 
