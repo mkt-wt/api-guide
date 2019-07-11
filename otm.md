@@ -5,8 +5,8 @@
 
 # Index
 * [SDK 삽입 (AOS & iOS)](./otm.md#SDK-삽입)
-	* [AOS](./otm.md#AOS)
-	* [iOS](./otm.md#iOS)
+	* [AOS](./otm.md#-AOS)
+	* [iOS](./otm.md#-iOS)
 * [분석 API](./otm.md#분석-API)
 	* [Hybrid 영역 태깅 참고사항](./otm.md#Hybrid-영역-태깅-참고사항)
 	* [로그인 분석](./otm.md#로그인-분석)
