@@ -34,8 +34,8 @@
 
 # SDK 삽입
 아래 가이드에서 '필수연동 API' 부분 까지 설정해 주시면 되는데, '필수연동 API'에서 '주문/매출 분석'을 제외하고 적용해 주시기 바랍니다. 그 외에 'Facebook 광고성과 분석' 설정은 OTM 앱에 Facebook SDK가 포함되어 있는 경우에 진행해 주시기 바랍니다.
-#### [AOS](https://bintray.com/beta/#/tracker/maven/SDK_V1?tab=readme)
-#### [iOS](https://cocoapods.org/pods/WiseTracker)
+#### -[AOS](https://bintray.com/beta/#/tracker/maven/SDK_V1?tab=readme)
+#### -[iOS](https://cocoapods.org/pods/WiseTracker)
 
 ## 분석 API
 데이터 분석용 API와 태깅 방법을 안내합니다.
@@ -57,21 +57,18 @@ Hybrid 영역에 태깅한 분석 API가 Native에 있는 SDK를 참조할 수 �
 
 #### 분석 코드 - AOS
 ``` java
-WiseTracker.setPageIdentity("LIR");
 WiseTracker.setGoal("g2", 1);
 WiseTracker.sendGoalData();
 ```
 
 #### 분석 코드 - iOS Objective-C
 ``` objc
-[WiseTracker setPageIdentity:@"LIR"];
 [WiseTracker setGoal:@"g2" value: 1];
 [WiseTracker sendGoalData];
 ```
 
 #### 분석 코드 - iOS Swift
 ``` swift
-WiseTracker.setPageIdentity("LIR")
 WiseTracker.setGoal("g2", 1)
 WiseTracker.sendGoalData()
 ```
@@ -79,7 +76,6 @@ WiseTracker.sendGoalData()
 #### 분석 코드 - Hybrid
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-	WiseTracker.setPageIdentity("LIR");
 	WiseTracker.setGoal("g2", 1);
 	WiseTracker.sendGoalData();
 </script>
@@ -95,7 +91,6 @@ WiseTracker.sendGoalData()
 -------- | --------
 컨텐츠 상세 | PDV
 주문 완료 | ODR
-로그인 완료 | LIR
 장바구니 보기 | OCV
 
 #### 분석 코드 - AOS
