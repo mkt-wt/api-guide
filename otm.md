@@ -100,30 +100,32 @@ WiseTracker.sendGoalData()
 
 #### 분석 코드 - AOS
 ``` java
-WiseTracker.setPageIdentity("`화면코드`");
+WiseTracker.setPageIdentity("화면코드");
+// 컨텐츠 상세 화면인 경우 화면코드에 PDV를, 주문 완료 화면인 경우 화면코드에 ODR을 입력
 ```
 
 #### 분석 코드 - iOS Objective-C
-주문 완료 화면
 ``` objc
-[WiseTracker setPageIdentity:@"ODR"];
+[WiseTracker setPageIdentity:@"화면코드"];
+// 컨텐츠 상세 화면인 경우 화면코드에 PDV를, 주문 완료 화면인 경우 화면코드에 ODR을 입력
 ```
 
 #### 분석 코드 - iOS Swift
-
 ``` swift
 WiseTracker.setPageIdentity("화면코드")
+// 컨텐츠 상세 화면인 경우 화면코드에 PDV를, 주문 완료 화면인 경우 화면코드에 ODR을 입력
 ```
 
 #### 분석 코드 - Hybrid
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("화면코드");
+	// 컨텐츠 상세 화면인 경우 화면코드에 PDV를, 주문 완료 화면인 경우 화면코드에 ODR을 입력
 </script>
 ```
 
 ### 화면별 페이지뷰 분석
-앱의 각 화면별 페이지뷰를 측정하기 위해, 각 화면 안에 아래 분석 코드를 설정합니다.
+사전 정의되지 않은 화면들의 페이지뷰를 측정하기 위해, 각 화면 안에 아래 분석 코드를 설정합니다.
 
 #### 주의사항
 각 화면을 식별하는 `화면코드`는 알파-뉴메릭 8자리까지 입력해야 합니다.
@@ -131,7 +133,7 @@ WiseTracker.setPageIdentity("화면코드")
 
 #### 분석 코드 - AOS
 ``` java
-WiseTracker.setPageIdentity("화면코드"); //
+WiseTracker.setPageIdentity("화면코드");
 ```
 
 #### 분석 코드 - iOS Objective-C
@@ -156,7 +158,7 @@ SDK와 API가 올바르게 적용 되었는지 확인하기 위해서는 아래 
 
 ### AOS
 AndroidManifest.xml 파일에 아래 메타 데이터 태그를 추가합니다.
-``` kotlin
+``` java
 <meta-data android:name="WiseTrackerLogState" android:value="true" />
 // 개발용 테스트 앱에는 true로, 배포용 앱에는 false로 설정
 ```
