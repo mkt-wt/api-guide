@@ -35,7 +35,7 @@
 데이터 분석용 API와 태깅 방법을 안내합니다.
 
 ### Hybrid 영역 태깅 참고사항
-Hybrid 영역에 태깅한 분석 API가 Native에 있는 SDK를 참조할 수 있도록 script의 `type`과 `id`를 설정합니다.
+분석 대상 화면이 웹뷰로 호출된 HTML 페이지라면, Hybrid 영역에 태깅한 분석 API가 Native에 있는 SDK를 참조할 수 있도록 script의 `type`과 `id`를 설정해야 합니다.
 ``` html
 <!-- refer to Wisetracker SDK -->
 <script type="wisetracker/text" id="wiseTracker">
