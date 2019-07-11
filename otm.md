@@ -112,7 +112,7 @@ WiseTracker.setPageIdentity("PDV");
 ```
 
 #### 분석 코드 - iOS Swift
-**예시** 사용자가 마이 페이지 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
+**[예시]** 사용자가 마이 페이지 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` swift
 WiseTracker.setPageIdentity("MYPAGE")
 // 마이 페이지 화면에 대해 커스텀 정의한 화면코드인 MYPAGE를 value로 입력함
