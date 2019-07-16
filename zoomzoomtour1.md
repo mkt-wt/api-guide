@@ -36,6 +36,7 @@
 아래 가이드에서 '필수연동 API' 부분 까지 설정해 주시면 됩니다. iOS 가이드의 '필수연동 API'에서는 '주문/매출 분석'을 제외하고 적용해 주시기 바랍니다.
 
 -[AOS](https://bintray.com/beta/#/tracker/maven/SDK_V1?tab=readme)
+
 -[iOS](https://cocoapods.org/pods/WiseTracker)
 
 ## 분석 API
