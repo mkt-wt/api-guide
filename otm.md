@@ -88,7 +88,7 @@ WiseTracker.sendGoalData()
 월정액상품 | SUBS
 VOD 결제하기 | ODF
 실시간TV | LIVE
-메인추천 모듈 | HOMEMAIN
+메인 | HOMEMAIN
 인기콘텐츠 | POPULAR
 상품기반 무료 (카테고리 - 나의 무료와 동일한 페이지) | FREE
 매거진 | MGZ
@@ -122,7 +122,7 @@ TV쿠폰 | TVCOUP
 패키지 메인 콘텐츠 | PACKAGE
 
 #### 분석 코드 - AOS
-**[예시]** 사용자가 컨텐츠 상세화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
+**[예시]** 사용자가 영상 상세의 단편/시리즈/클립 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` java
 WiseTracker.setPageIdentity("PDV");
 ```
@@ -137,15 +137,13 @@ WiseTracker.setPageIdentity("PDV");
 **[예시]** 사용자가 마이 페이지 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` swift
 WiseTracker.setPageIdentity("MYPAGE")
-// 마이 페이지 화면에 대해 커스텀 정의한 화면코드인 MYPAGE를 value로 입력함
 ```
 
 #### 분석 코드 - Hybrid
-**[예시]** 사용자가 홈 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
+**[예시]** 사용자가 인물 상세정보 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-	WiseTracker.setPageIdentity("HOME");
-	// 홈 화면에 대해 커스텀 정의한 화면코드인 HOME을 value로 입력함
+	WiseTracker.setPageIdentity("FIGURE");
 </script>
 ```
 
