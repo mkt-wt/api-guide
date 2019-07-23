@@ -90,13 +90,14 @@ VOD 결제하기 | ODF
 실시간TV | LIVE
 메인추천 모듈 | HOMEMAIN
 인기콘텐츠 | POPULAR
-상품기반 무료 (나의 무료, 카테고리 무료) | FREE
+상품기반 무료 (카테고리 - 나의 무료와 동일한 페이지) | FREE
 매거진 | MGZ
-5G특별관 (5G 프리미엄) | FIVEG
+5G특별관 (카테고리 - 5G 프리미엄과 동일한 페이지) | FIVEG
 오리지널 콘텐츠 | ORIGINAL
 리뷰의 신 | REVIEW
 음악채널(OST) | OST
 카테고리 Tab | CTGMAIN
+추천 카테고리 | RECOCTG
 전체 카테고리 | ALLCTG
 검색결과 | SCH
 콘텐츠 리스트(Scene 검색) | SCENESCH
