@@ -81,45 +81,45 @@ WiseTracker.sendGoalData()
 ### 화면별 페이지뷰 분석
 화면별 페이지뷰를 분석하기 위해서는 화면 식별용 API가 각 화면마다 태깅 되어야 합니다. 그리고 API에 각 화면에 대한 `화면코드`값을 입력해야 합니다. 화면정의 V0.9.3을 기준으로 아래 화면들에 대해 매핑된 `화면코드`를 사용해 주시기 바랍니다.
 
-화면이름 | 화면코드
--------- | --------
-로그인 | LIF
-회원가입 | RGF
-월정액상품 | SUBS
-VOD 결제하기 | ODF
-실시간TV | LIVE
-메인 | HOMEMAIN
-인기콘텐츠 | POPULAR
-상품기반 무료 (카테고리 - 나의 무료와 동일한 페이지) | FREE
+화면이름 | 화면코드 | 화면이미지
+-------- | -------- | --------
+로그인 | LIF | 링크
+회원가입 | RGF | 링크
+월정액상품 | SUBS | 링크
+VOD 결제하기 | ODF | 링크
+실시간TV | LIVE | 링크
+메인 | HOMEMAIN | 링크
+인기콘텐츠 | POPULAR | 링크
+상품기반 무료 (카테고리 - 나의 무료와 동일한 페이지) | FREE | 링크
 매거진 | MGZ
-5G특별관 (카테고리 - 5G 프리미엄과 동일한 페이지) | FIVEG
-오리지널 콘텐츠 | ORIGINAL
-리뷰의 신 | REVIEW
-음악채널(OST) | OST
-카테고리 Tab | CTGMAIN
-추천 카테고리 | RECOCTG
-전체 카테고리 | ALLCTG
-검색결과 | SCH
-콘텐츠 리스트(Scene 검색) | SCENESCH
-안면인식 감정 추론 기반 추천 콘텐츠 | EMOSCH
-마이페이지 | MYPAGE
-캐시 | CASH
-TV쿠폰 | TVCOUP
-콘텐츠 이용권 | VOUCHER
-무료체험권 | TRIAL
-마이스타일 리포트 | MYSTYLE
-구매내역(구매목록) | PAYLIST
-내가 찜한 콘텐츠 | WISHLIST
-좋아요 | LIKE
-다운로드 | DOWNLOAD
-시청내역 | WATCH
-성인 19+ | RATED
-올레TV 목록 | TVLIST
-이벤트 | EVENT
-공지 | NOTICE
-인물 상세정보 | FIGURE
-단편/시리즈/클립 | PDV
-패키지 메인 콘텐츠 | PACKAGE
+5G특별관 (카테고리 - 5G 프리미엄과 동일한 페이지) | FIVEG | 링크
+오리지널 콘텐츠 | ORIGINAL | 링크
+리뷰의 신 | REVIEW | 링크
+음악채널(OST) | OST | 링크
+카테고리 Tab | CTGMAIN | 링크
+추천 카테고리 | RECOCTG | 링크
+전체 카테고리 | ALLCTG | 링크
+검색결과 | SCH | 링크
+콘텐츠 리스트(Scene 검색) | SCENESCH | 링크
+안면인식 감정 추론 기반 추천 콘텐츠 | EMOSCH | 링크
+마이페이지 | MYPAGE | 링크
+캐시 | CASH | 링크
+TV쿠폰 | TVCOUP | 링크
+콘텐츠 이용권 | VOUCHER | 링크
+무료체험권 | TRIAL | 링크
+마이스타일 리포트 | MYSTYLE | 링크
+구매내역(구매목록) | PAYLIST | 링크
+내가 찜한 콘텐츠 | WISHLIST | 링크
+좋아요 | LIKE | 링크
+다운로드 | DOWNLOAD | 링크
+시청내역 | WATCH | 링크
+성인 19+ | RATED | 링크
+올레TV 목록 | TVLIST | 링크
+이벤트 | EVENT | 링크
+공지 | NOTICE | 링크
+인물 상세정보 | FIGURE | 링크
+단편/시리즈/클립 | PDV | 링크
+패키지 메인 콘텐츠 | PACKAGE | 링크
 
 #### 분석 코드 - AOS
 **[예시]** 사용자가 영상 상세의 단편/시리즈/클립 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
