@@ -83,7 +83,7 @@ WiseTracker.sendGoalData()
 
 화면이름 | 화면코드 | 화면이미지
 -------- | -------- | --------
-로그인 | LIF | 링크
+로그인 | LIF | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image001.png)
 회원가입 | RGF | 링크
 월정액상품 | SUBS | 링크
 VOD 결제하기 | ODF | 링크
@@ -91,7 +91,7 @@ VOD 결제하기 | ODF | 링크
 메인 | HOMEMAIN | 링크
 인기콘텐츠 | POPULAR | 링크
 상품기반 무료 (카테고리 - 나의 무료와 동일한 페이지) | FREE | 링크
-매거진 | MGZ
+매거진 | MGZ | 링크
 5G특별관 (카테고리 - 5G 프리미엄과 동일한 페이지) | FIVEG | 링크
 오리지널 콘텐츠 | ORIGINAL | 링크
 리뷰의 신 | REVIEW | 링크
