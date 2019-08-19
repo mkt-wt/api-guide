@@ -169,9 +169,9 @@ _TRK_PI="PDV";
 
 #### 주의사항
 1) '다른 요금제 선택' 버튼을 클릭하면 요금제 목록창이 나타납니다. 이 창에서 '선택' 버튼을 클릭하는 시점에 아래 코드를 태깅하면 됩니다.
-[button]!(http://www.wisetracker.co.kr/wp-content/uploads/2019/08/005.png)
+![button](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/005.png)
 2) 요금제 목록창에서 몇가지 요금들을 체크박스로 선택하여 '선택한 요금제 비교'로 넘어가는 경우도 있습니다. '선택한 요금제 비교'로 넘어간 화면에 있는 '선택' 버튼을 클릭하는 시점에도 아래 코드를 태깅해야 합니다.
-[button]!(http://www.wisetracker.co.kr/wp-content/uploads/2019/08/006.png)
+![button](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/006.png)
 
 #### 코드
 ``` javascript
