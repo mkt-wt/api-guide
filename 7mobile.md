@@ -25,8 +25,12 @@
 		* [주의사항](./7mobile.md#주의사항-3)
 		* [코드](./7mobile.md#코드-4)
 		* [태깅 예시](./7mobile.md#태깅-예시-4)
-	* [화면별 페이지뷰 분석](./7mobile.md#화면별-페이지뷰-분석)
+	* [구매 후기 등록횟수 분석](./7mobile.md#구매-후기-등록횟수-분석)
+		* [주의사항](./7mobile.md#주의사항-4)
 		* [코드](./7mobile.md#코드-5)
+	* [화면별 페이지뷰 분석](./7mobile.md#화면별-페이지뷰-분석)
+		* [코드](./7mobile.md#코드-6)
+		* [태깅 예시](./7mobile.md#태깅-예시-5)
 * [적용 후 데이터 검증](./7mobile.md#적용-후-데이터-검증)
 
 
@@ -134,33 +138,33 @@ _TRK_G1 = "1";
 
 #### 코드
 ``` javascript
-_TRK_PNC="상품코드";
-_TRK_PNC_NM="상품명";
-_TRK_PNG="범주코드"; //단말기 상품일 경우 000, 유심 상품일 경우 001 입력
-_TRK_PNG_NM="범주명"; //단말기 상품일 경우 '단말기', 유심 상품일 경우 '유심' 입력
-_TRK_PI="PDV";
+_TRK_PNC = "상품코드";
+_TRK_PNC_NM = "상품명";
+_TRK_PNG = "범주코드"; //단말기 상품일 경우 000, 유심 상품일 경우 001 입력
+_TRK_PNG_NM = "범주명"; //단말기 상품일 경우 '단말기', 유심 상품일 경우 '유심' 입력
+_TRK_PI = "PDV";
 ```
 
 #### 태깅 예시
 유저가 유심 상세화면을 조회하는 경우 해당 화면에 아래 코드 태깅.
 ``` html
 <script type="text/javascript">
-_TRK_PNC="0000365614"; //back office 상의 실제 상품코드 입력
-_TRK_PNC_NM="유심";
-_TRK_PNG="001";
-_TRK_PNG_NM="유심";
-_TRK_PI="PDV";
+_TRK_PNC = "0000365614"; //back office 상의 실제 상품코드 입력
+_TRK_PNC_NM = "유심";
+_TRK_PNG = "001";
+_TRK_PNG_NM = "유심";
+_TRK_PI = "PDV";
 </script>
 ```
 
 유저가 갤럭시J4+ 상세화면을 조회하는 경우 해당 화면에 아래 코드 태깅.
 ``` html
 <script type="text/javascript">
-_TRK_PNC="0000454713"; //back office 상의 실제 상품코드 입력
-_TRK_PNC_NM="갤럭시J4+";
-_TRK_PNG="000";
-_TRK_PNG_NM="단말기";
-_TRK_PI="PDV";
+_TRK_PNC = "0000454713"; //back office 상의 실제 상품코드 입력
+_TRK_PNC_NM = "갤럭시J4+";
+_TRK_PNG = "000";
+_TRK_PNG_NM = "단말기";
+_TRK_PI = "PDV";
 </script>
 ```
 
@@ -196,8 +200,9 @@ onclick="
 단말기 & 유심 상품이 온라인 또는 전화로 신청 완료되는 경우를 분석하기 위한 코드입니다. 따라서 '온라인신청'이 완료되는 화면과 '전화신청'이 완료되는 화면에 분석 코드가 태깅되어야 합니다.
 
 #### 주의사항
-1) 단말기 구매 시 유심 상품도 함께 구매하도록 되어 있습니다. 이런 경우 분석 코드에도 두 상품의 정보가 모두 입력 되어야 합니다.
-2) 온라인 신청 완료 화면, 그리고 전화 신청 완료 화면에 분석 코드를 태깅해 주시기 바랍니다.
+1) 단말기 구매 시 유심 상품도 함께 구매하게 되어 있습니다. 결국 1번의 구매에 '단말기 상품', '유심 상품' 총 2개의 상품이 포함될 수 있습니다.
+2) 위와 같이 한번의 구매에 복수의 상품이 포함된 경우, 환경변수의 값에 세미콜론 기호(;)를 사용해 다수의 정보를 구분해서 넣어야 합니다. 아래 예시를 참고해 주세요. 
+3) 온라인 신청 완료 화면, 그리고 전화 신청 완료 화면에 분석 코드를 태깅해 주시기 바랍니다.
 
 #### 코드
 ``` javascript
@@ -205,7 +210,7 @@ _TRK_PNC = "상품코드";
 _TRK_PNG = "범주코드";
 _TRK_EA = "주문수량";
 _TRK_AMT = "구매금액";
-_TRK_ODNO = "주문번호";
+_TRK_ODNO = "주문번호"; //해당 주문건의 유니크한 주문번호 입력
 _TRK_MVT3 = "신청방법"; //온라인 신청인 경우 '온라인'을, 전화 신청인 경우 '전화'를 입력
 _TRK_PI = "ODR";
 ```
@@ -214,7 +219,7 @@ _TRK_PI = "ODR";
 유저가 '전화신청'으로 '갤럭시J4+' 단말기와 'NFC 유심'을 신청한 경우 신청 완료 화면에 아래 코드 태깅.
 ``` html
 <script type="text/javascript">
-_TRK_PNC = "단말기상품코드;유심상품코드";
+_TRK_PNC = "단말기상품코드;유심상품코드"; //세미콜론(;)으로 값을 구분하여 입력
 _TRK_PNG = "000;001";
 _TRK_EA = "1;1";
 _TRK_AMT = "단말기구매금액;유심구매금액";
@@ -237,91 +242,95 @@ _TRK_PI = "ODR";
 </script>
 ```
 
+### 구매 후기 등록횟수 분석
+유저가 구매후기를 등록한 횟수를 측정하기 위해 후기등록이 정상적으로 완료되는 시점에 아래 코드를 태깅합니다.
+
+#### 주의사항
+'등록' 버튼이 클릭되는 이벤트가 아닌, '추천여부'가 선택되고 후기 '내용'이 작성되어 정상적으로 후기가 등록된 경우에 한해 분석코드가 읽히도록 태깅해 주시면 됩니다.
+
+#### 코드
+``` javascript
+eval('try{_trk_flashEnvView(
+\'_TRK_G3=1\',
+\'_TRK_PDV=RVSUBMIT\'
+);}catch(_e){}');
+```
+
 ### 화면별 페이지뷰 분석
-화면별 페이지뷰를 분석하기 위해서는 화면 식별용 API가 각 화면마다 태깅 되어야 합니다. 그리고 API에 각 화면에 대한 `화면코드`값을 입력해야 합니다. 화면정의 V0.9.3을 기준으로 아래 화면들에 대해 매핑된 `화면코드`를 사용해 주시기 바랍니다.
+화면별 페이지뷰를 분석하기 위해 화면 식별용 코드가 각 화면마다 태깅 되어야 합니다. 아래 표를 참고하여 각 화면에 매핑된 코드를 태깅해 주세요.
 
-화면이름 | 화면코드 | 화면이미지
--------- | -------- | --------
-로그인 | LIF | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image001.png)
-회원가입 | RGF | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image003.png)
-월정액상품 | SUBS | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image005.png)
-VOD 결제하기 | ODF | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image007.png)
-실시간TV | LIVE | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image009.png)
-메인 | HOMEMAIN | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image011.png)
-인기콘텐츠 | POPULAR | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image013.png)
-상품기반 무료 (카테고리 - 나의 무료와 동일한 페이지) | FREE | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image015.png)
-매거진 | MGZ | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image017.png)
-5G특별관 (카테고리 - 5G 프리미엄과 동일한 페이지) | FIVEG | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image019.png)
-오리지널 콘텐츠 | ORIGINAL | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image023.png)
-리뷰의 신 | REVIEW | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image025.png)
-음악채널(OST) | OST | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image027.png)
-카테고리 Tab | CTGMAIN | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image029.png)
-추천 카테고리 | RECOCTG | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image015.png)
-전체 카테고리 | ALLCTG | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image035.png)
-검색결과 | SCH | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image037.png)
-콘텐츠 리스트(Scene 검색) | SCENESCH | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image039.png)
-안면인식 감정 추론 기반 추천 콘텐츠 | EMOSCH | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image041.png)
-마이페이지 | MYPAGE | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image043.png)
-캐시 | CASH | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image045.png)
-TV쿠폰 | TVCOUP | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image047.png)
-콘텐츠 이용권 | VOUCHER | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image049.png)
-무료체험권 | TRIAL | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image051.png)
-마이스타일 리포트 | MYSTYLE | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image053.png)
-구매내역(구매목록) | PAYLIST | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image055.png)
-내가 찜한 콘텐츠 | WISHLIST | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image057.png)
-좋아요 | LIKE | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image059.png)
-다운로드 | DOWNLOAD | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image061.png)
-시청내역 | WATCH | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image063.png)
-성인 19+ | RATED | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image065.png)
-올레TV 목록 | TVLIST | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image067.png)
-이벤트 | EVENT | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image069.png)
-공지 | NOTICE | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image071.png)
-인물 상세정보 | FIGURE | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image073.png)
-단편/시리즈/클립 | PDV | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image075.png)
-패키지 메인 콘텐츠 | PACKAGE | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image077.png)
+화면이름 | 화면코드 | 화면이미지 | 비고
+-------- | -------- | -------- | --------
+로그인 | LIF | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/001.png) | 
+회원가입 | RGF | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/회원가입.png) | 
+회원정보입력 | RGF0 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/회원정보입력.png) | 
+회원가입완료 | RGF1 | 화면캡쳐없음 | 
+메인 | MAIN | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/07/image003.png) | 
+다이렉트샵 | DIRECT | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/directshop.png) | 
+휴대폰 목록 | PHONLIST | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/휴대폰목록.png) | /phonList.do?tabgubun=lte, phonList.do?tabgubun=3g 등 모든 /phonList.do 페이지에 코드 태깅
+무약정 바른폰 | BARUN | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/무약정바른폰.png) | 
+부가서비스 | ADDSRVC | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/부가서비스.png) | /addServiceList.do?searchSupplementaryType=01, /addServiceList.do?searchSupplementaryType=02 등 모든 /addServiceList.do 페이지에 코드 태깅
+당첨자 발표 | WINNER | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/당첨자발표.png) | 
+요금제 찾기 | RECO | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/나에게맞는요금제찾기.png) | 
+구매후기 | REVIEW | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/구매후기.png) | 
+고객센터안내 | CS | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/고객센터.png) | 
+공식인증 대리점 찾기 | SELLER | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/오프라인매장안내.png) | 
+AS센터 찾기 | AS | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/as센터찾기.png) | 
+7 POINT 안내 | BENEFIT0 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/7모바일고객혜택.png) | 
+휴대폰 결제 서비스 안내 | BENEFIT1 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/휴대폰결제서비스안내.png) | 
+7MAGAZINE | 7MGZ | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/7mzgazine.png) | 
+7DAY 출첵 | 7DAY | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/7day출첵.png) | 
+1:1 고객상담 | COUNSEL | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/1-1고객상담.png) | 
+진행 이벤트 | EVTLIST | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/진행이벤트.png) | 
+공시지원금 | GRANT | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/지원금공시.png) | /support/publicFundLte.do 페이지와 /support/publicFund3g.do 페이지에 코드 태깅
+제휴카드할인 | DISCNT0 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/제휴카드할인.png) | 
+스페셜약정할인 | DISCNT1 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/스페셜약정할인제도.png) | 
+선택약정할인 | DISCNT2 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/선택약정할인제도.png) | 
+자주하는 질문 | FAQ | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/자주하는질문.png) | 
+요금제 & 서비스 | PLANLIST | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/요금제.서비스.png) | /callingPlanList.do?refCode=LTE, /callingPlanList.do?refCode=USIM 등 모든 /callingPlanList.do 페이지에 코드 태깅
+전화신청 - 본인인증 & 정보입력 | PHONE0 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/전화신청-본인인증.정보입력.png) | 
+전화신청 - 신청 완료 | PHONE1 | 화면캡쳐없음 | 
+온라인 신청 - 약관동의 | ONLINE0 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/온라인신청-약관동의.png) | 
+온라인 신청 - 본인인증 & 정보입력 | ONLINE1 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/온라인신청-본인인증.정보입력.png) | 
+온라인 신청 - 신청 완료 | ONLINE2 | 화면캡쳐없음 | 
+선불서비스 | PPSRVC | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/선불서비스.png) | 
+선불요금제 | PPPLAN | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/선불요금제.png) | /callingPlanPrepay.do?searchCallPlanType=P, /callingPlanPrepay.do?searchCallPlanType=B 등 모든 /callingPlanPrepay.do 페이지에 코드 태깅
+선불 부가서비스 | PPADD | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/선불.png) | 
+나의 서비스 | MYSRVC | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/나의서비스.png) | /post/myService.do 페이지에 코드 태깅
+요금/납부관리 | CHARGE | 회선가입고객이 아니라서 화면 캡쳐 없음 | /post/chargeInfo.do 페이지에 코드 태깅
+사용량 조회 | USAGE | 회선가입고객이 아니라서 화면 캡쳐 없음 | /post/useAmount.do 페이지에 코드 태깅
+분실/정지 | PAUSE | 회선가입고객이 아니라서 화면 캡쳐 없음 | /post/changePause.do 페이지에 코드 태깅
+서비스 조회/변경 | JOININFO | 회선가입고객이 아니라서 화면 캡쳐 없음 | /post/joinInfo.do 페이지에 코드 태깅
+7 POINT | 7POINT | 회선가입고객이 아니라서 화면 캡쳐 없음 | /post/point.do 페이지에 코드 태깅
+나의 쇼핑 | CART | 회선가입고객이 아니라서 화면 캡쳐 없음 | /post/shoppingBasketList.do 페이지에 코드 태깅
+상품 상세 | PDV | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/상품상세.png) | 위의 **상품분석**에서 다뤘듯이, 단말기 상품과 유심 상품만 '상품'으로써 분석함. 따라서 단말기 상세 화면(/phonListDetail.do)과 유심 상세화면(/usimList.do)에만 PDV 코드를 태깅
 
-#### 분석 코드 - AOS
-**[예시]** 사용자가 영상 상세의 단편/시리즈/클립 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
-``` java
-WiseTracker.setPageIdentity("PDV");
+#### 코드
+``` javascript
+_TRK_PI = "화면코드";
 ```
 
-#### 분석 코드 - iOS Objective-C
-**[예시]** 사용자가 회원가입에 필요한 정보를 입력하는 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
-``` objc
-[WiseTracker setPageIdentity:@"RGF"];
-```
-
-#### 분석 코드 - iOS Swift
-**[예시]** 사용자가 마이 페이지 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
-``` swift
-WiseTracker.setPageIdentity("MYPAGE")
-```
-
-#### 분석 코드 - Hybrid
-**[예시]** 사용자가 인물 상세정보 화면을 조회하는 경우, 해당 화면에 아래 코드 태깅
+#### 태깅 예시
+유저가 GNB의 다이렉트샵을 클릭하여 다이렉트샵 화면을 조회하는 경우 해당 화면에 아래 코드 태깅
 ``` html
-<script type="wisetracker/text" id="wiseTracker">
-	WiseTracker.setPageIdentity("FIGURE");
+<script type="text/javascript">
+_TRK_PI = "DIRECT";
+</script>
+```
+
+유저가 GNB가 확장된 메뉴에서 부가서비스를 클릭하여 부가서비스 화면을 조회하는 경우 해당 화면에 아래 코드 태깅
+``` html
+<script type="text/javascript">
+_TRK_PI = "ADDSRVC";
+</script>
+```
+
+유저가 GNB가 확장된 메뉴에서 부가서비스를 클릭하여 부가서비스 화면을 조회하는 경우 해당 화면에 아래 코드 태깅
+``` html
+<script type="text/javascript">
+_TRK_PI = "ADDSRVC";
 </script>
 ```
 
 ## 적용 후 데이터 검증
-SDK와 API가 올바르게 적용 되었는지 확인하기 위해서는 아래 코드(디버그 모드 활성화)를 적용한 테스트 앱을 저희 쪽으로 보내주시면 됩니다. 보내주신 테스트 앱에서 데이터를 확인한 후 결과에 대해서 회신 드리고 있습니다.
-
-### AOS
-AndroidManifest.xml 파일에 아래 메타 데이터 태그를 추가합니다.
-``` java
-<meta-data android:name="WiseTrackerLogState" android:value="true" />
-// 개발용 테스트 앱에는 true로, 배포용 앱에는 false로 설정
-```
-
-### iOS
-Info.plist 파일에 아래 그림과 같이 값을 추가 합니다.
-
-![iOS Debug Mobe](http://www.wisetracker.co.kr/wp-content/uploads/2019/05/ios-debug.png)
-
-``` swift
-<key>WiseTrackerLogState</key>
-<string>true</string>
-```
+코드를 적용한 서버 주소(실서버 또는 개발서버)를 smbae@wisetracker.co.kr, humblejohn@wisetracker.co.kr 로 알려주시기 바랍니다. 정상 적용 여부와 디버깅 필요한 사항 등에 대해서 안내해 드리겠습니다.
