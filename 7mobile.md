@@ -325,12 +325,5 @@ _TRK_PI = "ADDSRVC";
 </script>
 ```
 
-유저가 GNB가 확장된 메뉴에서 부가서비스를 클릭하여 부가서비스 화면을 조회하는 경우 해당 화면에 아래 코드 태깅
-``` html
-<script type="text/javascript">
-_TRK_PI = "ADDSRVC";
-</script>
-```
-
 ## 적용 후 데이터 검증
 코드를 적용한 서버 주소(실서버 또는 개발서버)를 smbae@wisetracker.co.kr, humblejohn@wisetracker.co.kr 로 알려주시기 바랍니다. 정상 적용 여부와 디버깅 필요한 사항 등에 대해서 안내해 드리겠습니다.
