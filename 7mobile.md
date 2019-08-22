@@ -3,7 +3,8 @@
 
 > 정주온, humblejohn@wisetracker.co.kr
 
-# Index
+# Table of Contents
+* [분석 범위](./7mobile.md#분석-범위)
 * [공통 스크립트 삽입](./7mobile.md#공통-스크립트-삽입)
 * [분석 코드](./7mobile.md#분석-코드)
 	* [로그인 분석](./7mobile.md#로그인-분석)
@@ -33,8 +34,42 @@
 		* [태깅 예시](./7mobile.md#태깅-예시-5)
 * [적용 후 데이터 검증](./7mobile.md#적용-후-데이터-검증)
 
+# 분석 범위
+안내된 코드를 추가함으로써 최종적으로 다음 사항들을 데이터로 확인할 수 있게 됩니다.
 
-# 공통 스크립트 삽입
+- 외부 광고 & 제휴 채널을 통한 유입, 상품 구매 성과
+	- 광고 채널/캠페인
+	- 키워드 광고 / 배너광고
+	- 유입 검색어
+- 상품 구매 성과
+	- 상품: 유심, 단말기를 의미
+	- 신청 유형: 온라인 또는 전화
+	- 가입 유형: 신규, 기변, 번호이동
+	- 요금제 종류
+	- 요금 할인 유형: 공시지원금, 선택약정
+	- 유심 종류: 일반, NFC
+	- 각 상품별 구매 횟수, 구매 금액
+- 고객
+	- 성별
+	- 연령대
+	- 로그인 & 회원가입 횟수
+	- 방문유형: 처음 / 재방문 / 반복방문
+	- 방문 횟수분포
+	- 방문 간격분포
+- 이벤트: 이벤트 상세 화면의 PV, 광고 랜딩을 통한 이벤트 PV, 랜딩 이후 이동경로 분석
+- 퍼널: 각 화면간의 이동 횟수를 기반으로 한 시나리오 분석
+- Goals
+	- 후기 등록 횟수
+	- 요금제 변경 (추천 요금제 to 사용자 선택 요금제)
+- 세그먼트: 전체 데이터에서 아래 조건들에 해당하는 데이터만 구분해서 볼 수 있음
+	- 광고 채널
+	- 광고 캠페인
+	- 방문유형
+	- 성별
+	- 연령대
+
+
+## 공통 스크립트 삽입
 이메일을 통해 전달받은 스크립트 파일을 사이트의 Footer에 삽입해야 합니다. 스크립트 파일의 확장자가 txt인 경우 js로 변경해서 적용하면 됩니다.
 ``` html
 <!-- 사이트의 공통 영역에 Wisetracker script 삽입 -->
@@ -168,10 +203,11 @@ _TRK_PI = "PDV";
 </script>
 ```
 
-### 요금제 변경 분석
-단말기 상세 페이지의 'Step 2. 요금제 선택'에서, 유저가 요금제를 어떻게 변경하는지를 분석하기 위한 코드입니다.
+### 추천 요금제 변경 분석
+각 단말기마다 기본값으로 세팅된 추천 요금제가 있습니다. 이것을 어떤 요금제로 변경하는지 분석하기 위한 코드입니다.
 
 #### 주의사항
+1) '추천 요금제'란 각 단말기마다 기본값으로 세팅되어 있는 요금제를 말합니다. (예를들어 현 시점에 LG Q7(salePlcyCd=0000347351)에 기본 세팅된 요금제는 'LTE 온라인 음성 S3' 입니다.)
 1) '다른 요금제 선택' 버튼을 클릭하면 요금제 목록창이 나타납니다. 이 창에서 '선택' 버튼을 클릭하는 시점에 아래 코드를 태깅하면 됩니다.
 ![button](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/005.png)
 2) 요금제 목록창에서 몇가지 요금들을 체크박스로 선택하여 '선택한 요금제 비교'로 넘어가는 경우도 있습니다. '선택한 요금제 비교'로 넘어간 화면에 있는 '선택' 버튼을 클릭하는 시점에도 아래 코드를 태깅해야 합니다.
@@ -180,18 +216,28 @@ _TRK_PI = "PDV";
 #### 코드
 ``` javascript
 eval('try{_trk_flashEnvView(
-\'_TRK_MVT1=기존 요금제 명칭\',
-\'_TRK_MVT2=새롭게 선택된 요금제 명칭\'
+\'_TRK_MVT1=추천 요금제 명칭\',
+\'_TRK_MVT2=선택된 요금제 명칭\'
 );}catch(_e){}');
 ```
 
 #### 태깅 예시
-유저가 'LTE온라인6GB' 요금제에서 'LTE 온라인 음성 S5' 요금 옆의 '선택' 버튼을 클릭해 요금제를 변경한 경우, 해당 클릭 이벤트에 아래 코드 태깅.
+유저가 추천 요금제인 'LTE온라인6GB'를 'LTE 온라인 음성 S5' 요금으로 바꾸기 위해 '선택' 버튼을 클릭한 경우, 해당 클릭 이벤트에 아래 코드 태깅.
 ``` javascript
 onclick="
 	eval('try{_trk_flashEnvView(
 	\'_TRK_MVT1=LTE온라인6GB\',
 	\'_TRK_MVT2=LTE 온라인 음성 S5\'
+	);}catch(_e){}');
+"
+```
+
+유저가 추천 요금제인 'LTE온라인6GB'를 바꾸려다가 다시 'LTE온라인6GB' 요금의 '선택' 버튼을 클릭한 경우, 해당 클릭 이벤트에 아래 코드 태깅.
+``` javascript
+onclick="
+	eval('try{_trk_flashEnvView(
+	\'_TRK_MVT1=LTE온라인6GB\',
+	\'_TRK_MVT2=LTE온라인6GB\'
 	);}catch(_e){}');
 "
 ```
@@ -207,37 +253,61 @@ onclick="
 #### 코드
 ``` javascript
 _TRK_PNC = "상품코드";
+_TRK_PNC_SUB_TP = "신청유형"; //온라인 신청이면 '온라인'을, 전화 신청이면 '전화'를 입력
+_TRK_PNC_ATRC_1 = "가입유형코드";
+_TRK_PNC_ATRN_1 = "가입유형"; //번호이동, 신규, 기기변경
+_TRK_PNC_ATRC_2 = "할인방법코드";
+_TRK_PNC_ATRN_2 = "할인방법"; //공시지원금, 선택약정만 해당됨. 제휴카드할인은 제외.
+_TRK_PNC_ATRC_3 = "유심형태코드";
+_TRK_PNC_ATRN_3 = "유심명칭";
+_TRK_PNC_ATRC_4 = "요금제코드";
+_TRK_PNC_ATRN_4 = "요금제명칭";
 _TRK_PNG = "범주코드";
 _TRK_EA = "주문수량";
-_TRK_AMT = "구매금액";
+_TRK_AMT = "구매금액"; //유저가 실제 지불하는 금액 입력
 _TRK_ODNO = "주문번호"; //해당 주문건의 유니크한 주문번호 입력
-_TRK_MVT3 = "신청방법"; //온라인 신청인 경우 '온라인'을, 전화 신청인 경우 '전화'를 입력
 _TRK_PI = "ODR";
 ```
 
 #### 태깅 예시
-유저가 '전화신청'으로 '갤럭시J4+' 단말기와 'NFC 유심'을 신청한 경우 신청 완료 화면에 아래 코드 태깅.
+유저가 '번호이동'으로 '갤럭시J4+' 단말기, 'LTE 온라인 음성 S5' 요금제, 'NFC 유심'을 구매하면서 '공시지원금'을 선택해 '전화'로 신청한 경우 신청 완료 화면에 아래 코드 태깅.
 ``` html
 <script type="text/javascript">
 _TRK_PNC = "단말기상품코드;유심상품코드"; //세미콜론(;)으로 값을 구분하여 입력
+_TRK_PNC_SUB_TP = "전화;전화";
+_TRK_PNC_ATRC_1 = "가입유형코드;가입유형코드"; //번호이동을 의미하는 코드값
+_TRK_PNC_ATRN_1 = "번호이동;번호이동";
+_TRK_PNC_ATRC_2 = "할인방법코드;할인방법코드"; //공시지원금을 의미하는 코드값
+_TRK_PNC_ATRN_2 = "공시지원금;공시지원금";
+_TRK_PNC_ATRC_3 = "유심형태코드;유심형태코드"; //NFC 유심을 의미하는 코드값
+_TRK_PNC_ATRN_3 = "NFC 유심;NFC 유심";
+_TRK_PNC_ATRC_4 = "요금제코드;요금제코드"; //해당 요금제를 의미하는 코드값
+_TRK_PNC_ATRN_4 = "LTE 온라인 음성 S5;LTE 온라인 음성 S5";
 _TRK_PNG = "000;001";
 _TRK_EA = "1;1";
 _TRK_AMT = "단말기구매금액;유심구매금액";
 _TRK_ODNO = "주문번호";
-_TRK_MVT3 = "전화;전화";
 _TRK_PI = "ODR";
 </script>
 ```
 
-유저가 '온라인신청'으로 '일반 유심'을 신청한 경우 신청 완료 화면에 아래 코드 태깅.
+유저가 '신규'로 '일반 유심'과 'LTE 유심 (1GB/100분)' 요금제를 '온라인' 신청한 경우 신청 완료 화면에 아래 코드 태깅.
 ``` html
 <script type="text/javascript">
 _TRK_PNC = "유심상품코드";
+_TRK_PNC_SUB_TP = "온라인";
+_TRK_PNC_ATRC_1 = "가입유형코드"; //신규가입을 의미하는 코드값
+_TRK_PNC_ATRN_1 = "신규";
+_TRK_PNC_ATRC_2 = "";
+_TRK_PNC_ATRN_2 = "";
+_TRK_PNC_ATRC_3 = "유심형태코드"; //일반 유심을 의미하는 코드값
+_TRK_PNC_ATRN_3 = "일반 유심";
+_TRK_PNC_ATRC_4 = "요금제코드"; //해당 요금제를 의미하는 코드값
+_TRK_PNC_ATRN_4 = "LTE 유심 (1GB/100분)";
 _TRK_PNG = "001";
 _TRK_EA = "1";
 _TRK_AMT = "유심구매금액";
 _TRK_ODNO = "주문번호";
-_TRK_MVT3 = "온라인";
 _TRK_PI = "ODR";
 </script>
 ```
@@ -281,7 +351,8 @@ AS센터 찾기 | AS | [링크](http://www.wisetracker.co.kr/wp-content/uploads/
 7MAGAZINE | 7MGZ | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/7mzgazine.png) | 
 7DAY 출첵 | 7DAY | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/7day출첵.png) | 
 1:1 고객상담 | COUNSEL | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/1-1고객상담.png) | 
-진행 이벤트 | EVTLIST | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/진행이벤트.png) | 
+이벤트 리스트 | EVTLIST | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/진행이벤트.png) | /event/eventIngList.do
+이벤트 상세 | EVT | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/이벤트상세.png) | /event/eventIngView.do 하위의 개별 페이지에 코드 태깅
 공시지원금 | GRANT | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/지원금공시.png) | /support/publicFundLte.do 페이지와 /support/publicFund3g.do 페이지에 코드 태깅
 제휴카드할인 | DISCNT0 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/제휴카드할인.png) | 
 스페셜약정할인 | DISCNT1 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/스페셜약정할인제도.png) | 
