@@ -13,22 +13,23 @@ When some issues occur while you're adding Wisetracker's code, submit those issu
 	* [Search](./go2joy.md#Search)
 		* [Note](./go2joy.md#Note-2)
 		* [Code](./go2joy.md#Code-2)
+		* [Example](./go2joy.md#Example-1)
 	* [Reading Reviews](./go2joy.md#Reading-Reviews)
 		* [Note](./go2joy.md#Note-3)
 		* [Code](./go2joy.md#Code-3)
-		* [Example](./go2joy.md#Example-1)
+		* [Example](./go2joy.md#Example-2)
 	* [Reached Booking Page](./go2joy.md#Reached-Booking-Page)
 		* [Note](./go2joy.md#Note-4)
 		* [Code](./go2joy.md#Code-4)
-		* [Example](./go2joy.md#Example-2)
+		* [Example](./go2joy.md#Example-3)
 	* [Initiated Booking](./go2joy.md#Initiated-Booking)
 		* [Note](./go2joy.md#Note-5)
 		* [Code](./go2joy.md#Code-5)
-		* [Example](./go2joy.md#Example-3)
+		* [Example](./go2joy.md#Example-4)
 	* [Completed Booking](./go2joy.md#Completed-Booking)
 		* [Note](./go2joy.md#Note-6)
 		* [Code](./go2joy.md#Code-6)
-		* [Example](./go2joy.md#Example-4)
+		* [Example](./go2joy.md#Example-5)
 * [After Implement](./go2joy.md#After-Implement)
 	* [AOS](./go2joy.md#AOS)
 	* [iOS](./go2joy.md#iOS)
@@ -125,7 +126,6 @@ Sóc Trăng | 61
 Bạc Liêu | 62
 Cà Mau | 63
 
-
 #### Code
 Android
 ``` kotlin
@@ -218,6 +218,57 @@ WiseTracker.setGoal("g1", 1)
 WiseTracker.sendTransaction()
 ```
 
+### Search
+By recording this event you can record how many times each keywords are searched by users.
+
+#### Note
+This event should be triggered when search results come out on the page.
+
+#### Code
+Android
+``` kotlin
+WiseTracker.setSearchKeyword("keyword");
+WiseTracker.setSearchKeywordResult(number of items);
+WiseTracker.setPageIdentity("SEARCH");
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setSearchKeyword:@"keyword"];
+[WiseTracker setSearchKeywordResult:@number of items];
+[WiseTracker setPageIdentity:@"SEARCH"];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setSearchKeyword("keyword")
+WiseTracker.setSearchKeywordResult(number of items)
+WiseTracker.setPageIdentity("SEARCH")
+```
+
+#### Example
+If the user searches "hanoi" then 19 hotels come out as a result, following lines must be executed.
+
+Android
+``` kotlin
+WiseTracker.setSearchKeyword("hanoi");
+WiseTracker.setSearchKeywordResult(19);
+WiseTracker.setPageIdentity("SEARCH");
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setSearchKeyword:@"hanoi"];
+[WiseTracker setSearchKeywordResult:@19];
+[WiseTracker setPageIdentity:@"SEARCH"];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setSearchKeyword("hanoi")
+WiseTracker.setSearchKeywordResult(19)
+WiseTracker.setPageIdentity("SEARCH")
+```
 
 ### Reading Reviews
 You can record what hotel's review is read by users.
@@ -230,26 +281,95 @@ You can record what hotel's review is read by users.
 #### Code
 Android
 ``` kotlin
+WiseTracker.setGoalProduct("hotel code");
 WiseTracker.setGoal("g10", 1);
 WiseTracker.sendGoalData();
 ```
 
 iOS - Objective-C
 ``` objc
+[WiseTracker setGoalProduct:@"hotel code"];
 [WiseTracker setGoal:@"g10" value: 1];
 [WiseTracker sendGoalData];
 ```
 
 iOS - Swift
 ``` swift
+WiseTracker.setGoalProduct("hotel code")
 WiseTracker.setGoal("g10", 1)
 WiseTracker.sendGoalData()
 ```
 
-### Initiated Checkout
-You can record how many times start to checkout in each hotels.
+### Reached Booking Page
+Reached Booking Page
 
-### Note
+#### Note
+1) This event must be triggered when the user successfully reaches 'Booking' page.
+2) Thus, this code must not be executed in such cases as shown below.
+![case](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/Untitled-2.jpg)
+
+#### Code
+Android
+``` kotlin
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoal("g11", 1);
+WiseTracker.sendGoalData();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker.setGoalProduct:@"hotel code"];
+[WiseTracker.setGoalProduct:@"hotel code"];
+[WiseTracker.setGoalProduct:@"hotel code"];
+[WiseTracker setGoal:@"g11" value: 1];
+[WiseTracker sendGoalData];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoal("g11", 1)
+WiseTracker.sendGoalData()
+```
+
+#### Example
+If the user reaches booking page of A-IN HOTEL TRUNG SON's Standard Room, following lines must be executed.
+
+Android
+``` kotlin
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoal("g11", 1);
+WiseTracker.sendGoalData();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker.setGoalProduct:@"hotel code"];
+[WiseTracker.setGoalProduct:@"hotel code"];
+[WiseTracker.setGoalProduct:@"hotel code"];
+[WiseTracker setGoal:@"g11" value: 1];
+[WiseTracker sendGoalData];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoal("g11", 1)
+WiseTracker.sendGoalData()
+```
+
+### Initiated Booking
+You can record how many times start to booking process in each hotels.
+
+#### Note
 1) This event must be triggered when the user successfully reaches 'Billing Information' page only by clicks 'Book now!' button in [this page](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/room-type.jpg).
 2) Thus, this code must not be executed in such cases as shown below.
 ![case](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/Untitled-2.jpg)
@@ -257,35 +377,157 @@ You can record how many times start to checkout in each hotels.
 #### Code
 Android
 ``` kotlin
-WiseTracker.setGoal("g11", 1);
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoal("g12", 1);
 WiseTracker.sendGoalData();
 ```
 
 iOS - Objective-C
 ``` objc
-[WiseTracker setGoal:@"g11" value: 1];
+[WiseTracker setGoalProduct:@"hotel code"];
+[WiseTracker setGoalProduct:@"hotel code"];
+[WiseTracker setGoalProduct:@"hotel code"];
+[WiseTracker setGoal:@"g12" value: 1];
 [WiseTracker sendGoalData];
 ```
 
 iOS - Swift
 ``` swift
-WiseTracker.setGoal("g11", 1)
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoal("g12", 1)
 WiseTracker.sendGoalData()
 ```
 
+#### Example
+If the user initiated hourly booking for A-IN HOTEL TRUNG SON's Standard Room, following lines must be executed.
 
-## 적용 후 데이터 검증
-SDK와 API가 올바르게 적용 되었는지 확인하기 위해서는 아래 코드(디버그 모드 활성화)를 적용한 테스트 앱을 저희 쪽으로 보내주시면 됩니다. 보내주신 테스트 앱에서 데이터를 확인한 후 결과에 대해서 회신 드리고 있습니다.
+Android
+``` kotlin
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoal("g12", 1);
+WiseTracker.sendGoalData();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker.setGoalProduct:@"hotel code"];
+[WiseTracker.setGoalProduct:@"hotel code"];
+[WiseTracker.setGoalProduct:@"hotel code"];
+[WiseTracker setGoal:@"g12" value: 1];
+[WiseTracker sendGoalData];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoal("g12", 1)
+WiseTracker.sendGoalData()
+```
+
+### Completed Booking
+You can record how many times start to booking process in each hotels.
+
+#### Note
+1) This event must be triggered when the user successfully reaches 'Billing Information' page only by clicks 'Book now!' button in [this page](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/room-type.jpg).
+2) Thus, this code must not be executed in such cases as shown below.
+![case](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/Untitled-2.jpg)
+
+#### Code
+Android
+``` kotlin
+WiseTracker.setOrderProductArray(["hotel code"]);
+WiseTracker.setOrderProductArray(["hotel code"]);
+WiseTracker.setOrderProductArray(["hotel code"]);
+WiseTracker.setOrderQuantityArray([number of items purchased]);
+WiseTracker.setOrderAmountArray([money that user actually paid]);
+WiseTracker.setOrderNo("order No or ID");
+WiseTracker.setPageIdentity("ODR");
+WiseTracker.sendTransaction();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setOrderProductArray:@[@"hotel code"]];
+[WiseTracker setOrderProductArray:@[@"hotel code"]];
+[WiseTracker setOrderProductArray:@[@"hotel code"]];
+[WiseTracker setOrderQuantityArray:@[@number of items purchased]];
+[WiseTracker setOrderAmountArray:@[@money that user actually paid]]; //구매자가 실제 지불해야 하는 금액
+[WiseTracker setOrderNo:@"order No or ID"];
+[WiseTracker setPageIdentity:@"ODR"];
+[WiseTracker sendTransaction];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setOrderProductArray(["hotel code"])
+WiseTracker.setOrderProductArray(["hotel code"])
+WiseTracker.setOrderProductArray(["hotel code"])
+WiseTracker.setOrderQuantityArray([number of items purchased])
+WiseTracker.setOrderAmountArray([money that user actually paid])
+WiseTracker.setOrderNo("order No or ID")
+WiseTracker.setPageIdentity("ODR")
+WiseTracker.sendTransaction()
+```
+
+#### Example
+If the user searches "hanoi" then 19 hotels come out as a result, following lines must be executed.
+
+Android
+``` kotlin
+WiseTracker.setOrderProductArray(["hotel code"]);
+WiseTracker.setOrderProductArray(["hotel code"]);
+WiseTracker.setOrderProductArray(["hotel code"]);
+WiseTracker.setOrderQuantityArray([number of items purchased]);
+WiseTracker.setOrderAmountArray([money that user actually paid]);
+WiseTracker.setOrderNo("order No or ID");
+WiseTracker.setPageIdentity("ODR");
+WiseTracker.sendTransaction();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setOrderProductArray:@[@"hotel code"]];
+[WiseTracker setOrderProductArray:@[@"hotel code"]];
+[WiseTracker setOrderProductArray:@[@"hotel code"]];
+[WiseTracker setOrderQuantityArray:@[@number of items purchased]];
+[WiseTracker setOrderAmountArray:@[@money that user actually paid]]; //구매자가 실제 지불해야 하는 금액
+[WiseTracker setOrderNo:@"order No or ID"];
+[WiseTracker setPageIdentity:@"ODR"];
+[WiseTracker sendTransaction];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setOrderProductArray(["hotel code"])
+WiseTracker.setOrderProductArray(["hotel code"])
+WiseTracker.setOrderProductArray(["hotel code"])
+WiseTracker.setOrderQuantityArray([number of items purchased])
+WiseTracker.setOrderAmountArray([money that user actually paid])
+WiseTracker.setOrderNo("order No or ID")
+WiseTracker.setPageIdentity("ODR")
+WiseTracker.sendTransaction()
+```
+
+## After Implement
+Please send us testing app debug mode is enabled. You can enable debug mode by adding configuration below. Then we will test that whether those In-App Events are well implemented.
 
 ### AOS
-AndroidManifest.xml 파일에 아래 메타 데이터 태그를 추가합니다.
+Add following lines to AndroidManifest.xml file.
 ``` kotlin
 <meta-data android:name="WiseTrackerLogState" android:value="true" />
-// 개발용 테스트 앱에는 true로, 배포용 앱에는 false로 설정
+// set true for testing, set false for distributing
 ```
 
 ### iOS
-Info.plist 파일에 아래 그림과 같이 값을 추가 합니다.
+Set following value to Info.plist file.
 
 ![iOS Debug Mobe](http://www.wisetracker.co.kr/wp-content/uploads/2019/05/ios-debug.png)
 
