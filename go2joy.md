@@ -30,7 +30,11 @@ When some issues occur while you're adding Wisetracker's code, submit those issu
 		* [Note](./go2joy.md#Note-6)
 		* [Code](./go2joy.md#Code-6)
 		* [Example](./go2joy.md#Example-5)
-* [After Implement](./go2joy.md#After-Implement)
+	* [Page Identity](./go2joy.md#Page-Identity)
+		* [Note](./go2joy.md#Note-7)
+		* [Code](./go2joy.md#Code-7)
+		* [Example](./go2joy.md#Example-6)
+* [After Implementation](./go2joy.md#After-Implementation)
 	* [AOS](./go2joy.md#AOS)
 	* [iOS](./go2joy.md#iOS)
 
@@ -516,7 +520,80 @@ WiseTracker.setPageIdentity("ODR")
 WiseTracker.sendTransaction()
 ```
 
-## After Implement
+### Page Identity
+You can record pageview and duration for each page.
+
+#### Note
+1) Adding following lines in each page.
+2) Must check a below table to pass `page code` value.
+
+Page Name | Page Code | Image
+-------- | -------- | --------
+Main | MAIN | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/main.jpg)
+My Instant Booking | INSTBOOK | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/my-instant-booking.jpg)
+Map | MAP | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/map.jpg)
+Filter | FILTER | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/filter.jpg)
+Choose Area | AREA | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/choose-area.jpg)
+Login | LOGIN | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/login.jpg)
+Email Sign-up | SU00 | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/signup000.jpg)
+Member Profile | SU01 | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/signup001-member-profile.jpg)
+Hotel Detail | PDV | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/review00-hotel-detail.jpg)
+Room Detail | ROOMDT | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/room-detail.jpg)
+Booking | BOOKING | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/room-type.jpg)
+Billing Information | BILLING | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/billing-info.jpg)
+Payment Method | PAYMENT | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/payment-method.jpg)
+Booking Complete | ODR | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/complete-checkout.jpg)
+Promotion List | PROMOLST | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/promotion-list.jpg)
+Promotion Detail | PROMODT | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/promotion-detail.jpg)
+Event List | EVTLST | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/event-list.jpg)
+Event Detail | EVTDT | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/event-detail.jpg)
+My Page | MYPAGE | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/my-page.jpg)
+Account Setting | ACCOUNT | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/account-setting.jpg)
+My Coupon | COUPON | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/coupon.jpg)
+My Point | POINT | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/point.jpg)
+Notification Setting | NOTI | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/noti-setting.jpg)
+Q&A | QNA | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/qna.jpg)
+Write a Question | INQUIRY | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/write-a-question.jpg)
+Notice | NOTICE | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/notice.jpg)
+My Favorite | MYFAV | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/my-favourite.jpg)
+My Booking | MYBOOK | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/my-booking.jpg)
+Invite Friend | INVITE | [Link](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/intive-friends.jpg)
+
+#### Code
+Android
+``` kotlin
+WiseTracker.setPageIdentity("page code");
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setPageIdentity:@"page code"];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setPageIdentity("page code")
+```
+
+#### Example
+If the user successfully landed in 'Payment Method' page, following line must be executed.
+
+Android
+``` kotlin
+WiseTracker.setPageIdentity("PAYMENT");
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setPageIdentity:@"PAYMENT"];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setPageIdentity("PAYMENT")
+```
+
+## After Implementation
 Please send us testing app debug mode is enabled. You can enable debug mode by adding configuration below. Then we will test that whether those In-App Events are well implemented.
 
 ### AOS
