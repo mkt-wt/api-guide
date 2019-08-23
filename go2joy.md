@@ -245,9 +245,10 @@ WiseTracker.sendGoalData()
 You can record how many times start to checkout in each hotels.
 
 ### Note
-1) This event must be triggered only when the user clicks 'Book now!' button in [this page](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/room-type.jpg) and successfully reaches 'Billing Information' Page.
-2) 
-
+1) This event must be triggered when the user successfully reaches 'Billing Information' page only by clicks 'Book now!' button in [this page](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/room-type.jpg).
+2) Thus, this code must not be executed in such cases as shown below.
+![case1](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/err01.jpg)
+![case2](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/err00.jpg)
 
 #### Code
 Android
