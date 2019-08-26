@@ -33,7 +33,7 @@ By adding code below, you cannot only record how many users log in to but also k
 
 #### Note
 1) This event must be triggered when users log in sucseccfully including 'Auto Log in'.
-2) Must check below tables to pass `gender code`, `age code` & `province ID` values.
+2) Must check below tables to pass `gender code`, `age code` & `province ID` values (case sensitive).
 
 Gender | Gender Code
 -------- | --------
@@ -279,7 +279,7 @@ You can record pageview and duration for each page.
 
 #### Note
 1) Adding following lines in each page.
-2) Must check a below table to pass `page code` value.
+2) Must check a below table to pass `page code` value (all uppercase).
 
 Page Name | Page Code | Image
 -------- | -------- | --------
