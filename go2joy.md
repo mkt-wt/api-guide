@@ -123,9 +123,9 @@ Android
 ``` kotlin
 WiseTracker.setPageIdentity("LIR");
 WiseTracker.setGoal("g2", 1);
-WiseTracker.setGender("gender code");
-WiseTracker.setAge("age code");
-WiseTracker.setUserAttribute("uvp1", "province ID");
+WiseTracker.setGender("`gender code`");
+WiseTracker.setAge("`age code`");
+WiseTracker.setUserAttribute("uvp1", "`province ID`");
 WiseTracker.sendTransaction();
 ```
 
