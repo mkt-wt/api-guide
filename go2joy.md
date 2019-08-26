@@ -51,6 +51,7 @@ Age | Age Code
 50 - 59 | F
 60 - 69 | G
 70 -  | H
+except the above | Z
 
 Province | Province ID
 -------- | --------
