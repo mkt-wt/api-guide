@@ -331,21 +331,21 @@ You can record what hotel's review is read by users.
 Android
 ``` kotlin
 WiseTracker.setGoalProduct("hotel code");
-WiseTracker.setGoal("g10", 1);
+WiseTracker.setGoal("g11", 1);
 WiseTracker.sendGoalData();
 ```
 
 iOS - Objective-C
 ``` objc
 [WiseTracker setGoalProduct:@"hotel code"];
-[WiseTracker setGoal:@"g10" value: 1];
+[WiseTracker setGoal:@"g11" value: 1];
 [WiseTracker sendGoalData];
 ```
 
 iOS - Swift
 ``` swift
 WiseTracker.setGoalProduct("hotel code")
-WiseTracker.setGoal("g10", 1)
+WiseTracker.setGoal("g11", 1)
 WiseTracker.sendGoalData()
 ```
 
@@ -354,21 +354,21 @@ If the user clicks 'Review' button of IBOSS HOTEL, following lines must be execu
 Android
 ``` kotlin
 WiseTracker.setGoalProduct("hotel code of IBOSS HOTEL");
-WiseTracker.setGoal("g10", 1);
+WiseTracker.setGoal("g11", 1);
 WiseTracker.sendGoalData();
 ```
 
 iOS - Objective-C
 ``` objc
 [WiseTracker setGoalProduct:@"hotel code of IBOSS HOTEL"];
-[WiseTracker setGoal:@"g10" value: 1];
+[WiseTracker setGoal:@"g11" value: 1];
 [WiseTracker sendGoalData];
 ```
 
 iOS - Swift
 ``` swift
 WiseTracker.setGoalProduct("hotel code of IBOSS HOTEL")
-WiseTracker.setGoal("g10", 1)
+WiseTracker.setGoal("g11", 1)
 WiseTracker.sendGoalData()
 ```
 
@@ -385,7 +385,7 @@ Android
 ``` kotlin
 WiseTracker.setGoalProduct("hotel code");
 WiseTracker.setGoalProductType2("room name");
-WiseTracker.setGoal("g11", 1);
+WiseTracker.setGoal("g12", 1);
 WiseTracker.sendGoalData();
 ```
 
@@ -393,7 +393,7 @@ iOS - Objective-C
 ``` objc
 [WiseTracker setGoalProduct:@"hotel code"];
 [WiseTracker setGoalProductType2:@"room name"];
-[WiseTracker setGoal:@"g11" value: 1];
+[WiseTracker setGoal:@"g12" value: 1];
 [WiseTracker sendGoalData];
 ```
 
@@ -401,7 +401,7 @@ iOS - Swift
 ``` swift
 WiseTracker.setGoalProduct("hotel code")
 WiseTracker.setGoalProductType2("room name");
-WiseTracker.setGoal("g11", 1)
+WiseTracker.setGoal("g12", 1)
 WiseTracker.sendGoalData()
 ```
 
@@ -412,7 +412,7 @@ Android
 ``` kotlin
 WiseTracker.setGoalProduct("hotel code of A-IN HOTEL TRUNG SON");
 WiseTracker.setGoalProductType2("Standard Room");
-WiseTracker.setGoal("g11", 1);
+WiseTracker.setGoal("g12", 1);
 WiseTracker.sendGoalData();
 ```
 
@@ -420,7 +420,7 @@ iOS - Objective-C
 ``` objc
 [WiseTracker setGoalProduct:@"hotel code of A-IN HOTEL TRUNG SON"];
 [WiseTracker setGoalProductType2:@"Standard Room"];
-[WiseTracker setGoal:@"g11" value: 1];
+[WiseTracker setGoal:@"g12" value: 1];
 [WiseTracker sendGoalData];
 ```
 
@@ -428,7 +428,7 @@ iOS - Swift
 ``` swift
 WiseTracker.setGoalProduct("hotel code of A-IN HOTEL TRUNG SON")
 WiseTracker.setGoalProductType2("Standard Room")
-WiseTracker.setGoal("g11", 1)
+WiseTracker.setGoal("g12", 1)
 WiseTracker.sendGoalData()
 ```
 
@@ -446,7 +446,7 @@ Android
 WiseTracker.setGoalProduct("hotel code");
 WiseTracker.setGoalProductType2("room name");
 WiseTracker.setGoalProductType3("booking type"); //hourly, overnight or daily
-WiseTracker.setGoal("g12", 1);
+WiseTracker.setGoal("g13", 1);
 WiseTracker.sendGoalData();
 ```
 
@@ -455,7 +455,7 @@ iOS - Objective-C
 [WiseTracker setGoalProduct:@"hotel code"];
 [WiseTracker setGoalProductType2:@"room name"];
 [WiseTracker setGoalProductType3:@"booking type"]; //hourly, overnight or daily
-[WiseTracker setGoal:@"g12" value: 1];
+[WiseTracker setGoal:@"g13" value: 1];
 [WiseTracker sendGoalData];
 ```
 
@@ -464,7 +464,7 @@ iOS - Swift
 WiseTracker.setGoalProduct("hotel code")
 WiseTracker.setGoalProductType2("room name")
 WiseTracker.setGoalProductType3("booking type") //hourly, overnight or daily
-WiseTracker.setGoal("g12", 1);
+WiseTracker.setGoal("g13", 1);
 WiseTracker.sendGoalData()
 ```
 
@@ -476,7 +476,7 @@ Android
 WiseTracker.setGoalProduct("hotel code of A-IN HOTEL TRUNG SON");
 WiseTracker.setGoalProductType2("Standard Room");
 WiseTracker.setGoalProductType3("hourly");
-WiseTracker.setGoal("g12", 1);
+WiseTracker.setGoal("g13", 1);
 WiseTracker.sendGoalData();
 ```
 
@@ -485,7 +485,7 @@ iOS - Objective-C
 [WiseTracker setGoalProduct:@"hotel code of A-IN HOTEL TRUNG SON"];
 [WiseTracker setGoalProductType2:@"Standard Room"];
 [WiseTracker setGoalProductType3:@"hourly"];
-[WiseTracker setGoal:@"g12" value: 1];
+[WiseTracker setGoal:@"g13" value: 1];
 [WiseTracker sendGoalData];
 ```
 
@@ -494,7 +494,7 @@ iOS - Swift
 WiseTracker.setGoalProduct("hotel code of A-IN HOTEL TRUNG SON")
 WiseTracker.setGoalProductType2("Standard Room")
 WiseTracker.setGoalProductType3("hourly")
-WiseTracker.setGoal("g12", 1)
+WiseTracker.setGoal("g13", 1)
 WiseTracker.sendGoalData()
 ```
 
