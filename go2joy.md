@@ -35,7 +35,7 @@ When some issues occur while you're adding Wisetracker's code, submit those issu
 	* [Page Identity](./go2joy.md#Page-Identity)
 		* [Note](./go2joy.md#Note-6)
 		* [Code](./go2joy.md#Code-8)
-		* [Example](./go2joy.md#Example-6)
+		* [Example](./go2joy.md#Example-7)
 * [After Implementation](./go2joy.md#After-Implementation)
 	* [AOS](./go2joy.md#AOS)
 	* [iOS](./go2joy.md#iOS)
