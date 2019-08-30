@@ -14,14 +14,28 @@ When some issues occur while you're adding Wisetracker's code, submit those issu
 		* [Note](./go2joy.md#Note-2)
 		* [Code](./go2joy.md#Code-2)
 		* [Example](./go2joy.md#Example-1)
+	* [Hotel Page View](./go2joy.md#Hotel-Page-View)
+		* [Code](./go2joy.md#Code-3)
+		* [Example](./go2joy.md#Example-2)	
 	* [Reading Reviews](./go2joy.md#Reading-Reviews)
+		* [Note](./go2joy.md#Note-3)
+		* [Code](./go2joy.md#Code-4)
+		* [Example](./go2joy.md#Example-3)
 	* [Reached Booking Page](./go2joy.md#Reached-Booking-Page)
+		* [Note](./go2joy.md#Note-4)
+		* [Code](./go2joy.md#Code-5)
+		* [Example](./go2joy.md#Example-4)
 	* [Initiated Booking](./go2joy.md#Initiated-Booking)
-	* [Completed Booking](./go2joy.md#Completed-Booking)
-	* [Page Identity](./go2joy.md#Page-Identity)
-		* [Note](./go2joy.md#Note-7)
-		* [Code](./go2joy.md#Code-7)
+		* [Note](./go2joy.md#Note-5)
+		* [Code](./go2joy.md#Code-6)
 		* [Example](./go2joy.md#Example-5)
+	* [Completed Booking](./go2joy.md#Completed-Booking)
+		* [Code](./go2joy.md#Code-7)
+		* [Example](./go2joy.md#Example-6)
+	* [Page Identity](./go2joy.md#Page-Identity)
+		* [Note](./go2joy.md#Note-6)
+		* [Code](./go2joy.md#Code-8)
+		* [Example](./go2joy.md#Example-6)
 * [After Implementation](./go2joy.md#After-Implementation)
 	* [AOS](./go2joy.md#AOS)
 	* [iOS](./go2joy.md#iOS)
@@ -51,7 +65,6 @@ Age | Age Code
 50 - 59 | F
 60 - 69 | G
 70 -  | H
-except the above | Z
 
 Province | Province ID
 -------- | --------
@@ -263,17 +276,307 @@ WiseTracker.setSearchKeywordResult(19)
 WiseTracker.setPageIdentity("SEARCH")
 ```
 
+### Hotel Page View
+You can record pageviews of each hotel.
+
+#### Code
+Following lines must be located on every hotel detail page.
+Android
+``` kotlin
+WiseTracker.setProduct("hotel code", "hotel name");
+WiseTracker.setPageIdentity("PDV");
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setProduct:@"hotel code" name:@"hotel name"];
+[WiseTracker setPageIdentity:@"PDV"];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setProduct("hotel code", "hotel name")
+WiseTracker.setPageIdentity("PDV")
+```
+
+#### Example
+If the user landed IBOSS HOTEL page, following lines must be executed.
+Android
+``` kotlin
+WiseTracker.setProduct("hotel code of IBOSS HOTEL", "Iboss Hotel");
+WiseTracker.setPageIdentity("PDV");
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setProduct:@"hotel code of IBOSS HOTEL" name:@"Iboss Hotel"];
+[WiseTracker setPageIdentity:@"PDV"];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setProduct("hotel code of IBOSS HOTEL", "Iboss Hotel")
+WiseTracker.setPageIdentity("PDV")
+```
+
 ### Reading Reviews
-You can record what hotel's review is read by users. Specific code snippets will be determined soon.
+You can record what hotel's review is read by users.
+
+#### Note
+1) This event must be triggered when 'Reading Reviews' button is clicked. Theirfore, we recommend you to add following lines on 'click event' of the button.
+2) There are two 'Reading Reviews' buttons in Hotel Detail Page. Make sure to add following lines to those two buttons.
+![buttons](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/Untitled-1.jpg)
+
+#### Code
+Android
+``` kotlin
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoal("g10", 1);
+WiseTracker.sendGoalData();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setGoalProduct:@"hotel code"];
+[WiseTracker setGoal:@"g10" value: 1];
+[WiseTracker sendGoalData];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoal("g10", 1)
+WiseTracker.sendGoalData()
+```
+
+#### Example
+If the user clicks 'Review' button of IBOSS HOTEL, following lines must be executed.
+Android
+``` kotlin
+WiseTracker.setGoalProduct("hotel code of IBOSS HOTEL");
+WiseTracker.setGoal("g10", 1);
+WiseTracker.sendGoalData();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setGoalProduct:@"hotel code of IBOSS HOTEL"];
+[WiseTracker setGoal:@"g10" value: 1];
+[WiseTracker sendGoalData];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setGoalProduct("hotel code of IBOSS HOTEL")
+WiseTracker.setGoal("g10", 1)
+WiseTracker.sendGoalData()
+```
 
 ### Reached Booking Page
-By recording this event, you can see how many times user landed in each hotels booking page. Specific code snippets will be determined soon.
+By recording this event, you can see how many times user landed in each hotel's booking page.
+
+#### Note
+1) This event must be triggered when the user clicks two types of 'Book Now!' buttons.
+![case](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/book-now-click.jpg)
+2) Thus, following lines should be executed when the user clicks those two 'Book Now!' buttons.
+
+#### Code
+Android
+``` kotlin
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoalProductType2("room name");
+WiseTracker.setGoal("g11", 1);
+WiseTracker.sendGoalData();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setGoalProduct:@"hotel code"];
+[WiseTracker setGoalProductType2:@"room name"];
+[WiseTracker setGoal:@"g11" value: 1];
+[WiseTracker sendGoalData];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoalProductType2("room name");
+WiseTracker.setGoal("g11", 1)
+WiseTracker.sendGoalData()
+```
+
+#### Example
+If the user reaches booking page of A-IN HOTEL TRUNG SON's Standard Room, following lines must be executed.
+
+Android
+``` kotlin
+WiseTracker.setGoalProduct("hotel code of A-IN HOTEL TRUNG SON");
+WiseTracker.setGoalProductType2("Standard Room");
+WiseTracker.setGoal("g11", 1);
+WiseTracker.sendGoalData();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setGoalProduct:@"hotel code of A-IN HOTEL TRUNG SON"];
+[WiseTracker setGoalProductType2:@"Standard Room"];
+[WiseTracker setGoal:@"g11" value: 1];
+[WiseTracker sendGoalData];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setGoalProduct("hotel code of A-IN HOTEL TRUNG SON")
+WiseTracker.setGoalProductType2("Standard Room")
+WiseTracker.setGoal("g11", 1)
+WiseTracker.sendGoalData()
+```
 
 ### Initiated Booking
-You can record how many times start to booking process in each hotels. Specific code snippets will be determined soon.
+You can record how many times start to booking process in each hotels.
+
+#### Note
+1) This event must be triggered when the user successfully reaches 'Billing Information' page only by clicks 'Book now!' button in [this page](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/room-type.jpg).
+2) Thus, this code must not be executed in such cases as shown below.
+![case](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/Untitled-2.jpg)
+
+#### Code
+Android
+``` kotlin
+WiseTracker.setGoalProduct("hotel code");
+WiseTracker.setGoalProductType2("room name");
+WiseTracker.setGoalProductType3("booking type"); //hourly, overnight or daily
+WiseTracker.setGoal("g12", 1);
+WiseTracker.sendGoalData();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setGoalProduct:@"hotel code"];
+[WiseTracker setGoalProductType2:@"room name"];
+[WiseTracker setGoalProductType3:@"booking type"]; //hourly, overnight or daily
+[WiseTracker setGoal:@"g12" value: 1];
+[WiseTracker sendGoalData];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setGoalProduct("hotel code")
+WiseTracker.setGoalProductType2("room name")
+WiseTracker.setGoalProductType3("booking type") //hourly, overnight or daily
+WiseTracker.setGoal("g12", 1);
+WiseTracker.sendGoalData()
+```
+
+#### Example
+If the user initiated hourly booking for A-IN HOTEL TRUNG SON's Standard Room, following lines must be executed.
+
+Android
+``` kotlin
+WiseTracker.setGoalProduct("hotel code of A-IN HOTEL TRUNG SON");
+WiseTracker.setGoalProductType2("Standard Room");
+WiseTracker.setGoalProductType3("hourly");
+WiseTracker.setGoal("g12", 1);
+WiseTracker.sendGoalData();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setGoalProduct:@"hotel code of A-IN HOTEL TRUNG SON"];
+[WiseTracker setGoalProductType2:@"Standard Room"];
+[WiseTracker setGoalProductType3:@"hourly"];
+[WiseTracker setGoal:@"g12" value: 1];
+[WiseTracker sendGoalData];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setGoalProduct("hotel code of A-IN HOTEL TRUNG SON")
+WiseTracker.setGoalProductType2("Standard Room")
+WiseTracker.setGoalProductType3("hourly")
+WiseTracker.setGoal("g12", 1)
+WiseTracker.sendGoalData()
+```
 
 ### Completed Booking
-You can record revenue generated from booking in each hotels. Specific code snippets will be determined soon.
+You can record revenue generated from booking in each hotels.
+
+#### Code
+Following lines must be executed on 'Booking Complete' page.
+Android
+``` kotlin
+WiseTracker.setOrderProduct("hotel code");
+WiseTracker.setOrderProductType2("room name");
+WiseTracker.setOrderProductType3("booking type"); //hourly, overnight or daily
+WiseTracker.setOrderQuantity(quantity of booked room);
+WiseTracker.setOrderAmount(amount of money that the user acturally pays);
+WiseTracker.setOrderNo("order number");
+WiseTracker.setPageIdentity("ODR");
+WiseTracker.sendTransaction();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setOrderProduct:@"hotel code"];
+[WiseTracker setGoalProductType2:@"room name"];
+[WiseTracker setGoalProductType3:@"booking type"]; //hourly, overnight or daily
+[WiseTracker setOrderQuantity:@quantity of booked room];
+[WiseTracker setOrderAmount:@amount of money that the user acturally pays];
+[WiseTracker setOrderNo:@"order number"];
+[WiseTracker setPageIdentity:@"ODR"];
+[WiseTracker sendTransaction];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setOrderProduct("hotel code")
+WiseTracker.setOrderProductType2("room name")
+WiseTracker.setOrderProductType3("booking type") //hourly, overnight or daily
+WiseTracker.setOrderQuantity(quantity of booked room)
+WiseTracker.setOrderAmount(amount of money that the user acturally pays)
+WiseTracker.setOrderNo("order number")
+WiseTracker.setPageIdentity("ODR")
+WiseTracker.sendTransaction()
+```
+
+#### Example
+If the user booked hourly A-IN HOTEL TRUNG SON's Standard Room for 200,000 VND, following lines must be executed.
+
+Android
+``` kotlin
+WiseTracker.setOrderProduct("hotel code of A-IN HOTEL TRUNG SON");
+WiseTracker.setOrderProductType2("Standard Room");
+WiseTracker.setOrderProductType3("hourly");
+WiseTracker.setOrderQuantity(1);
+WiseTracker.setOrderAmount(200000);
+WiseTracker.setOrderNo("order number of this booking");
+WiseTracker.setPageIdentity("ODR");
+WiseTracker.sendTransaction();
+```
+
+iOS - Objective-C
+``` objc
+[WiseTracker setOrderProduct:@"hotel code of A-IN HOTEL TRUNG SON"];
+[WiseTracker setGoalProductType2:@"Standard Room"];
+[WiseTracker setGoalProductType3:@"hourly"];
+[WiseTracker setOrderQuantity:@1];
+[WiseTracker setOrderAmount:@200000];
+[WiseTracker setOrderNo:@"order number of this booking"];
+[WiseTracker setPageIdentity:@"ODR"];
+[WiseTracker sendTransaction];
+```
+
+iOS - Swift
+``` swift
+WiseTracker.setOrderProduct("hotel code of A-IN HOTEL TRUNG SON")
+WiseTracker.setOrderProductType2("Standard Room")
+WiseTracker.setOrderProductType3("hourly")
+WiseTracker.setOrderQuantity(1)
+WiseTracker.setOrderAmount(200000)
+WiseTracker.setOrderNo("order number of this booking")
+WiseTracker.setPageIdentity("ODR")
+WiseTracker.sendTransaction()
+```
 
 ### Page Identity
 You can record pageview and duration for each page.
