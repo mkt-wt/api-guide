@@ -8,7 +8,7 @@
 * [분석 API](./seven-eleven.md#분석-API)
 	* [Hybrid 영역 태깅 참고사항](./seven-eleven.md#Hybrid-영역-태깅-참고사항)
 	* [회원 가입 분석](./seven-eleven.md#회원-가입-분석)
-		* [주의사항](./seven-eleven.md#분석-코드)
+		* [주의사항](./seven-eleven.md#주의사항)
 		* [분석 코드](./seven-eleven.md#분석-코드)
 * [적용 후 데이터 검증](./seven-eleven.md#적용-후-데이터-검증)
 	* [AOS](./seven-eleven.md#AOS)
