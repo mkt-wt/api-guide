@@ -38,6 +38,7 @@ Hybrid 영역에 태깅한 분석 API가 Native에 있는 SDK를 참조할 수 �
 
 #### 주의사항
 아래 그림과 같이 앱 안에 존재하는 모든 회원가입 버튼이 클릭되는 시점에 분석 코드가 읽히도록 설정해야 합니다.
+![case](http://www.wisetracker.co.kr/wp-content/uploads/2019/09/7-11.jpg)
 
 #### 분석 코드
 AOS
