@@ -40,9 +40,9 @@ Hybrid
 ``` html
 <!-- 회원가입 완료 화면에 코드 추가 -->
 <script type="wisetracker/text" id="wiseTracker">
-WiseTracker.setPageIdentity("RGR");
-WiseTracker.setGoal("g1", 1);
-WiseTracker.sendGoalData();
+	WiseTracker.setPageIdentity("RGR");
+	WiseTracker.setGoal("g1", 1);
+	WiseTracker.sendGoalData();
 </script>
 ```
 
