@@ -1,7 +1,7 @@
 # Wisetracker Integration Guide
 '세븐일레븐'앱에 와이즈트래커를 연동하는데 필요한 기술문서입니다. 연동 중 발생하는 문의사항은 아래 담당자에게 연락 주시기 바랍니다.
 
-> 정주온, humblejohn@wisetracker.co.kr
+> 허원철 팀장, fornew21c@wisetracker.co.kr
 
 # Index
 * [SDK 삽입 (AOS & iOS)](./seven-eleven.md#SDK-삽입)
