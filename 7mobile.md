@@ -1,7 +1,7 @@
 # Wisetracker Integration Guide
 'SK 7mobile' 사이트에 와이즈트래커 분석코드를 삽입하는데 필요한 기술문서입니다. 작업 중 발생하는 문의사항은 아래 담당자에게 연락 주시기 바랍니다.
 
-> 허원철 팀장, fornew21c@wisetracker.co.kr
+> 정주온, humblejohn@wisetracker.co.kr
 
 # Table of Contents
 * [분석 범위](./7mobile.md#분석-범위)
