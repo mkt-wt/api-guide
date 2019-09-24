@@ -513,10 +513,8 @@ AS센터 찾기 | AS | [링크](http://www.wisetracker.co.kr/wp-content/uploads/
 자주하는 질문 | FAQ | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/자주하는질문.png) | 
 요금제 & 서비스 | PLANLIST | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/요금제.서비스.png) | /callingPlanList.do?refCode=LTE, /callingPlanList.do?refCode=USIM 등 모든 /callingPlanList.do 페이지에 코드 태깅
 전화신청 - 본인인증 & 정보입력 | PHONE0 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/전화신청-본인인증.정보입력.png) | 
-전화신청 - 신청 완료 | PHONE1 | 화면캡쳐없음 | 
 온라인 신청 - 약관동의 | ONLINE0 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/온라인신청-약관동의.png) | 
 온라인 신청 - 본인인증 & 정보입력 | ONLINE1 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/온라인신청-본인인증.정보입력.png) | 
-온라인 신청 - 신청 완료 | ONLINE2 | 화면캡쳐없음 | 
 선불서비스 | PPSRVC | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/선불서비스.png) | 
 선불요금제 | PPPLAN | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/선불요금제.png) | /callingPlanPrepay.do?searchCallPlanType=P, /callingPlanPrepay.do?searchCallPlanType=B 등 모든 /callingPlanPrepay.do 페이지에 코드 태깅
 선불 부가서비스 | PPADD | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2019/08/선불.png) | 
