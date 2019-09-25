@@ -133,7 +133,7 @@ function addCartExampleFunction (){
 #### 분석 코드
 ``` javascript
 onclick = "
-	WiseTracker.setOrderNPaymentId("#MALL_MANAGE_CODE#"); //고유 MALL_MANAGE_CODE 입력
+	WiseTracker.setOrderNPaymentId("MALL_MANAGE_CODE"); //고유 MALL_MANAGE_CODE 입력
 	WiseTracker.sendTransaction();
 "
 ```
