@@ -132,9 +132,10 @@ function addCartExampleFunction (){
 
 #### 분석 코드
 ``` javascript
-<!-- 엔페이 구매 버튼의 클릭 이벤트에 코드 추가 -->
-WiseTracker.setOrderNPaymentId("#MALL_MANAGE_CODE#"); //고유 MALL_MANAGE_CODE 입력
-WiseTracker.sendTransaction();
+onclick = "
+	WiseTracker.setOrderNPaymentId("#MALL_MANAGE_CODE#"); //고유 MALL_MANAGE_CODE 입력
+	WiseTracker.sendTransaction();
+"
 ```
 
 ## 적용 후 데이터 검증
