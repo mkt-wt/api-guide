@@ -45,7 +45,6 @@ Hybrid 영역에 태깅한 분석 API가 Native에 있는 SDK를 참조해서 �
 유저가 앱에서 회원가입을 마치면 도달하게 되는 '회원가입 완료화면'에 아래 코드를 추가합니다.
 
 #### 분석 코드
-Hybrid
 ``` html
 <!-- 회원가입 완료 화면에 코드 추가 -->
 <script type="wisetracker/text" id="wiseTracker">
@@ -59,7 +58,6 @@ Hybrid
 개별 상품들의 상세 페이지에 아래 코드를 추가합니다.
 
 #### 분석 코드
-Hybrid
 ``` html
 <!-- 상품 상세 화면에 코드 추가 -->
 <script type="wisetracker/text" id="wiseTracker">
@@ -73,7 +71,6 @@ Hybrid
 유저가 장바구니에 상품을 담는 펑션에 아래 코드를 추가합니다.
 
 #### 분석 코드
-Hybrid
 ``` html
 function addCartExampleFunction (){
 	// 장바구니 이벤트 안에서 호출함
@@ -88,7 +85,6 @@ function addCartExampleFunction (){
 구매완료 화면에 아래 코드를 추가합니다.
 
 #### 분석 코드
-Hybrid
 ``` html
 <!-- 구매완료 화면에 코드 추가 -->
 <script type="wisetracker/text" id="wiseTracker">
@@ -135,7 +131,6 @@ Hybrid
 '엔페이로 구매하기' 버튼의 클릭 이벤트에 아래 코드를 추가합니다.
 
 #### 분석 코드
-Hybrid
 ``` html
 <!-- 엔페이 구매 버튼의 클릭 이벤트에 코드 추가 -->
 WiseTracker.setOrderNPaymentId("#MALL_MANAGE_CODE#"); //고유 MALL_MANAGE_CODE 입력
