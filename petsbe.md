@@ -137,7 +137,7 @@ function addCartExampleFunction (){
 
 ### 엔페이 구매 분석
 '엔페이로 구매하기' 버튼의 클릭 이벤트에 아래 코드를 추가합니다.
-[fig](http://www.wisetracker.co.kr/wp-content/uploads/2019/09/KakaoTalk_20190927_085956856.jpg)
+![fig](http://www.wisetracker.co.kr/wp-content/uploads/2019/09/KakaoTalk_20190927_085956856.jpg)
 
 #### 분석 코드
 ``` javascript
