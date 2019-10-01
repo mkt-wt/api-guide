@@ -108,7 +108,7 @@ if(confirm("앱으로 이동하시겠습니까?") == true){
 		_wthst:"trk.wisetracker.co.kr",
 		_wtp:7,
 		_wtpkg:"com.petsbe.android.petsbemall", 
-		_wtdl:"https://apps.apple.com/us/app/%ED%8E%AB%EC%B8%A0%EB%B9%84-%EC%87%BC%ED%95%91-%EA%B0%95%EC%95%84%EC%A7%80-%EA%B3%A0%EC%96%91%EC%9D%B4-%EC%82%AC%EB%A3%8C-%EC%88%98%EC%9D%98%EC%82%AC-%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90/id1023281662", 
+		_wtdl:"https://apps.apple.com/kr/app/%ED%8E%AB%EC%B8%A0%EB%B9%84-%EC%87%BC%ED%95%91-%EA%B0%95%EC%95%84%EC%A7%80-%EA%B3%A0%EC%96%91%EC%9D%B4-%EC%82%AC%EB%A3%8C-%EC%88%98%EC%9D%98%EC%82%AC-%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90/id1023281662", 
 		_wtal:"앱 메인화면으로 연결되는 딥링크" // 펫츠비 앱 메인화면의 딥링크를 입력해 주세요
 	});
 }else{   
