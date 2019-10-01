@@ -57,7 +57,7 @@ Hybrid 영역에 태깅한 분석 API가 Native에 있는 SDK를 참조해서 �
 </head>
 ```
 
-그 후 각 페이지에 아래 코드를 추가하여 와이즈트래커 초기화 함수를 호출합니다.
+그 후 모든 페이지에 아래 코드를 추가하여 와이즈트래커 초기화 함수를 호출합니다.
 ``` javascript
 $(document).ready(function(){  
 	// webTracker 초기화. 
