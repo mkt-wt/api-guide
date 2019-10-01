@@ -7,6 +7,7 @@
 * [SDK 삽입 (AOS & iOS)](./petsbe.md#SDK-삽입)
 * [분석 API](./petsbe.md#분석-API)
 	* [Hybrid 영역 태깅 참고사항](./petsbe.md#Hybrid-영역-태깅-참고사항)
+	* [웹투앱 어트리뷰션 설정](./petsbe.md#웹투앱-어트리뷰션-설정)
 	* [회원 가입 분석](./petsbe.md#회원-가입-분석)
 		* [주의사항](./petsbe.md#주의사항)
 		* [분석 코드](./petsbe.md#분석-코드)
@@ -63,9 +64,9 @@ $(document).ready(function(){
 		_wtufn:"ALL",
 		_wdp: {
 			_wts:'P1569890659428',
-            _wtc:'C1569890816436',
-            _wtm:'C0000001',
-            _wtw:'%EB%AA%A8%EB%B0%94%EC%9D%BC%EC%9B%B9+%EC%9E%90%EC%97%B0%EC%9C%A0%EC%9E%85'
+			_wtc:'C1569890816436',
+			_wtm:'C0000001',
+			_wtw:'%EB%AA%A8%EB%B0%94%EC%9D%BC%EC%9B%B9+%EC%9E%90%EC%97%B0%EC%9C%A0%EC%9E%85'
 		}
 	});
 });
