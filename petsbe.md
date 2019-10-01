@@ -46,11 +46,15 @@ Hybrid 영역에 태깅한 분석 API가 Native에 있는 SDK를 참조해서 �
 
 ### 웹투앱 어트리뷰션 설정
 펫츠비 모바일 웹사이트를 통해 발생한 앱 설치와 전환을 분석하기 위해 모바일 웹사이트에 추가해야 할 설정입니다.
-먼저 아래 코드를 모바일 웹사이트의 <head>에 추가합니다. 반드시 사이트의 모든 페이지에 추가되어야 합니다.
+먼저 아래 코드를 모바일 웹사이트의 `<head>`에 추가합니다. 반드시 사이트의 모든 페이지에 추가되어야 합니다.
 
 ``` html
-<!-- Wisetracker web-to-app SDK -->
-<script src="https://cdn.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
+<head>
+	...
+	<!-- Wisetracker web-to-app SDK -->
+	<script src="https://cdn.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
+	...
+</head>
 ```
 
 그 후 각 페이지에 아래 코드를 추가하여 와이즈트래커 초기화 함수를 호출합니다.
