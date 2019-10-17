@@ -5,11 +5,11 @@
 
 # Table of Contents
 * [구버전 Android SDK 삭제](./removing_old_sdk.md#구버전-Android-SDK-삭제)
-	* [기설치된 라이브러리 파일 삭제](./removing_old_sdk.md#기설치된-라이브러리-파일-삭제)
-	* [의존성 제거](./removing_old_sdk.md#의존성-제거)
-		* [Project/build.gradle](./removing_old_sdk.md#(1)-Project/build.gradle-파일에-아래-코드-삽입된-경우-제거)
-		* [app/build.gradle](./removing_old_sdk.md#(2)-app/build.gradle-파일에-아래-코드-삽입된-경우-제거)
-	* [최신 SDK로 업데이트](./removing_old_sdk.md#최신-SDK로-업데이트)
+	* [기설치된 라이브러리 파일 삭제](./removing_old_sdk.md#1.-기설치된-라이브러리-파일-삭제)
+	* [의존성 제거](./removing_old_sdk.md#2.-의존성-제거)
+		* [Project/build.gradle](./removing_old_sdk.md#1-projectbuildgradle-%ED%8C%8C%EC%9D%BC%EC%97%90-%EC%95%84%EB%9E%98-%EC%BD%94%EB%93%9C-%EC%82%BD%EC%9E%85%EB%90%9C-%EA%B2%BD%EC%9A%B0-%EC%A0%9C%EA%B1%B0)
+		* [app/build.gradle](./removing_old_sdk.md#2-appbuildgradle-%ED%8C%8C%EC%9D%BC%EC%97%90-%EC%95%84%EB%9E%98-%EC%BD%94%EB%93%9C-%EC%82%BD%EC%9E%85%EB%90%9C-%EA%B2%BD%EC%9A%B0-%EC%A0%9C%EA%B1%B0)
+	* [최신 SDK로 업데이트](./removing_old_sdk.md#3.-아래-가이드-참고하여-최신-SDK로-업데이트)
 * [구버전 iOS SDK 삭제](./removing_old_sdk.md#구버전-iOS-SDK-삭제)
 	* [기설치된 프레임워크와 파일들 삭제](./removing_old_sdk.md#기설치된-프레임워크와-파일들-삭제)
 	* [CocoaPods로 최신 SDK 설치](./removing_old_sdk.md#CocoaPods로-최신-SDK-설치)
