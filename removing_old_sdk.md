@@ -44,7 +44,7 @@ dependencies {
 -> https://bintray.com/beta/#/tracker/maven/SDK_V1?tab=readme
 
 ## 구버전 iOS SDK 삭제
-### 1. 기설치된 프레임워크를 포함한 파일들 삭제
+### 1. 기설치된 프레임워크와 파일들 삭제
 ![](http://www.wisetracker.co.kr/wp-content/uploads/2019/10/deletefile.png)
 ![](http://www.wisetracker.co.kr/wp-content/uploads/2019/10/delete.png)
 
