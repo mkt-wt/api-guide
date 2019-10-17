@@ -4,16 +4,16 @@
 > 와이즈트래커 개발팀, tech@wisetracker.co.kr
 
 # Table of Contents
-* [구버전 Android SDK 삭제](./removing_old_skd.md#구버전-Android-SDK-삭제)
-	* [기설치된 라이브러리 파일 삭제](./removing_old_skd.md#기설치된-라이브러리-파일-삭제)
-	* [의존성 제거](./removing_old_skd.md#의존성-제거)
-		* [Project/build.gradle](./removing_old_skd.md#Project/build.gradle)
-		* [app/build.gradle](./removing_old_skd.md#app/build.gradle)
-	* [최신 SDK로 업데이트](./removing_old_skd.md#최신-SDK로-업데이트)
-* [구버전 iOS SDK 삭제](./removing_old_skd.md#구버전-iOS-SDK-삭제)
-	* [기설치된 프레임워크와 파일들 삭제](./removing_old_skd.md#기설치된-프레임워크와-파일들-삭제)
-	* [CocoaPods로 최신 SDK 설치](./removing_old_skd.md#CocoaPods로-최신-SDK-설치)
-	* [정상 설치 시 해당폴더 구조](./removing_old_skd.md#정상-설치-시-해당폴더-구조)
+* [구버전 Android SDK 삭제](./removing_old_sdk.md#구버전-Android-SDK-삭제)
+	* [기설치된 라이브러리 파일 삭제](./removing_old_sdk.md#기설치된-라이브러리-파일-삭제)
+	* [의존성 제거](./removing_old_sdk.md#의존성-제거)
+		* [Project/build.gradle](./removing_old_sdk.md#Project/build.gradle)
+		* [app/build.gradle](./removing_old_sdk.md#app/build.gradle)
+	* [최신 SDK로 업데이트](./removing_old_sdk.md#최신-SDK로-업데이트)
+* [구버전 iOS SDK 삭제](./removing_old_sdk.md#구버전-iOS-SDK-삭제)
+	* [기설치된 프레임워크와 파일들 삭제](./removing_old_sdk.md#기설치된-프레임워크와-파일들-삭제)
+	* [CocoaPods로 최신 SDK 설치](./removing_old_sdk.md#CocoaPods로-최신-SDK-설치)
+	* [정상 설치 시 해당폴더 구조](./removing_old_sdk.md#정상-설치-시-해당폴더-구조)
 
 ## 구버전 Android SDK 삭제
 ### 1. 기설치된 라이브러리 파일 삭제
