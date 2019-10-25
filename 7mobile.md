@@ -17,7 +17,7 @@
 		* [주의사항](./7mobile.md#주의사항-1)
 		* [코드](./7mobile.md#코드-2)
 		* [태깅 예시](./7mobile.md#태깅-예시-2)
-	* [요금제 변경 분석](./7mobile.md#추천-요금제-변경-분석)
+	* [추천 요금제 변경 분석](./7mobile.md#추천-요금제-변경-분석)
 		* [주의사항](./7mobile.md#주의사항-2)
 		* [코드](./7mobile.md#코드-3)
 		* [태깅 예시](./7mobile.md#태깅-예시-3)
@@ -34,6 +34,9 @@
 	* [화면별 페이지뷰 분석](./7mobile.md#화면별-페이지뷰-분석)
 		* [코드](./7mobile.md#코드-7)
 		* [태깅 예시](./7mobile.md#태깅-예시-6)
+	* [사용중인 요금제 변경 분석](./7mobile.md#사용중인-요금제-변경-분석)
+		* [코드](./7mobile.md#코드-8)
+		* [태깅 예시](./7mobile.md#태깅-예시-7)
 * [적용 후 데이터 검증](./7mobile.md#적용-후-데이터-검증)
 
 ## 공통 스크립트 삽입
@@ -229,7 +232,10 @@ LTE49	| 00000032
 일반	| 00000101
 라이트	| 00000102
 플러스 (구 티머니) | 00000103
-
+wavve 5GB | 00000289
+wavve 무제한	| 00000288
+wavve 유심 5GB | 00000291
+wavve 유심 무제한 | 00000290
 
 #### 코드
 ``` javascript
@@ -421,7 +427,7 @@ _TRK_PNC_SUB_TP = "신청유형"; //온라인 신청이면 '온라인'을, 전�
 _TRK_PNC_SUB_TP2 = "가입유형"; //번호이동, 신규, 기기변경 
 _TRK_PNC_SUB_TP3 = "할인방법"; //공시지원금 or 선택약정만 포함. 카드할인은 포함하지 않음
 _TRK_PNC_SUB_TP4 = "유심명칭"; //일반유심 or NFC유심
-_TRK_PNC_SUB_TP5 = "요금제코드";
+_TRK_PNC_SUB_TP5 = "요금제명칭";
 _TRK_PNG = "범주코드"; //단말기는 000, 유심은 001
 _TRK_EA = "주문수량";
 _TRK_AMT = "구매금액"; //유저가 실제 지불하는 금액 입력
@@ -440,7 +446,7 @@ _TRK_PNC_SUB_TP = "전화;전화";
 _TRK_PNC_SUB_TP2 = "번호이동;번호이동";
 _TRK_PNC_SUB_TP3 = "공시지원금;공시지원금";
 _TRK_PNC_SUB_TP4 = "NFC유심;NFC유심";
-_TRK_PNC_SUB_TP5 = "요금제코드;요금제코드";
+_TRK_PNC_SUB_TP5 = "LTE 온라인 음성 S5;LTE 온라인 음성 S5";
 _TRK_PNG = "000;001";
 _TRK_EA = "1;1";
 _TRK_AMT = "단말기구매금액;유심구매금액";
@@ -458,7 +464,7 @@ _TRK_PNC_SUB_TP = "온라인";
 _TRK_PNC_SUB_TP2 = "신규가입";
 _TRK_PNC_SUB_TP3 = "";
 _TRK_PNC_SUB_TP4 = "일반유심";
-_TRK_PNC_SUB_TP5 = "요금제코드";
+_TRK_PNC_SUB_TP5 = "LTE 유심 (1GB/100분)";
 _TRK_PNG = "001";
 _TRK_EA = "1";
 _TRK_AMT = "유심구매금액";
@@ -566,6 +572,27 @@ _TRK_PI = "DIRECT";
 <script type="text/javascript">
 _TRK_PI = "ADDSRVC";
 </script>
+```
+
+### 사용중인 요금제 변경 분석
+현재 사용중인 요금제를 어떤 요금제로 변경하는지 분석하기 위한 코드입니다. 그림을 참고하여 요금제 변경이 완료되면 나타나는 창에 아래 코드를 추가해 주시기 바랍니다.
+![modal](http://www.wisetracker.co.kr/wp-content/uploads/2019/10/019.png)
+
+#### 코드
+``` javascript
+eval('try{_trk_flashEnvView(
+\'_TRK_IK=사용했던 요금제의 명칭\',
+\'_TRK_IKWDG=변경한 요금제의 명칭\'
+);}catch(_e){}');
+```
+
+#### 태깅 예시
+'LTE 온라인 데이터 S4' 요금제를 사용하던 유저가 'wavve 5GB' 요금제로 변경을 완료한 경우, 변경이 완료된 시점에 아래 코드 태깅
+``` javascript
+eval('try{_trk_flashEnvView(
+\'_TRK_IK=LTE 온라인 데이터 S4\',
+\'_TRK_IKWDG=wavve 5GB\'
+);}catch(_e){}');
 ```
 
 ## 적용 후 데이터 검증
