@@ -35,18 +35,18 @@ $(document).ready(function(){
 // 에이전트 체크 로직
 
 if(os == "android"){
-	_wiseWebTrack.redirection({
-		// Requirement parameter
-		version:"V2",
-		_wtno:10028,
-		_wthst:"trk.wisetracker.co.kr",
-		_wtufn:"ALL",
-		_wtp:7,
-		_wtfv:"server",
-		_wtpkg:"com.nbkorea.mynb", 
-		_wtdl:"market://details?id=com.nbkorea.mynb&hl=ko",
-		_wtal:"앱으로 연결할 딥링크", //예를 들어 mynb://?cmd=link&url=http://m.newbalancemynb.com/event/eventDetail.do?eventIdx=44
-		createClickData:"Y"
+_wiseWebTrack.redirection({
+	// Requirement parameter
+	version:"V2",
+	_wtno:10028,
+	_wthst:"trk.wisetracker.co.kr",
+	_wtufn:"ALL",
+	_wtp:7,
+	_wtfv:"server",
+	_wtpkg:"com.nbkorea.mynb", 
+	_wtdl:"market://details?id=com.nbkorea.mynb&hl=ko",
+	_wtal:"앱으로 연결할 딥링크", //예를 들어 mynb://?cmd=link&url=http://m.newbalancemynb.com/event/eventDetail.do?eventIdx=44
+	createClickData:"Y"
 	});
 }else if(os == "ios"){
 	_wiseWebTrack.redirection({
