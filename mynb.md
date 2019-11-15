@@ -44,7 +44,7 @@ _wiseWebTrack.redirection({
 	_wtp:7,
 	_wtfv:"server",
 	_wtpkg:"com.nbkorea.mynb", 
-	_wtdl:"market://details?id=com.nbkorea.mynb&hl=ko",
+	_wtdl:"market://details?id=com.nbkorea.mynb",
 	_wtal:"앱으로 연결할 딥링크", //예를 들어 mynb://?cmd=link&url=http://m.newbalancemynb.com/event/eventDetail.do?eventIdx=44
 	createClickData:"Y"
 	});
