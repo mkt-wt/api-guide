@@ -45,6 +45,7 @@
 각 플랫폼별 온라인 가이드를 참고해서 SDK를 삽입해 주시면 됩니다. 아래 가이드의 3번 '필수 연동 API' 까지는 반드시 적용해 주셔야 하며, Facebook 분석을 위한 연동은 optional 이며, WAFI 는 적용하지 않습니다.
 
 -[AOS](https://bintray.com/beta/#/tracker/maven/SDK_V1?tab=readme)
+
 -[iOS](https://github.com/WisetrackerTechteam/wisetrackerSDK)
 
 ## 분석 API
