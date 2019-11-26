@@ -274,7 +274,7 @@ WiseTracker.sendTransaction();
 ```
 
 #### 예시 B
-유저가 新秀丽 VENON BACKPACK BLACK背包 상품을 2개와, M/K PALETTE 眼影盘 #BEACH MUSE 상품 1개를 구매한 경우
+유저가 新秀丽 VENON BACKPACK BLACK背包 상품 2개와, M/K PALETTE 眼影盘 #BEACH MUSE 상품 1개를 구매한 경우
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setOrderProductArray(["10368200000704", "56023270012001"]);
