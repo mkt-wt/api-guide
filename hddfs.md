@@ -142,7 +142,7 @@ WiseTracker.sendGoalData();
 ``` java
 WiseTracker.setProduct("상품코드", "상품명");
 WiseTracker.setCustomMvtTag("mvt1", "브랜드명");
-WiseTracker.sendPageIdentity("PDV");
+WiseTracker.setPageIdentity("PDV");
 ```
 
 #### 예시
@@ -151,7 +151,7 @@ WiseTracker.sendPageIdentity("PDV");
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setProduct("10368200000704", "新秀丽 VENON BACKPACK BLACK背包");
 	WiseTracker.setCustomMvtTag("mvt1", "新秀丽");
-	WiseTracker.sendPageIdentity("PDV");
+	WiseTracker.setPageIdentity("PDV");
 </script>
 ```
 
