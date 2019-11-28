@@ -144,7 +144,7 @@ WiseTracker.sendGoalData();
 2) 일부 상품(아래에 예시 있음)들은 별도의 UI를 사용하고 있습니다. 현 시점에는 해당 상품들엔 상품 분석 코드가 누락된채 사이트에 올라와 있습니다.
 3) 아마 BO를 통해 해당 상품이 생성되는 부분에 상품 분석 코드가 빠져 있는 것 같습니다. BO에서 발행하는 모든 상품에 상품 분석 코드가 들어가도록 작업해 주시기 바랍니다.
 
--[!이미지](http://www.wisetracker.co.kr/wp-content/uploads/2019/11/002.jpg)
+![이미지](http://www.wisetracker.co.kr/wp-content/uploads/2019/11/002.jpg)
 
 #### 분석 코드
 ``` java
@@ -307,7 +307,7 @@ AndroidManifest.xml 파일에 아래 메타 데이터 태그를 추가합니다.
 ### iOS
 Info.plist 파일에 아래 그림과 같이 값을 추가 합니다.
 
-![iOS Debug Mobe](http://www.wisetracker.co.kr/wp-content/uploads/2019/05/ios-debug.png)
+![iOS Debug Mode](http://www.wisetracker.co.kr/wp-content/uploads/2019/05/ios-debug.png)
 
 ``` swift
 <key>WiseTrackerLogState</key>
