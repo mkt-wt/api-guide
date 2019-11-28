@@ -197,7 +197,7 @@ function addCartExampleFunction (){
 WiseTracker.setGoalProduct("상품코드");
 WiseTracker.setGoalCustomMvtTag("mvt1", "브랜드명");
 WiseTracker.setGoal("g4", 1);
-WiseTracker.sendTransaction();
+WiseTracker.sendGoalData();
 ```
 
 #### 예시
@@ -208,7 +208,7 @@ function mergeMyGoosExample (){
 	WiseTracker.setGoalProduct("10368200000704");
 	WiseTracker.setGoalCustomMvtTag("mvt1", "新秀丽");
 	WiseTracker.setGoal("g4", 1);
-	WiseTracker.sendTransaction();
+	WiseTracker.sendGoalData();
 }
 ```
 
