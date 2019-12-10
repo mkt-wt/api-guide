@@ -4,7 +4,7 @@
 > 정주온, humblejohn@wisetracker.co.kr
 
 # Index
-* [분석 코드 & 스크립트 위치 조정](./hddfs_web.md#분석-코드-&-스크립트-위치-조정)
+* [분석 코드 & 스크립트 위치 조정](./hddfs_web.md#분석-코드--스크립트-위치-조정)
 	* [주의사항](./hddfs_web.md#주의사항)
 	* [적용 예시](./hddfs_web.md#적용-예시)
 * [수정이 필요한 분석 코드](./hddfs_web.md#수정이-필요한-분석-코드)
