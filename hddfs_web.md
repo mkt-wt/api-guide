@@ -57,7 +57,7 @@
 ``` html
 <head>
 ...
-<!-- wisetracker 검색어 분석용 코드 ->
+<!-- wisetracker 검색어 분석용 코드 -->
 <script type="text/javascript">
 	_TRK_IK = "검색어";
 	_TRK_IKWDRS = "검색결과 수";
@@ -127,4 +127,5 @@ _TRK_PI = "ODR";
 위 사항을 적용해주신 이후 아래 담당자에게 연락 주시면 저희가 테스트 하여 결과 전달 드리겠습니다.
 
 > 정주온, humblejohn@wisetracker.co.kr
+
 > 배승민 과장, smbae@wisetracker.co.kr
