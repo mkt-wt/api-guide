@@ -38,7 +38,7 @@
 ``` html
 <head>
 ...
-<!-- wisetracker 구매 분석용 코드 --!>
+<!-- wisetracker 구매 분석용 코드 -->
 <script type="text/javascript">
 	_TRK_PNC = "상품코드;상품코드";
 	_TRK_EA = "주문수량;주문수량";
@@ -48,7 +48,7 @@
 	_TRK_PI = "ODR";
 </script>
 ...
-<!-- wisetracker 공통 스크립트 include --!>
+<!-- wisetracker 공통 스크립트 include -->
 <script src="https://cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
 </head>
 ```
@@ -57,13 +57,13 @@
 ``` html
 <head>
 ...
-<!-- wisetracker 검색어 분석용 코드 --!>
+<!-- wisetracker 검색어 분석용 코드 -!>
 <script type="text/javascript">
 	_TRK_IK = "검색어";
 	_TRK_IKWDRS = "검색결과 수";
 </script>
 ...
-<!-- wisetracker 공통 스크립트 include --!>
+<!-- wisetracker 공통 스크립트 include -->
 <script src="https://cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
 </head>
 ```
@@ -72,7 +72,7 @@
 ``` html
 <head>
 ...
-<!-- wisetracker 상품 분석용 코드 --!>
+<!-- wisetracker 상품 분석용 코드 -->
 <script type="text/javascript">
 	_TRK_PNC = "상품코드"; 
 	_TRK_PNC_NM = "상품명";
@@ -80,7 +80,7 @@
 	_TRK_PI = "PDV";
 </script>
 ...
-<!-- wisetracker 공통 스크립트 include --!>
+<!-- wisetracker 공통 스크립트 include -->
 <script src="https://cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
 </head>
 ```
