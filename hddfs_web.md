@@ -1,19 +1,37 @@
 # Wisetracker Integration Guide
-현대백화점면세점 중문 PC 웹사이트 & 모바일 웹사이트에는 와이즈트래커의 분석 코드들이 추가되어 있습니다. 보다 정확한 데이터 분석을 위해서 기존에 추가된 일부 코드들을 수정해야 합니다. 본 문서에서는 기존에 추가된 코드들을 수정하는 방법을 안내하고 있으며 반드시 PC 웹사이트와 모바일 웹사이트 모두 적용 되어야 합니다. 작업 중 발생하는 문의사항은 아래 담당자에게 연락 주시기 바랍니다.
+현대백화점면세점 중문 PC 웹사이트 & 모바일 웹사이트에는 와이즈트래커의 분석 코드들이 추가되어 있습니다. 보다 정확한 데이터 분석을 위해서 새로운 분석 코드를 추가하고, 기존에 추가된 일부 코드들을 수정하는 작업이 필요합니다. 본 문서에서는 새로운 코드 추가 & 기존 코드 수정 방법을 안내하고 있으며 반드시 PC 웹사이트와 모바일 웹사이트 모두 적용 되어야 합니다. 작업 중 발생하는 문의사항은 아래 담당자에게 연락 주시기 바랍니다.
 
 > 정주온, humblejohn@wisetracker.co.kr
 
 # Index
-* [분석 코드 & 스크립트 위치 조정](./hddfs_web.md#분석-코드--스크립트-위치-조정)
-	* [주의사항](./hddfs_web.md#주의사항)
-	* [적용 예시](./hddfs_web.md#적용-예시)
+* [웹투앱 분석 코드 추가](./hddfs_web.md#웹투앱-분석-코드-추가)
+	* [분석 코드](./hddfs_web.md#분석-코드)
+* [기존 분석 코드 & 스크립트 위치 조정](./hddfs_web.md#기존-분석-코드--스크립트-위치-조정)
+	* [주의사항](./hddfs_web.md#주의사항-1)
+	* [적용 예시](./hddfs_web.md#적용-예시-1)
 * [수정이 필요한 분석 코드](./hddfs_web.md#수정이-필요한-분석-코드)
 	* [상품 분석용 코드 수정 사항](./hddfs_web.md#상품-분석용-코드-수정-사항)
 	* [구매 분석용 코드 수정 사항](./hddfs_web.md#구매-분석용-코드-수정-사항)
 * [적용 후 데이터 검증](./hddfs_web.md#적용-후-데이터-검증)
 
 
-## 분석 코드 & 스크립트 위치 조정
+## 웹투앱 분석 코드 추가
+웹사이트 방문 이후 앱을 설치하는 경우를 분석하기 위한 코드입니다. 현대백화점면세점 중문 PC 웹사이트, 중문 모바일 웹사이트의 `<head>`에 아래 코드를 적용해 주시기 바랍니다.
+
+```html
+<!DOCTYPE html>
+<head>
+...
+<!-- 웹투앱 분석 라이브러리 wiseWebTrack.js include -->
+<!-- 라이브러리 다음 라인에 wiseWebTrackInit 스크립트를 이어서 추가 -->
+<!-- wiseWebTrackInit 스크립트는 첨부 파일로 제공함 -->
+<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
+<script src="{jsFilePath}/js/wiseWebTrackInit.js"></script>
+...
+</head>
+```
+
+## 기존 분석 코드 & 스크립트 위치 조정
 현재 사이트 상에는 와이즈트래커의 분석 코드와 공통 스크립트(라이브러리)가 `<body>` 영역에 추가되어 있습니다. 이 중 대부분의 코드를 `<head>` 영역으로 옮겨야 할 필요가 있습니다. 아래 주의사항과 설명을 참고하여 작업을 진행해 주시기 바랍니다.
 
 ### 주의사항
@@ -34,7 +52,12 @@
 ### 적용 예시
 주문 완료 페이지에 위치한 기존 분석 코드를 모두 `<head>`로 이동
 ``` html
+<!DOCTYPE html>
 <head>
+...
+<!-- 앞에서 새로 추가한 wiseWebTrack 스크립트들 -->
+<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
+<script src="{jsFilePath}/js/wiseWebTrackInit.js"></script>
 ...
 <!-- wisetracker 구매 분석용 코드 -->
 <script type="text/javascript">
@@ -53,7 +76,12 @@
 
 검색 완료 페이지에 위치한 기존 분석 코드를 모두 `<head>`로 이동
 ``` html
+<!DOCTYPE html>
 <head>
+...
+<!-- 앞에서 새로 추가한 wiseWebTrack 스크립트들 -->
+<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
+<script src="{jsFilePath}/js/wiseWebTrackInit.js"></script>
 ...
 <!-- wisetracker 검색어 분석용 코드 -->
 <script type="text/javascript">
@@ -68,7 +96,12 @@
 
 상품 상세 페이지에 위치한 기존 분석 코드를 모두 `<head>`로 이동
 ``` html
+<!DOCTYPE html>
 <head>
+...
+<!-- 앞에서 새로 추가한 wiseWebTrack 스크립트들 -->
+<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
+<script src="{jsFilePath}/js/wiseWebTrackInit.js"></script>
 ...
 <!-- wisetracker 상품 분석용 코드 -->
 <script type="text/javascript">
