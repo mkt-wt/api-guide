@@ -23,6 +23,7 @@
 ...
 <!-- 웹투앱 분석용 스크립트 include -->
 <!-- 두 스크립트의 순서가 변하면 안됩니다 -->
+<!-- PC 사이트와 모바일 사이트 모두 동일하게 적용해 주세요 -->
 <script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>      
 <script src="//ads.wisetracker.co.kr/wa/js/customize/hddfs/wiseWebTrackInit.js"></script>
 ...
