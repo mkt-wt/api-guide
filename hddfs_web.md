@@ -120,9 +120,9 @@
 #### 상품 분석용 코드 수정 사항
 1) 일반적인 상품과 구별되는 특수한 UI가 적용된 상품들은 상품 구매용 분석 코드 자체가 빠져 있습니다. 해당 UI를 사용하는 상품들에도 상품 분석용 코드가 적용되도록 수정해 주시기 바랍니다.
 
-[예시 URL](https://cn.hddfs.com/shop/gd/dtl/goos.do?onlnGoosCd=10229250009701)
+[상품 분석용 코드가 페이지에 없는 예시 URL 1](https://cn.hddfs.com/shop/gd/dtl/goos.do?onlnGoosCd=10229250009701)
 
-[예시 URL](https://cn.hddfs.com/shop/gd/dtl/goos.do?onlnGoosCd=10063280006501)
+[상품 분석용 코드가 페이지에 없는 예시 URL 2](https://cn.hddfs.com/shop/gd/dtl/goos.do?onlnGoosCd=10063280006501)
 
 2) `상품명` value를 환경 변수에 넣을 때 인코딩되지 않은 스트링을 그대로 넣어 주시기 바랍니다. 상품명 중간에 있는 특수문자(&, 앰퍼샌드)가 HTML Entity로 인코딩된 값이 들어오면서 문제가 발생하고 있습니다.
 
