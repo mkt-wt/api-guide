@@ -21,11 +21,10 @@
 <!DOCTYPE html>
 <head>
 ...
-<!-- 웹투앱 분석 라이브러리 wiseWebTrack.js include -->
-<!-- 라이브러리 다음 라인에 wiseWebTrackInit 스크립트를 이어서 추가 -->
-<!-- wiseWebTrackInit 스크립트는 첨부 파일로 제공함 -->
-<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
-<script src="{jsFilePath}/js/wiseWebTrackInit.js"></script>
+<!-- 웹투앱 분석용 스크립트 include -->
+<!-- 두 스크립트의 순서가 변하면 안됩니다 -->
+<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>      
+<script src="//ads.wisetracker.co.kr/wa/js/customize/hddfs/wiseWebTrackInit.js"></script>
 ...
 </head>
 ```
@@ -55,8 +54,8 @@
 <head>
 ...
 <!-- 앞에서 새로 추가한 wiseWebTrack 스크립트들 -->
-<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
-<script src="{jsFilePath}/js/wiseWebTrackInit.js"></script>
+<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>      
+<script src="//ads.wisetracker.co.kr/wa/js/customize/hddfs/wiseWebTrackInit.js"></script>
 ...
 <!-- wisetracker 구매 분석용 코드 -->
 <script type="text/javascript">
@@ -79,8 +78,8 @@
 <head>
 ...
 <!-- 앞에서 새로 추가한 wiseWebTrack 스크립트들 -->
-<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
-<script src="{jsFilePath}/js/wiseWebTrackInit.js"></script>
+<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>      
+<script src="//ads.wisetracker.co.kr/wa/js/customize/hddfs/wiseWebTrackInit.js"></script>
 ...
 <!-- wisetracker 검색어 분석용 코드 -->
 <script type="text/javascript">
@@ -99,8 +98,8 @@
 <head>
 ...
 <!-- 앞에서 새로 추가한 wiseWebTrack 스크립트들 -->
-<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
-<script src="{jsFilePath}/js/wiseWebTrackInit.js"></script>
+<script src="//ads.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>      
+<script src="//ads.wisetracker.co.kr/wa/js/customize/hddfs/wiseWebTrackInit.js"></script>
 ...
 <!-- wisetracker 상품 분석용 코드 -->
 <script type="text/javascript">
