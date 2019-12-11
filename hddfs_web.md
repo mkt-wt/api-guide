@@ -35,7 +35,7 @@
 ### 주의사항
 1) 와이즈트래커의 공통 스크립트(xxxxx_Insight_WebAnalytics.js)는 헤드가 끝나기 직전(`</head>`)에 위치 시킵니다.
 2) 와이즈트래커의 환경 변수(_TRK 로 시작하는)는 반드시 공통 스크립트보다 위쪽에 위치 시킵니다.
-3) 예외적으로 아래 표에 있는 환경 변수는 `<head>`로 옮기지 않고 현재 적용된 그대로 둡니다.
+3) 예외적으로 아래 표에 있는 분석 코드는 `<head>`로 옮기지 않고 현재 적용된 그대로 둡니다.
 
 
 분석 항목 | 분석 코드
@@ -68,7 +68,7 @@
 </script>
 ...
 <!-- wisetracker 공통 스크립트 include -->
-<script src="https://cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
+<script src="//cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
 </head>
 ```
 
@@ -88,7 +88,7 @@
 </script>
 ...
 <!-- wisetracker 공통 스크립트 include -->
-<script src="https://cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
+<script src="//cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
 </head>
 ```
 
@@ -110,7 +110,7 @@
 </script>
 ...
 <!-- wisetracker 공통 스크립트 include -->
-<script src="https://cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
+<script src="//cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
 </head>
 ```
 
