@@ -77,7 +77,7 @@ H-Point | G
 65~69세 | L
 70세 이상 | M
 
-### 분석 코드
+### 분석코드
 ``` javascript
 eval('try{_trk_flashEnvView(
 \'_TRK_PI=LIR\',
@@ -90,7 +90,7 @@ eval('try{_trk_flashEnvView(
 );}catch(_e){}');
 ```
 
-### 적용예시
+### 적용 예시
 30세 남성이 Weibo 계정으로 로그인 하는 경우, 로그인 완료 시점에 아래 코드 추가
 ``` javascript
 function loginExampleFunction (){
