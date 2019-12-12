@@ -5,9 +5,13 @@
 
 # Index
 * [웹투앱 분석 코드 추가](./hddfs_web.md#웹투앱-분석-코드-추가)
-* [기존 분석 코드 & 스크립트 위치 조정](./hddfs_web.md#기존-분석-코드--스크립트-위치-조정)
+* [로그인 분석 코드 추가](./hddfs_web.md#로그인-분석-코드-추가)
 	* [주의사항](./hddfs_web.md#주의사항)
+	* [분석코드](./hddfs_web.md#분석코드)
 	* [적용 예시](./hddfs_web.md#적용-예시)
+* [기존 분석 코드 & 스크립트 위치 조정](./hddfs_web.md#기존-분석-코드--스크립트-위치-조정)
+	* [주의사항](./hddfs_web.md#주의사항-1)
+	* [적용 예시](./hddfs_web.md#적용-예시-1)
 * [수정이 필요한 분석 코드](./hddfs_web.md#수정이-필요한-분석-코드)
 	* [상품 분석용 코드 수정 사항](./hddfs_web.md#상품-분석용-코드-수정-사항)
 	* [구매 분석용 코드 수정 사항](./hddfs_web.md#구매-분석용-코드-수정-사항)
@@ -28,6 +32,78 @@
 <script src="//ads.wisetracker.co.kr/wa/js/customize/hddfs/wiseWebTrackInit.js"></script>
 ...
 </head>
+```
+
+## 로그인 분석 코드 추가
+유저가 앱에 로그인 하는 횟수, 로그인 유형, 로그인한 유저의 인구통계 정보를 분석할 수 있는 코드를 추가해 주시기 바랍니다.
+
+### 주의사항
+1) 로그인 완료를 처리하는 시점에 분석 코드를 추가합니다.
+2) 총 7가지 방법으로 로그인 할 수 있습니다. 아래 표를 참고하여 각 로그인 유형에 맞는 코드를 입력해 주시기 바랍니다.
+
+로그인 유형 | 유형 코드
+-------- | --------
+일반(ID로그인) | A
+Weibo | B
+QQ | C
+Wechat | D
+Alipay | E
+Baidu | F
+H-Point | G
+
+3) 로그인한 유저의 성별 정보는 아래 표를 참고하여 입력해 주시기 바랍니다.
+
+성별 | 성별 코드
+-------- | --------
+여성 | F
+남성 | M
+기타 | U
+
+4) 로그인한 유저의 연령대 정보는 아래 표를 참고하여 입력해 주시기 바랍니다.
+
+연령대 | 연령대 코드
+-------- | --------
+10세 미만 | A
+10~19세 | B
+20~24세 | C
+25~29세 | D
+30~34세 | E
+35~39세 | F
+40~44세 | G
+45~49세 | H
+50~54세 | I
+55~59세 | J
+60~64세 | K
+65~69세 | L
+70세 이상 | M
+
+### 분석 코드
+``` javascript
+eval('try{_trk_flashEnvView(
+\'_TRK_PI=LIR\',
+\'_TRK_ISLOGIN=Y\',
+\'_TRK_MBR=Y\',
+\'_TRK_SX=성별코드\',
+\'_TRK_AG=연령대코드\',
+\'_TRK_UVP1=로그인유형코드\',
+\'_TRK_G2=1\'
+);}catch(_e){}');
+```
+
+### 적용예시
+30세 남성이 Weibo 계정으로 로그인 하는 경우, 로그인 완료 시점에 아래 코드 추가
+``` javascript
+function loginExampleFunction (){
+	eval('try{_trk_flashEnvView(
+		\'_TRK_PI=LIR\',
+		\'_TRK_ISLOGIN=Y\',
+		\'_TRK_MBR=Y\',
+		\'_TRK_SX=M\',
+		\'_TRK_AG=E\',
+		\'_TRK_UVP1=B\',
+		\'_TRK_G2=1\'
+		);}catch(_e){}');
+}
 ```
 
 ## 기존 분석 코드 & 스크립트 위치 조정
@@ -69,7 +145,7 @@
 </script>
 ...
 <!-- wisetracker 공통 스크립트 include -->
-<script src="//cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
+<script src="https://cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
 </head>
 ```
 
@@ -89,7 +165,7 @@
 </script>
 ...
 <!-- wisetracker 공통 스크립트 include -->
-<script src="//cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
+<script src="https://cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
 </head>
 ```
 
@@ -111,7 +187,7 @@
 </script>
 ...
 <!-- wisetracker 공통 스크립트 include -->
-<script src="//cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
+<script src="https://cdn.hd-dfs.com/front/js/CN/tracking/10125_Insight_WebAnalytics_pc.js?ver=10"></script>
 </head>
 ```
 
