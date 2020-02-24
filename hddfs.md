@@ -276,6 +276,7 @@ WiseTracker.sendTransaction();
 	WiseTracker.setOrderQuantityArray([2]);
 	WiseTracker.setOrderAmountArray([650]);
 	WiseTracker.setOrderCustomMvtTagArray(["新秀丽"]);
+	WiseTracker.setOrderNo("O12345678");
 	WiseTracker.setPageIdentity("ODR");
 	WiseTracker.sendTransaction();
 </script>
@@ -289,6 +290,7 @@ WiseTracker.sendTransaction();
 	WiseTracker.setOrderQuantityArray([2, 1]);
 	WiseTracker.setOrderAmountArray([650, 27]);
 	WiseTracker.setOrderCustomMvtTagArray(["新秀丽", "3CE"]);
+	WiseTracker.setOrderNo("O5678901234");
 	WiseTracker.setPageIdentity("ODR");
 	WiseTracker.sendTransaction();
 </script>
