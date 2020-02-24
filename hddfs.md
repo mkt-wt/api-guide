@@ -263,6 +263,7 @@ WiseTracker.setPageIdentity("SEARCH");
 WiseTracker.setOrderProductArray(["A상품코드", "B상품코드"]);
 WiseTracker.setOrderQuantityArray([A상품수량, B상품수량]);
 WiseTracker.setOrderAmountArray([A결제금액, B결제금액]);
+WiseTracker.setOrderNo("주문번호");
 WiseTracker.setOrderCustomMvtTagArray(["A브랜드명", "B브랜드명"]);
 WiseTracker.setPageIdentity("ODR");
 WiseTracker.sendTransaction();
