@@ -13,6 +13,14 @@
 	* [주의사항](./return.md#주의사항-1)
 	* [분석코드](./return.md#분석코드-2)
 	* [적용예시](./return.md#적용예시)
+* [광고시청](./return.md#광고시청)
+* [던전 완료](./return.md#던전-완료)
+* [아레나 완료](./return.md#아레나-완료)
+* [아아템 레벨업](./return.md#아이템-레벨업)
+* [아이템 승급](./return.md#아이템-승급)
+* [아이템 강화](./return.md#아이템-강화)
+* [아이템 각인](./return.md#아이템-각인)
+* [아이템 세공](./return.md#아이템-세공)
 * [적용 후 데이터 검증](./return.md#적용-후-데이터-검증)
 	* [AOS](./return.md#AOS)
 
@@ -48,8 +56,6 @@ WiseTracker.sendGoalData();
 // 레벨 상승
 WiseTracker.setUserAttribute( "uvp1", "달성한 레벨" );
 WiseTracker.setGoal("g3", 1);
-WiseTracker.setGoal("g4", 이전 레벨);
-WiseTracker.setGoal("g5", 달성한 레벨);
 WiseTracker.sendTransaction();
 ```
 
@@ -59,8 +65,6 @@ WiseTracker.sendTransaction();
 // 레벨 25로 상승
 WiseTracker.setUserAttribute( "uvp1", "25" );
 WiseTracker.setGoal("g3", 1);
-WiseTracker.setGoal("g4", 24);
-WiseTracker.setGoal("g5", 25);
 WiseTracker.sendTransaction();
 ```
 
@@ -71,13 +75,12 @@ WiseTracker.sendTransaction();
 1) 결제금액은 원화(KRW) 기준의 액수만을 사용해 주시기 바랍니다.
 2) 게임머니(골드, 다이아몬드, 마일리지)를 사용하여 아이템을 구매한 경우에는 본 코드를 적용하지 않습니다. 오직 실제 화폐로 아이템을 구매한 경우에만 본 코드를 적용해주세요.
 
-
 ### 분석코드
 ``` kotlin
 // 인앱구매 완료
 WiseTracker.setOrderProduct("상품코드");
 WiseTracker.setOrderQuantity(상품수량);
-WiseTracker.setOrderAmountArray(결제금액);
+WiseTracker.setOrderAmount(결제금액);
 WiseTracker.setOrderNo("주문번호");
 WiseTracker.setPageIdentity("ODR");
 WiseTracker.sendTransaction();
@@ -89,10 +92,74 @@ WiseTracker.sendTransaction();
 // 스타터 패키지 결제 완료
 WiseTracker.setOrderProduct("P12345"); // 스타터 패키지의 상품코드
 WiseTracker.setOrderQuantity(1);
-WiseTracker.setOrderAmountArray(5500); // KRW 기준 결제액 입력
+WiseTracker.setOrderAmount(5500); // KRW 기준 결제액 입력
 WiseTracker.setOrderNo("O12345678");
 WiseTracker.setPageIdentity("ODR");
 WiseTracker.sendTransaction();
+```
+
+## 광고시청
+유저가 광고시청을 완료하여 보상을 받은 시점에 아래 코드를 추가합니다.
+``` kotlin
+// 광고시청을 통해 보상 지급
+WiseTracker.setGoal("g4", 1);
+WiseTracker.sendGoalData();
+```
+
+## 던전 클리어
+유저가 던전에서 승리하여 보상을 받은 시점에 아래 코드를 추가합니다. 던전에서 사망하거나 시간이 초과되어 보상을 받지 못하는 경우에는 본 코드가 추가되어서는 안됩니다.
+``` kotlin
+// 던전에서 승리하여 보상 지급
+WiseTracker.setGoal("g5", 1);
+WiseTracker.sendGoalData();
+```
+
+## 아레나 결투 완료
+유저가 아레나에서 PvP를 완료하는 시점에 아래 코드를 추가합니다. 승패와 관련이 없으며 모든 PvP 완료에 대해서 본 코드가 추가 되는 개념입니다.
+``` kotlin
+// PvP 완료
+WiseTracker.setGoal("g6", 1);
+WiseTracker.sendGoalData();
+```
+
+## 아이템 레벨업
+유저가 아이템의 레벨엡에 성공한 시점에 아래 코드를 추가합니다.
+``` kotlin
+// 아이템 레벨업 성공
+WiseTracker.setGoal("g7", 1);
+WiseTracker.sendGoalData();
+```
+
+## 아이템 승급
+유저가 아이템 승급에 성공한 시점에 아래 코드를 추가합니다.
+``` kotlin
+// 아이템 승급 성공
+WiseTracker.setGoal("g8", 1);
+WiseTracker.sendGoalData();
+```
+
+## 아이템 강화
+유저가 아이템 강화에 성공한 시점에 아래 코드를 추가합니다.
+``` kotlin
+// 아이템 강화 성공
+WiseTracker.setGoal("g9", 1);
+WiseTracker.sendGoalData();
+```
+
+## 아이템 각인
+유저가 아이템 각인에 성공한 시점에 아래 코드를 추가합니다.
+``` kotlin
+// 아이템 각인 성공
+WiseTracker.setGoal("g10", 1);
+WiseTracker.sendGoalData();
+```
+
+## 아이템 세공
+유저가 아이템 세공에 성공한 시점에 아래 코드를 추가합니다.
+``` kotlin
+// 아이템 세공 성공
+WiseTracker.setGoal("g11", 1);
+WiseTracker.sendGoalData();
 ```
 
 ## 적용 후 데이터 검증
