@@ -164,7 +164,7 @@ WiseTracker.sendTransaction();
 ## 비밀의 탑 입장
 유저가 비밀의 탑에 입장하는 이벤트에 아래 코드를 추가합니다.
 ``` kotlin
-// 던전에 입장
+// 비밀의 탑 입장
 WiseTracker.setUserAttribute( "uvp1", "현재 캐릭터 레벨" );
 WiseTracker.setUserAttribute( "uvp2", "입장한 비밀의 탑 층수" );
 WiseTracker.setPageIdentity("TOWER");
@@ -175,7 +175,7 @@ WiseTracker.sendTransaction();
 ### 적용예시
 레벨 55인 캐릭터가 비밀의 탑 30층에 입장한 경우
 ``` kotlin
-// 던전에 입장
+// 비밀의 탑 입장
 WiseTracker.setUserAttribute( "uvp1", "55" );
 WiseTracker.setUserAttribute( "uvp2", "30" );
 WiseTracker.setPageIdentity("TOWER");
