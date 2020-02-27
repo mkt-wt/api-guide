@@ -222,9 +222,9 @@ WiseTracker.sendTransaction();
 ```
 
 ## 아이템 강화
-유저가 아이템 강화에 성공한 시점에 아래 코드를 추가합니다.
+유저가 아이템 강화를 시도한 시점에 아래 코드를 추가합니다. 강화 성공/실패 여부와 관계 없이 시도 자체를 측정하는 개념입니다.
 ``` kotlin
-// 아이템 강화 성공
+// 아이템 강화 시도
 WiseTracker.setPageIdentity("ITEM");
 WiseTracker.setGoal("g12", 1);
 WiseTracker.sendTransaction();
