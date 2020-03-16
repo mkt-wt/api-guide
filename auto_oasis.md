@@ -26,7 +26,7 @@
 ### 수입유 특가
 유저가 메인 화면에 있는 '수입유 특가' 버튼을 클릭하는 시점에 아래 코드를 추가합니다.
 ``` javascript
-<script type="wisetracker/text" id="wiseTracker">
+<script type="text/javascript">
 	WiseTracker.setGoal("g3", 1);
 	WiseTracker.sendGoalData();
 </script>
@@ -35,7 +35,7 @@
 ### 출장 정비
 유저가 메인 화면에 있는 '출장 정비' 버튼을 클릭하는 시점에 아래 코드를 추가합니다.
 ``` javascript
-<script type="wisetracker/text" id="wiseTracker">
+<script type="text/javascript">
 	WiseTracker.setGoal("g4", 1);
 	WiseTracker.sendGoalData();
 </script>
@@ -44,7 +44,7 @@
 ### 오토케어 워시
 유저가 메인 화면에 있는 '오토케어 워시' 버튼을 클릭하는 시점에 아래 코드를 추가합니다.
 ``` javascript
-<script type="wisetracker/text" id="wiseTracker">
+<script type="text/javascript">
 	WiseTracker.setGoal("g5", 1);
 	WiseTracker.sendGoalData();
 </script>
@@ -53,7 +53,7 @@
 ### Kixx 엔진오일
 유저가 메인 화면에 있는 'Kixx 엔진오일' 버튼을 클릭하는 시점에 아래 코드를 추가합니다.
 ``` javascript
-<script type="wisetracker/text" id="wiseTracker">
+<script type="text/javascript">
 	WiseTracker.setGoal("g6", 1);
 	WiseTracker.sendGoalData();
 </script>
