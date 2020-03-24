@@ -10,6 +10,11 @@
 	* [출장 정비](./auto_oasis.md#출장-정비)
 	* [오토케어 워시](./auto_oasis.md#오토케어-워시)
 	* [Kixx 엔진오일](./auto_oasis.md#Kixx-엔진오일)
+* [화면 조회 분석 API](./auto_oasis.md#화면-조회-분석-API)
+	* [메인](./auto_oasis.md#수입유-특가)
+	* [설정](./auto_oasis.md#출장-정비)
+	* [차량정보 저장 완료](./auto_oasis.md#차량정보-저장-완료)
+	* [회원가입 약관동의](./auto_oasis.md#회원가입-약관동의)
 * [적용 후 데이터 검증](./auto_oasis.md#적용-후-데이터-검증)
 	* [AOS](./auto_oasis.md#AOS)
 	* [iOS](./auto_oasis.md#iOS)
@@ -56,6 +61,61 @@
 <script type="text/javascript">
 	WiseTracker.setGoal("g6", 1);
 	WiseTracker.sendGoalData();
+</script>
+```
+
+## 화면 조회 분석 API
+앱 개편으로 인해 분석 코드가 영향을 받았습니다. 이에 따라 화면 PV를 분석하는 일부 코드들이 영향을 받았습니다. 아래 내용은 부정확한 데이터가 들어오고 있는 화면들에 대한 수정 방법 안내입니다. 내용을 숙지하시어 수정사항을 반영해 주시기 바랍니다.
+
+### 메인
+메인 화면 내에 아래 코드를 적용해 주시기 바랍니다.
+``` html
+<!-- html 페이지 상에서 와이즈트래커 SDK 참조 -->
+<!-- script type 이 javascript 가 아닌 것을 주의 -->
+<script type="wisetracker/text" id="wiseTracker">
+	WiseTracker.setPageIdentity("MAIN001");
+</script>
+```
+
+### 설정
+설정 화면 내에 아래 코드를 적용해 주시기 바랍니다.
+``` html
+<!-- html 페이지 상에서 와이즈트래커 SDK 참조 -->
+<!-- script type 이 javascript 가 아닌 것을 주의 -->
+<script type="wisetracker/text" id="wiseTracker">
+	WiseTracker.setPageIdentity("CONF");
+</script>
+```
+
+### 차량정보 등록
+차량정보 등록 화면에 있는 코드를 아래와 같이 수정해 주시기 바랍니다. 만약 코드가 없다면 아래 코드를 추가하면 됩니다.
+``` html
+<!-- html 페이지 상에서 와이즈트래커 SDK 참조 -->
+<!-- script type 이 javascript 가 아닌 것을 주의 -->
+<script type="wisetracker/text" id="wiseTracker">
+	WiseTracker.setPageIdentity("CAR002"); //과거에 추가된 부분
+	WiseTracker.sendTransaction(); //새로 추가할 라인
+</script>
+```
+
+### 차량정보 저장 완료
+차량정보가 정상적으로 등록되면 나타나는 alert 에 아래 코드를 적용해 주시기 바랍니다.
+``` javascript
+<script>
+	alert('차량등록이 완료되었습니다.');
+	// 와이즈트래커 분석코드 추가
+	WiseTracker.setPageIdentity("CONF");
+	WiseTracker.sendTransaction();
+</script>
+```
+
+### 회원가입 약관동의
+회원가입 약관동의 화면 내에 아래 코드를 적용해 주시기 바랍니다.
+``` html
+<!-- html 페이지 상에서 와이즈트래커 SDK 참조 -->
+<!-- script type 이 javascript 가 아닌 것을 주의 -->
+<script type="wisetracker/text" id="wiseTracker">
+	WiseTracker.setPageIdentity("RGF004");
 </script>
 ```
 
