@@ -90,6 +90,7 @@
 
 ### 차량정보 등록
 차량정보 등록 화면에 있는 코드를 아래와 같이 수정해 주시기 바랍니다. 만약 코드가 없다면 아래 코드를 추가하면 됩니다.
+![차량정보 등록화면](http://www.wisetracker.co.kr/wp-content/uploads/2020/03/ao001.jpg)
 ``` html
 <!-- html 페이지 상에서 와이즈트래커 SDK 참조 -->
 <!-- script type 이 javascript 가 아닌 것을 주의 -->
@@ -101,6 +102,7 @@
 
 ### 차량정보 저장 완료
 차량정보가 정상적으로 등록되면 나타나는 alert 에 아래 코드를 적용해 주시기 바랍니다.
+![자량정보 저장완료](http://www.wisetracker.co.kr/wp-content/uploads/2020/03/ao003.jpg)
 ``` javascript
 <script>
 	alert('차량등록이 완료되었습니다.');
