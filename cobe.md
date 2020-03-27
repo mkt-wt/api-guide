@@ -25,8 +25,8 @@
 
 ## 사전등록 완료
 유저가 앱에서 정상적으로 사전등록을 마치면 나타나는 alert에 아래 코드를 추가합니다.
-![사전등록 완료](http://www.wisetracker.co.kr/wp-content/uploads/2020/03/cobe000.jpg)
 
+![사전등록 완료](http://www.wisetracker.co.kr/wp-content/uploads/2020/03/cobe000.jpg)
 ``` javascript
 <script>
 	alert('...바코드를 제시한 후 입장해주세요.');
