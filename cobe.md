@@ -10,6 +10,7 @@
 	* [적용예시](./cobe.md#적용예시-1)
 * [적용 후 데이터 검증](./cobe.md#적용-후-데이터-검증)
 	* [AOS](./cobe.md#AOS)
+	* [iOS](./cobe.md#iOS)
 
 
 ## 회원가입
@@ -27,6 +28,7 @@
 유저가 앱에서 정상적으로 사전등록을 마치면 나타나는 alert에 아래 코드를 추가합니다.
 
 ![사전등록 완료](http://www.wisetracker.co.kr/wp-content/uploads/2020/03/cobe000.jpg)
+
 ``` javascript
 <script>
 	alert('...바코드를 제시한 후 입장해주세요.');
@@ -102,4 +104,14 @@ AndroidManifest.xml 파일에 아래 메타 데이터 태그를 추가합니다.
 ``` kotlin
 <meta-data android:name="WiseTrackerLogState" android:value="true" />
 // 개발용 테스트 앱에는 true로, 배포용 앱에는 false로 설정
+```
+
+### iOS
+Info.plist 파일에 아래 그림과 같이 값을 추가 합니다.
+
+![iOS Debug Mode](http://www.wisetracker.co.kr/wp-content/uploads/2019/05/ios-debug.png)
+
+``` swift
+<key>WiseTrackerLogState</key>
+<string>true</string>
 ```
