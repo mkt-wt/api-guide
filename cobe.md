@@ -34,6 +34,7 @@
 	alert('...바코드를 제시한 후 입장해주세요.');
 	// 와이즈트래커 분석코드 추가
 	WiseTracker.setGoal("g3", 1);
+	WiseTracker.setPageIdentity("REG");
 	WiseTracker.sendTransaction();
 </script>
 ```
