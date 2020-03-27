@@ -29,7 +29,7 @@
 
 ![사전등록 완료](http://www.wisetracker.co.kr/wp-content/uploads/2020/03/cobe000.jpg)
 
-``` javascript
+``` html
 <script>
 	alert('...바코드를 제시한 후 입장해주세요.');
 	// 와이즈트래커 분석코드 추가
