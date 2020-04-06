@@ -51,7 +51,7 @@ WiseTracker.sendTransaction()
  사전 정의된 화면 이외의 화면을 분석하고자 할때 사용자 정의 화면코드를 활용할 수 있습니다.
  "custom value"에 임의의 값을 넣어 원하는 화면에 코드를 삽입하면 되며,
  "custom value"는 영문+숫자 조합의 6byte 이하의 문자열로 구성합니다.
- ```
+```
 
 ## 3. 컨텐츠 분석
 
@@ -61,8 +61,8 @@ WiseTracker.sendTransaction()
 적용위치 : 컨텐츠를 계층구로조 분석할 필요가 있는 모든 화면
 WiseTracker.setContents("^1st depth value^2dn depth value"); // value는 반드시 ^로 시작되어야 하며, 하위 뎁스를 구분할 경우에도 ^를 사용합니다.
 
+
 ```
-//적용예시
  WiseTracker.setContents("^메인^의류^점퍼");
 ```
 
@@ -70,23 +70,19 @@ WiseTracker.setContents("^1st depth value^2dn depth value"); // value는 반드�
 앱을 구성하는 다양한 상품 및 상품 카테고리 정보를 분석하기 위해 코드를 삽입합니다.
 
 적용위치 : 상품 상세화면
-상품 :  WiseTracker.setProduct("상품코드", "상품명");
-상품 카테고리 : WiseTracker.setProductCategory("상품 카테고리 코드", "^상품 카테고리명");
-상품 상세화면 : WiseTracker.setPageIdentity("PDV"); // Premium API의 2번 '화면분석'에서 정의한 상품 상세화면 코드
 
 ```
-//적용예시
  WiseTracker.setProduct("PROD01", "나이키");
  WiseTracker.setProductCategory("CAT01", "^신발");
  WiseTracker.setPageIdentity("PDV");
-3) 검색 키워드 분석
+```
+
+### 3) 검색 키워드 분석
 사용자가 앱을 이용해 검색한 키워드, 검색 결과를 분석하기 위해 코드를 삽입합니다.
 
 적용위치 : 검색결과 화면
-WiseTracker.setSearchKeyword("검색어");
-WiseTracker.setSearchKeywordResult(검색결과 수);
 
-//적용예시
+```
  WiseTracker.setSearchKeyword("가디건");
  WiseTracker.setSearchKeywordResult(1089);
 ```
@@ -107,8 +103,9 @@ WiseTracker.setSearchKeywordResult(검색결과 수);
  WiseTracker.setOrderProductArray(["PROD01","PROD02"]); // 상품정보
  WiseTracker.setOrderProductCategoryArray(["CAT01","CAT02"]); //상품카테고리
  WiseTracker.setOrderAmountArray([10000, 20000]); // 주문 상품 총액 (합계)
- WiseTracker.setOrderQuantityArray ([1, 2]); // 주문 개수
- WiseTracker.setPageIdentity("ODR"); // 주문완료
+ WiseTracker.setOrderQuantityArray ([1, 2]); // 주문 수량
+ WiseTracker.setPageIdentity("ODR"); // 주문페이지 PI세팅
+ WiseTracker.sendTransaction(); //데이터 전송
 ```
 
  

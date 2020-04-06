@@ -46,7 +46,6 @@ WiseTracker.sendGoalData()
 ### 2) Swift	
 ```Swift	
 WiseTracker.setGoal("g2", 1)
-WiseTracker.setGoal("g6", 1)
 WiseTracker.setGender("A")
 WiseTracker.setAge("C")
 WiseTracker.setUserAttribute("uvp1", "B")
@@ -127,17 +126,16 @@ WiseTracker.sendTransaction()
 앱을 구성하는 다양한 컨텐츠를 계층구조로 정리해 분석하기 위해 코드를 삽입합니다.	
 
 - 적용 위치: 컨텐츠를 계층구로조 분석할 필요가 있는 모든 화면	
+WiseTracker.setContents("^1st depth value^2dn depth value") // value는 반드시 ^로 시작되어야 하며, 하위 뎁스를 구분할 경우에도 ^를 사용합니다
 
 #### a) Objective-C	
 ```Objective-C	
-[WiseTracker setContents:@"^1st depth value^2dn depth value"]; // value는 반드시 ^로 시작되어야 하며, 하위 뎁스를 구분할 경우에도 ^를 사용합니다	
-//적용예시	
- [WiseTracker setContents:@"^메인^의류^점퍼"];	
+ [WiseTracker setContents:@"^메인^의류^점퍼"];
 ```	
 
 #### b) Swift	
 ```Swift	
-WiseTracker.setContents("^1st depth value^2dn depth value") // value는 반드시 ^로 시작되어야 하며, 하위 뎁스를 구분할 경우에도 ^를 사용합니다	
+	
  	
 //적용예시	
  WiseTracker.setContents("^메인^의류^점퍼")	
@@ -145,49 +143,35 @@ WiseTracker.setContents("^1st depth value^2dn depth value") // value는 반드�
 
 #### c) WebView	
 ```Java script	
-WiseTracker.setContents("^1st depth value^2dn depth value"); // value는 반드시 ^로 시작되어야 하며, 하위 뎁스를 구분할 경우에도 ^를 사용합니다	
-//적용예시	
- <script type="wisetracker/text" id="wiseTracker">	
- WiseTracker.setContents("^메인^의류^점퍼");	
+ <script type="wisetracker/text" id="wiseTracker">
+ WiseTracker.setContents("^메인^의류^점퍼");
  </script>	
 ```	
 
 ### 2) 상품 분석	
-앱을 구성하는 다양한 상품 및 상품 카테고리 정보를 분석하기 위해 코드를 삽입합니다.	
+앱을 구성하는 다양한 상품 및 상품 카테고리 정보를 분석하기 위해 코드를 삽입합니다.
 
 - 적용 위치: 상품 상세화면	
 
 #### a) Objective-C	
 ```Objective-C	
-상품 : [WiseTracker setProduct:@"상품코드" name:@"상품명"];	
-상품 카테고리 : [WiseTracker setProductCategory:@"상품 카테고리 코드" name:@"^상품 카테고리명"];	
-상품 상세화면 : [WiseTracker setPageIdentity:@"PDV"];	
-//적용예시	
- [WiseTracker setProduct:@"PROD01" name:@"나이키"];	
- [WiseTracker setProductCategory:@"CAT01" name:@"^신발"];	
+ [WiseTracker setProduct:@"PROD01" name:@"나이키"];
+ [WiseTracker setProductCategory:@"CAT01" name:@"^신발"];
  [WiseTracker setPageIdentity:@"PDV"];	
 ```	
 
 #### b) Swift	
 ```Swift	
-상품 : WiseTracker.setProduct("상품코드", "상품명")	
-상품 카테고리 : WiseTracker.setProductCategory("상품 카테고리 코드", "^상품 카테고리명")	
-상품 상세화면 : WiseTracker.setPageIdentity("PDV")	
-//적용예시	
- WiseTracker.setProduct("PROD01", "나이키")	
- WiseTracker.setProductCategory("CAT01", "^신발")	
+ WiseTracker.setProduct("PROD01", "나이키")
+ WiseTracker.setProductCategory("CAT01", "^신발")
  WiseTracker.setPageIdentity("PDV")	
 ```	
 
 #### c) WebView	
 ```Java script	
-상품 : WiseTracker.setProduct("상품코드", "상품명");	
-상품 카테고리 : WiseTracker.setProductCategory("상품 카테고리 코드", "^상품 카테고리명");	
-상품 상세화면 : WiseTracker.setPageIdentity("PDV");	
-//적용예시	
- <script type="wisetracker/text" id="wiseTracker">	
- WiseTracker.setProduct("PROD01", "나이키");	
- WiseTracker.setProductCategory("CAT01", "^신발");	
+ <script type="wisetracker/text" id="wiseTracker">
+ WiseTracker.setProduct("PROD01", "나이키");
+ WiseTracker.setProductCategory("CAT01", "^신발");
  WiseTracker.setPageIdentity("PDV");	
  </script>	
 ```	
@@ -198,7 +182,7 @@ WiseTracker.setContents("^1st depth value^2dn depth value"); // value는 반드�
 [WiseTracker setSearchKeyword:@"검색어"];	
 [WiseTracker setSearchKeywordResult:@검색결과 수];	
 //적용예시	
- [WiseTracker setSearchKeyword:@"가디건"];	
+ [WiseTracker setSearchKeyword:@"가디건"];
  [WiseTracker setSearchKeywordResult:@1089];	
 ```	
 
@@ -217,9 +201,9 @@ WiseTracker.setSearchKeyword("검색어");
 WiseTracker.setSearchKeywordResult(검색결과 수);	
  	
 //적용예시	
- <script type="wisetracker/text id="wiseTracker">	
+ <script type="wisetracker/text id="wiseTracker">
  WiseTracker.setSearchKeyword("가디건");	
- WiseTracker.setSearchKeywordResult(1089);	
+ WiseTracker.setSearchKeywordResult(1089);
  </script>	
 ```	
 
@@ -230,50 +214,33 @@ WiseTracker.setSearchKeywordResult(검색결과 수);
 
 ### 1) Objective-C	
 ```Objective-C	
-상품 : [WiseTracker setOrderProductArray:@[@"상품코드1", @"상품코드2"]];	
-상품 카테고리 : [WiseTracker setOrderProductCategoryArray:@[@"상품 카테고리 코드1", @"상품 카테고리 코드2"]];	
-상품 구매금액 : [WiseTracker setOrderAmountArray:@[@A상품 구매 금액, @B상품 구매 금액]];	
-상품 주문수량 : [WiseTracker setOrderQuantityArray:@[@A상품 주문수량, @B상품 주문수량]];	
-주문이 발생한 페이지 : [WiseTracker setPageIdentity:@"ODR"];	
- 	
-//적용예시	
- [WiseTracker setOrderProductArray:@[@"PROD01",@"PROD02"]]; // 상품정보	
- [WiseTracker setOrderProductCategoryArray:@[@"CAT01",@"CAT02"]]; // 상품카테고리	
- [WiseTracker setOrderAmountArray:@[@10000, @20000]]; // 주문 상품 총액 (합계)	
- [WiseTracker setOrderQuantityArray:@[@1, @2]]; // 주문	
+ [WiseTracker setOrderProductArray:@[@"PROD01",@"PROD02"]]; // 상품정보
+ [WiseTracker setOrderProductCategoryArray:@[@"CAT01",@"CAT02"]]; // 상품카테고리
+ [WiseTracker setOrderAmountArray:@[@10000, @20000]]; // 주문 상품 총액 (합계)
+ [WiseTracker setOrderQuantityArray:@[@1, @2]]; // 주문 수량
+ [WiseTracker setPageIdentity:@"ODR"]; // 주문페이지 PI세팅
+ [WiseTracker sendTransaction]; // 데이터 전송
 ```	
 
 ### 2) Swift	
 ```Swift	
-상품 : WiseTracker.setOrderProductArray(["상품코드1", "상품코드2"])	
-상품 카테고리 : WiseTracker.setOrderProductCategoryArray(["상품 카테고리 코드1", "상품 카테고리 코드2"])	
-상품 구매금액 : WiseTracker.setOrderAmountArray([A상품 구매 금액, B상품 구매 금액])	
-상품 주문수량 : WiseTracker.setOrderQuantityArray([A상품 주문수량, B상품 주문수량])	
-주문이 발생한 페이지 : WiseTracker.setPageIdentity("ODR")	
- 	
-//적용예시	
- WiseTracker.setOrderProductArray(["PROD01","PROD02"]) // 상품정보	
- WiseTracker.setOrderProductCategoryArray(["CAT01","CAT02"]) // 상품카테고리	
- WiseTracker.setOrderAmountArray([10000, 20000]) // 주문 상품 총액 (합계)	
- WiseTracker.setOrderQuantityArray ([1, 2]) // 주문	
- WiseTracker.setPageIdentity("ODR") // 주문완료	
+ WiseTracker.setOrderProductArray(["PROD01","PROD02"]) // 상품정보
+ WiseTracker.setOrderProductCategoryArray(["CAT01","CAT02"]) // 상품카테고리
+ WiseTracker.setOrderAmountArray([10000, 20000]) // 주문 상품 총액 (합계)
+ WiseTracker.setOrderQuantityArray ([1, 2]) // 주문 수량
+ WiseTracker.setPageIdentity("ODR") // 주문페이지 PI세팅
+ WiseTracker.sendTransaction() // 데이터 전송
 ```	
 
 ### 3) WebView	
 ```Java script	
-상품 : WiseTracker.setOrderProductArray({"상품코드1", "상품코드2"});	
-상품 카테고리 : WiseTracker.setOrderProductCategoryArray({"상품 카테고리 코드1", "상품 카테고리 코드2"});	
-상품 구매금액 : WiseTracker.setOrderAmountArray({A상품 구매 금액, B상품 구매 금액});	
-상품 주문수량 : WiseTracker.setOrderQuantityArray({A상품 주문수량, B상품 주문수량});	
-주문이 발생한 페이지 : WiseTracker.setPageIdentity("ODR");	
- 	
-//적용예시	
- <script type="wisetracker/text" id="wiseTracker">	
- WiseTracker.setOrderProductArray({"PROD01","PROD02"}); // 상품정보	
- WiseTracker.setOrderProductCategoryArray({"CAT01","CAT02"}); // 상품카테고리	
- WiseTracker.setOrderAmountArray({10000, 20000}); // 주문 상품 총액 (합계)	
- WiseTracker.setOrderQuantityArray ({1, 2}); // 주문	
- WiseTracker.setPageIdentity("ODR"); // 주문완료	
+ <script type="wisetracker/text" id="wiseTracker">
+ WiseTracker.setOrderProductArray(["PROD01","PROD02"]); // 상품정보
+ WiseTracker.setOrderProductCategoryArray(["CAT01","CAT02"]); // 상품카테고리
+ WiseTracker.setOrderAmountArray([10000, 20000]); // 주문 상품 총액 (합계)
+ WiseTracker.setOrderQuantityArray ([1, 2]); // 주문
+ WiseTracker.setPageIdentity("ODR"); // 주문페이지 PI세팅
+ WiseTracker.sendTransaction(); // 데이터 전송
  </script>	
 ```	
 
