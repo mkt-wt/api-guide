@@ -1,4 +1,5 @@
-#Premium 연동 API
+# Premium 연동 API
+
 Wisetracker의 모든 고급기능을 사용할 수 있는 Premium Plan을 도입했다면 아래 Premium 연동 API를 적용하여 고급기능에 필요한 데이터들을 앱에서 수집할 수 있게 됩니다.
 
 ## 1. 사용자분석
