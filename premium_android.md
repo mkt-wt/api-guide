@@ -1,32 +1,33 @@
-#Premium 연동 API
+# Premium 연동 API
 Wisetracker의 모든 고급기능을 사용할 수 있는 Premium Plan을 도입했다면 아래 Premium 연동 API를 적용하여 고급기능에 필요한 데이터들을 앱에서 수집할 수 있게 됩니다.
 
-## 1. 사용자분석
-사용자의 성별, 연령대, 회원등급 등을 분석하기 위해 해당 정보를 수집하는 코드를 삽입합니다.
+## 1. 사용자 분석
 
-적용위치 : 회원가입 완료화면 및 로그인 완료화면
+### 1) 회원 가입
 
+앱을 설치한 이후 회원 가입이 얼마나 많이 발생하는지 확인할 수 있게 됩니다. 이메일, 전화번호, 소셜 미디어 계정 등 다양한 수단으로 회원 가입이 가능한 경우, Goal API를 추가 사용해 각 수단별 회원 가입을 분석할 수 있습니다.
+
+– 적용 위치: 회원 가입 완료 화면
+
+```Android
+WiseTracker.setGoal("g1", 1 )
+WiseTracker.sendGoalData()
 ```
-남성 : WiseTracker.setGender(WiseTracker.GENDER_MALE);
-여성 : WiseTracker.setGender(WiseTracker.GENDER_FEMALE);
-기타 : WiseTracker.setGender(WiseTracker.GENDER_ETC);
 
-10대 이하 : WiseTracker.setAge(WiseTracker.AGE_0_TO_9);
-10대 : WiseTracker.setAge(WiseTracker.AGE_10_TO_19);
-20대 : WiseTracker.setAge(WiseTracker.AGE_20_TO_29);
-30대 : WiseTracker.setAge(WiseTracker.AGE_30_TO_39);
-40대 : WiseTracker.setAge(WiseTracker.AGE_40_TO_49);
-50대 : WiseTracker.setAge(WiseTracker.AGE_50_TO_59);
-60대 이상 : WiseTracker.setAge(WiseTracker.AGE_60_OVER);
+### 2) 로그인 분석	
+얼마나 많은 사용자들이 로그인을 하는지 확인할 수 있게 됩니다. 추가 API를 적용하면 로그인 하는 사용자의 인구통계 & 회원 속성 정보, 그리고 로그인 수단별 로그인 횟수를 분석할 수 있습니다.	
 
- 회원속성 : WiseTracker.setUserAttribute( WiseTracker.USER_ATTRIBUTE_1,"custom value");
-USER_ATTRIBUTE는 회원의 다양한 속성(회원등급, 직업, 외국인 여부 등)을 분류할 필요가 있을 때 사용합니다.
+- 적용위치 : 로그인 완료화면	
+– 주의사항: 자동 로그인, 소셜 로그인 등 모든 로그인 완료에 적용
 
-//적용예시
- WiseTracker.setGender(WiseTracker.GENDER_MALE ); // 성별
- WiseTracker.setAge(WiseTracker.AGE_20_TO_29 ); // 연령 
- WiseTracker.setUserAttribute(WiseTracker.USER_ATTRIBUTE_1,"VIP" ); // 회원 분류
-```
+```Android	
+WiseTracker.setGoal("g2", 1)
+WiseTracker.setGoal("g6", 1)
+WiseTracker.setGender("A")
+WiseTracker.setAge("C")
+WiseTracker.setUserAttribute("uvp1", "B")
+WiseTracker.sendTransaction()
+```	
  
 
 ## 2. 화면분석
@@ -109,26 +110,5 @@ WiseTracker.setSearchKeywordResult(검색결과 수);
  WiseTracker.setPageIdentity("ODR"); // 주문완료
 ```
 
-## 5. Custom Goals 분석
-각 고객사마다 비즈니스 환경과 분석 대상이 다릅니다. 상품구매 외에 가입, 상담 문의 등도 전환으로 지정해 성과 값을 수집할 필요가 있습니다. 이런 Custom 전환성과를 분석하기 위해 코드를 삽입합니다.
-
-적용위치 : 전환 완료 화면
-
-```
-WiseTracker.setGoal(WiseTracker.GOAL_1, 1);
-
-//WiseTracker.GOAL_1~10 까지 사용 가능하며, 전환 완료 화면이 존재하지 않는 경우 버튼에 적용해 측정할 수도 있습니다.
-//장바구니 담기 버튼, SNS 공유 버튼 등
-*Click Event 분석을 위한 sendTransaction
-sendTransaction 함수가 호출되면, 분석한 데이터를 SDK가 즉시 서버로 전송합니다.
-따라서 Button에 대한 Click Event와 같이 Activity의 전환 없이 발생하는 Event를 측정하기 위해 사용합니다.
-
-적용위치 : Activity 전환이 없는 Event 중 측정이 필요한 것 (배너 클릭, SNS 공유, 위시 리스트 등록 등)
-public void CommonBtnEvt(View v){
-	WiseTracker.setGoal(WiseTracker.GOAL_1,1);
-	WiseTracker.sendTransaction();
-}
-
-```
  
 
