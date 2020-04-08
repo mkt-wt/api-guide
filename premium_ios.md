@@ -162,9 +162,9 @@ WiseTracker.setContents("^1st depth value^2dn depth value") // value는 반드�
 
 #### b) Swift	
 ```Swift	
- WiseTracker.setProduct("PROD01", "나이키")
- WiseTracker.setProductCategory("CAT01", "^신발")
- WiseTracker.setPageIdentity("PDV")	
+ WiseTracker.setProduct("PROD01", name: "나이키")
+ WiseTracker.setProductCategory("CAT01", name: "^신발")
+ WiseTracker.setPageIdentity("PDV")
 ```	
 
 #### c) WebView	
