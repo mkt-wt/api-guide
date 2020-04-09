@@ -62,15 +62,15 @@ WiseTracker.sendClickData("EVT", "[TOPSELLER_W_SHO]");
 | PC | 탑셀러 1 depth 메뉴 | MEN 버튼 | [TOPSELLER_MEN] |  |
 | PC | 탑셀러 1 depth 메뉴 | LIFE 버튼 | [TOPSELLER_LIFE] |  |
 | PC | 탑셀러 1 depth 메뉴 | BEAUTY 버튼 | [TOPSELLER_BEAUTY] |  |
-| PC | 탑셀러 2 depth 메뉴 | ALL WOMEN 버튼 | [TOPSELLER_W_ALL] | CSS의 `topseller_women` 클래스가 active 일때 나타나는 버튼 |
+| PC | 탑셀러 2 depth 메뉴 | ALL WOMEN 버튼 | [TOPSELLER_W_ALL] |  |
 | PC | 탑셀러 2 depth 메뉴 | APPAREL 버튼 | [TOPSELLER_W_APP] | CSS의 `topseller_women` 클래스가 active 일때 나타나는 버튼 |
 | PC | 탑셀러 2 depth 메뉴 | SHOES 버튼 | [TOPSELLER_W_SHO] | CSS의 `topseller_women` 클래스가 active 일때 나타나는 버튼 |
-| PC | 탑셀러 2 depth 메뉴 | BAGS 버튼 | [TOPSELLER_W_BAG] | CSS의 `topseller_women` 클래스가 active 일때 나타나는 버튼 |
-| PC | 탑셀러 2 depth 메뉴 | ACCESSORIES 버튼 | [TOPSELLER_W_ACC] | CSS의 CSS의 `topseller_women` 클래스가 active 일때 나타나는 버튼 |
-| PC | 탑셀러 2 depth 메뉴 | ALL MEN 버튼 | [TOPSELLER_ALL_M] | CSS의 `topseller_men` 클래스가 active 일때 나타나는 버튼 |
+| PC | 탑셀러 2 depth 메뉴 | BAGS 버튼 | [TOPSELLER_W_BAG] |  |
+| PC | 탑셀러 2 depth 메뉴 | ACCESSORIES 버튼 | [TOPSELLER_W_ACC] |  |
+| PC | 탑셀러 2 depth 메뉴 | ALL MEN 버튼 | [TOPSELLER_ALL_M] |  |
 | PC | 탑셀러 2 depth 메뉴 | APPAREL 버튼 | [TOPSELLER_M_APP] | CSS의 `topseller_men` 클래스가 active 일때 나타나는 버튼 |
 | PC | 탑셀러 2 depth 메뉴 | SHOES 버튼 | [TOPSELLER_M_SHO] | CSS의 `topseller_men` 클래스가 active 일때 나타나는 버튼 |
-| PC | 탑셀러 2 depth 메뉴 | BAG & ACC 버튼 | [TOPSELLER_M_BAG] | CSS의 `topseller_men` 클래스가 active 일때 나타나는 버튼 |
+| PC | 탑셀러 2 depth 메뉴 | BAG & ACC 버튼 | [TOPSELLER_M_BAG] |  |
 | PC | 탑셀러 2 depth 메뉴 | ALL LIFE 버튼 | [TOPSELLER_ALL_L] |  |
 | PC | 탑셀러 2 depth 메뉴 | HOME 버튼 | [TOPSELLER_L_HOM] |  |
 | PC | 탑셀러 2 depth 메뉴 | LIFEWEAR 버튼 | [TOPSELLER_L_LIF] |  |
@@ -92,15 +92,15 @@ WiseTracker.sendClickData("EVT", "[TOPSELLER_W_SHO]");
 | 모바일웹 & APP | 탑셀러 1 depth 메뉴 | MEN 버튼 | [M_TOPSELLER_MEN] |  |
 | 모바일웹 & APP | 탑셀러 1 depth 메뉴 | LIFE 버튼 | [M_TOPSELLER_LIFE] |  |
 | 모바일웹 & APP | 탑셀러 1 depth 메뉴 | BEAUTY 버튼 | [M_TOPSELLER_BEAUTY] |  |
-| 모바일웹 & APP | 탑셀러 2 depth 메뉴 | ALL WOMEN 버튼 | [M_TOPSELLER_W_ALL] | CSS의 `topseller_women` 클래스가 active 일때 나타나는 버튼 |
+| 모바일웹 & APP | 탑셀러 2 depth 메뉴 | ALL WOMEN 버튼 | [M_TOPSELLER_W_ALL] |  |
 | 모바일웹 & APP | 탑셀러 2 depth 메뉴 | APPAREL 버튼 | [M_TOPSELLER_W_APP] | CSS의 `topseller_women` 클래스가 active 일때 나타나는 버튼 |
 | 모바일웹 & APP | 탑셀러 2 depth 메뉴 | SHOES 버튼 | [M_TOPSELLER_W_SHO] | CSS의 `topseller_women` 클래스가 active 일때 나타나는 버튼 |
-| 모바일웹 & APP | 탑셀러 2 depth 메뉴 | BAGS 버튼 | [M_TOPSELLER_W_BAG] | CSS의 `topseller_women` 클래스가 active 일때 나타나는 버튼 |
-| 모바일웹 & APP | 탑셀러 2 depth 메뉴 | ACCESSORIES 버튼 | [TOPSELLER_W_ACC] | CSS의 `topseller_women` 클래스가 active 일때 나타나는 버튼 |
-| 모바일웹 & APP | 탑셀러 2 depth 메뉴 | ALL MEN 버튼 | [M_TOPSELLER_ALL_M] | CSS의 `topseller_men` 클래스가 active 일때 나타나는 버튼 |
+| 모바일웹 & APP | 탑셀러 2 depth 메뉴 | BAGS 버튼 | [M_TOPSELLER_W_BAG] |  |
+| 모바일웹 & APP | 탑셀러 2 depth 메뉴 | ACCESSORIES 버튼 | [TOPSELLER_W_ACC] |  |
+| 모바일웹 & APP | 탑셀러 2 depth 메뉴 | ALL MEN 버튼 | [M_TOPSELLER_ALL_M] |  |
 | 모바일웹 & APP | 탑셀러 2 depth 메뉴 | APPAREL 버튼 | [M_TOPSELLER_M_APP] | CSS의 `topseller_men` 클래스가 active 일때 나타나는 버튼 |
 | 모바일웹 & APP | 탑셀러 2 depth 메뉴 | SHOES 버튼 | [M_TOPSELLER_M_SHO] | CSS의 `topseller_men` 클래스가 active 일때 나타나는 버튼 |
-| 모바일웹 & APP | 탑셀러 2 depth 메뉴 | BAG & ACC 버튼 | [M_TOPSELLER_M_BAG] | CSS의 `topseller_men` 클래스가 active 일때 나타나는 버튼 |
+| 모바일웹 & APP | 탑셀러 2 depth 메뉴 | BAG & ACC 버튼 | [M_TOPSELLER_M_BAG] |  |
 | 모바일웹 & APP | 탑셀러 2 depth 메뉴 | ALL LIFE 버튼 | [M_TOPSELLER_ALL_L] |  |
 | 모바일웹 & APP | 탑셀러 2 depth 메뉴 | HOME 버튼 | [M_TOPSELLER_L_HOM] |  |
 | 모바일웹 & APP | 탑셀러 2 depth 메뉴 | LIFEWEAR 버튼 | [M_TOPSELLER_L_LIF] |  |
