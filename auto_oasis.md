@@ -191,8 +191,10 @@
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-	WiseTracker.setOrderProductArray(["상품코드"]); // 에어컨가스 충전 상품의 고유 코드
-	WiseTracker.setOrderProductCategoryArray(["상품이 속한 카테고리의 코드"]); // 에어컨가스 충전 상품이 속한 카테고리의 코유코드
+	WiseTracker.setOrderProductArray(["상품코드"]);
+	// 에어컨가스 충전 상품의 고유 코드
+	WiseTracker.setOrderProductCategoryArray(["상품 카테고리코드"]);
+	// 에어컨가스 충전 상품이 속한 카테고리의 코유코드
 	WiseTracker.setOrderQuantityArray([1]); // int
 	WiseTracker.setOrderAmountArray([55000]); // int, 할인을 반영한 금액 입력
 	WiseTracker.setOrderNo("주문번호");
@@ -206,7 +208,7 @@
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setOrderProductArray(["A상품코드","B상품코드"]);
 	// 에어컨가스 충전과 Kixx G1/D1 상품의 고유 코드
-	WiseTracker.setOrderProductCategoryArray(["A상품코드","B상품코드"]);
+	WiseTracker.setOrderProductCategoryArray(["A상품 카테고리코드","B상품 카테고리코드"]);
 	// 에어컨가스 충전과 Kixx G1/D1 상품이 속한 카테고리의 고유 코드
 	WiseTracker.setOrderQuantityArray([1, 2]); // int
 	WiseTracker.setOrderAmountArray([55000, 133850]); // int, 할인을 반영한 금액 입력
