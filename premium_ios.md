@@ -85,7 +85,7 @@ WiseTracker.sendTransaction()
 사용자 정의 화면 : [WiseTrackersetPageIdentity:@"custom value"];	
 // 사전 정의된 화면 이외의 화면을 분석하고자 할때 사용자 정의 화면코드를 활용할 수 있습니다.	
 // "custom value"에 임의의 값을 넣어 원하는 화면에 코드를 삽입하면 되며	
-// "custom value"는 영문+숫자 조합의 6byte 이하의 문자열로 구성합니다.	
+// "custom value"는 영문+숫자 조합의 8자리 이하의 문자열로 구성합니다.	
 ```	
 
 ### 2) Swift	
