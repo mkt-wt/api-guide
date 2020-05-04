@@ -14,10 +14,10 @@
 	* [오토케어 워시](./auto_oasis.md#오토케어-워시)
 	* [Kixx 엔진오일](./auto_oasis.md#Kixx-엔진오일) -->
 * [화면 조회 분석 API](./auto_oasis.md#화면-조회-분석-API)
-	* [메인](./auto_oasis.md#메인)
-	* [메인](./auto_oasis.md#메인)
-	* [메인](./auto_oasis.md#메인)
-
+	* [출장정비](./auto_oasis.md#출장정비)
+	* [출장정비 예약 및 결제](./auto_oasis.md#출장정비-예약-및-결제)
+	* [엔진오일 특가](./auto_oasis.md#엔진오일-특가)
+	* [결제](./auto_oasis.md#결제)
 <!--	* [메인](./auto_oasis.md#메인)
 	* [설정](./auto_oasis.md#설정)
 	* [차량정보 등록](./auto_oasis.md#차량정보-등록)
@@ -145,78 +145,6 @@
 	WiseTracker.setPageIdentity("PRECHECK");
 </script>
 ```
-
-
-
-<!--
-### 메인
-
-메인 화면 내에 아래 코드를 적용해 주시기 바랍니다.
-``` html
-<!-- html 페이지 상에서 와이즈트래커 SDK 참조 -->
-<!-- script type 이 javascript 가 아닌 것을 주의 -->
-<script type="wisetracker/text" id="wiseTracker">
-	WiseTracker.setPageIdentity("MAIN001");
-</script>
-```
-
-
-
-### 설정
-
-설정 화면 내에 아래 코드를 적용해 주시기 바랍니다.
-``` html
-<!-- html 페이지 상에서 와이즈트래커 SDK 참조 -->
-<!-- script type 이 javascript 가 아닌 것을 주의 -->
-<script type="wisetracker/text" id="wiseTracker">
-	WiseTracker.setPageIdentity("CONF");
-</script>
-```
-
-
-
-### 차량정보 등록
-
-차량정보 등록 화면에 있는 코드를 아래와 같이 수정해 주시기 바랍니다. 만약 코드가 없다면 아래 코드를 추가하면 됩니다.
-![차량정보 등록화면](http://www.wisetracker.co.kr/wp-content/uploads/2020/03/ao001.jpg)
-``` html
-<!-- html 페이지 상에서 와이즈트래커 SDK 참조 -->
-<!-- script type 이 javascript 가 아닌 것을 주의 -->
-<script type="wisetracker/text" id="wiseTracker">
-	WiseTracker.setPageIdentity("CAR002"); //과거에 추가된 부분
-	WiseTracker.sendTransaction(); //새로 추가할 라인
-</script>
-```
-
-
-
-### 차량정보 저장 완료
-
-차량정보가 정상적으로 등록되면 나타나는 alert 에 아래 코드를 적용해 주시기 바랍니다.
-![자량정보 저장완료](http://www.wisetracker.co.kr/wp-content/uploads/2020/03/ao003.jpg)
-
-``` javascript
-<script>
-	alert('차량등록이 완료되었습니다.');
-	// 와이즈트래커 분석코드 추가
-	WiseTracker.setPageIdentity("CONF");
-	WiseTracker.sendTransaction();
-</script>
-```
-
-
-
-### 회원가입 약관동의
-
-회원가입 약관동의 화면 내에 아래 코드를 적용해 주시기 바랍니다.
-``` html
-<!-- html 페이지 상에서 와이즈트래커 SDK 참조 -->
-<!-- script type 이 javascript 가 아닌 것을 주의 -->
-<script type="wisetracker/text" id="wiseTracker">
-	WiseTracker.setPageIdentity("RGF004");
-</script>
-```
--->
 
 
 ## 구매 분석 API
