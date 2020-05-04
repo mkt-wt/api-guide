@@ -6,26 +6,33 @@
 
 
 # Index
-
+<!--
 * [SDK 업데이트 (AOS & iOS)](./auto_oasis.md#SDK-업데이트)
 * [클릭 분석 API](./auto_oasis.md#클릭-분석-API)
 	* [수입유 특가](./auto_oasis.md#수입유-특가)
 	* [출장 정비](./auto_oasis.md#출장-정비)
 	* [오토케어 워시](./auto_oasis.md#오토케어-워시)
-	* [Kixx 엔진오일](./auto_oasis.md#Kixx-엔진오일)
+	* [Kixx 엔진오일](./auto_oasis.md#Kixx-엔진오일) -->
 * [화면 조회 분석 API](./auto_oasis.md#화면-조회-분석-API)
 	* [메인](./auto_oasis.md#메인)
+	* [메인](./auto_oasis.md#메인)
+	* [메인](./auto_oasis.md#메인)
+
+<!--	* [메인](./auto_oasis.md#메인)
 	* [설정](./auto_oasis.md#설정)
 	* [차량정보 등록](./auto_oasis.md#차량정보-등록)
 	* [차량정보 저장 완료](./auto_oasis.md#차량정보-저장-완료)
 	* [회원가입 약관동의](./auto_oasis.md#회원가입-약관동의)
+	* [회원가입 약관동의](./auto_oasis.md#회원가입-약관동의)
+	* [회원가입 약관동의](./auto_oasis.md#회원가입-약관동의)
+	* [회원가입 약관동의](./auto_oasis.md#회원가입-약관동의) -->
 * [구매 분석 API](./auto_oasis.md#구매-분석-API)
 	* [적용 예시](./auto_oasis.md#적용-예시)
 * [적용 후 데이터 검증](./auto_oasis.md#적용-후-데이터-검증)
 	* [AOS](./auto_oasis.md#AOS)
 	* [iOS](./auto_oasis.md#iOS)
 
-
+<!--
 
 ## SDK 업데이트
 
@@ -87,14 +94,61 @@
 </script>
 ```
 
-
+-->
 
 ## 화면 조회 분석 API
 
-앱 개편으로 인해 분석 코드가 영향을 받았습니다. 이에 따라 화면 PV를 분석하는 일부 코드들이 영향을 받았습니다. 아래 내용은 부정확한 데이터가 들어오고 있는 화면들에 대한 수정 방법 안내입니다. 내용을 숙지하시어 수정사항을 반영해 주시기 바랍니다.
+### 출장정비
+출장정비 화면에 아래 코드를 추가해주시기 바랍니다.
+
+![출장정비](http://www.wisetracker.co.kr/wp-content/uploads/2020/05/KakaoTalk_20200504_115427679.jpg)
+
+``` html
+<script type="wisetracker/text" id="wiseTracker">
+	WiseTracker.setPageIdentity("OSERV00");
+</script>
+```
+
+### 출장정비 예약 및 결제
+출장정비 예약 및 결제 화면에 아래 코드를 추가해주시기 바랍니다.
+
+![출장정비예약결제](http://www.wisetracker.co.kr/wp-content/uploads/2020/05/KakaoTalk_20200504_115427802.jpg)
+
+``` html
+<script type="wisetracker/text" id="wiseTracker">
+	WiseTracker.setPageIdentity("OSERV01");
+</script>
+```
 
 
 
+### 엔진오일 특가
+엔진오일 특가 화면에 아래 코드를 추가해주시기 바랍니다.
+
+![엔진오일 특가](http://www.wisetracker.co.kr/wp-content/uploads/2020/05/KakaoTalk_20200504_115428069.jpg)
+
+``` html
+<script type="wisetracker/text" id="wiseTracker">
+	WiseTracker.setPageIdentity("ENGOIL");
+</script>
+```
+
+
+### 결제
+결제 화면에 아래 코드를 추가해주시기 바랍니다.
+
+![결제](http://www.wisetracker.co.kr/wp-content/uploads/2020/05/KakaoTalk_20200504_141208272.jpg)
+
+
+``` html
+<script type="wisetracker/text" id="wiseTracker">
+	WiseTracker.setPageIdentity("PRECHECK");
+</script>
+```
+
+
+
+<!--
 ### 메인
 
 메인 화면 내에 아래 코드를 적용해 주시기 바랍니다.
@@ -162,7 +216,7 @@
 	WiseTracker.setPageIdentity("RGF004");
 </script>
 ```
-
+-->
 
 
 ## 구매 분석 API
