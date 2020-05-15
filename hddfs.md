@@ -42,11 +42,15 @@
 
 
 # SDK 삽입
-각 플랫폼별 온라인 가이드를 참고해서 SDK를 삽입해 주시면 됩니다. 아래 가이드의 3번 '필수 연동 API' 까지는 반드시 적용해 주셔야 하며, Facebook 분석을 위한 연동은 optional 이며, WAFI 는 적용하지 않습니다.
+각 플랫폼별 온라인 가이드를 참고해서 SDK를 삽입해 주시면 됩니다.
+* 아래 안드로이드 가이드의 **2.2 Facebook 광고성과 분석 설정**은 필요한 경우에만 적용해주세요.
+* 아래 안드로이드 가이드의 **2.3 인스톨 레퍼러 자체 분석 설정정**은 적용하지 않아야 합니니다.
+* 아래 iOS 가이드의 **2.3 Facebook 광고성과 분석을 위한 설정**은 필요한 경우에만 적용해주세요.
 
--[AOS](https://bintray.com/beta/#/tracker/maven/SDK_V1?tab=readme)
 
--[iOS](https://github.com/WisetrackerTechteam/wisetrackerSDK)
+-[AOS](http://document.wisetracker.co.kr/v1/docs/sdk/android/android-install-guide)
+
+-[iOS](http://document.wisetracker.co.kr/v1/docs/sdk/ios/ios-install-guide)
 
 ## 분석 API
 데이터 분석용 API와 태깅 방법을 안내합니다.
@@ -264,6 +268,7 @@ WiseTracker.setOrderProductArray(["A상품코드", "B상품코드"]);
 WiseTracker.setOrderQuantityArray([A상품수량, B상품수량]);
 WiseTracker.setOrderAmountArray([A결제금액, B결제금액]);
 WiseTracker.setOrderCustomMvtTagArray(["A브랜드명", "B브랜드명"]);
+WiseTracker.setOrderNo("주문번호");
 WiseTracker.setPageIdentity("ODR");
 WiseTracker.sendTransaction();
 ```
@@ -276,6 +281,7 @@ WiseTracker.sendTransaction();
 	WiseTracker.setOrderQuantityArray([2]);
 	WiseTracker.setOrderAmountArray([650]);
 	WiseTracker.setOrderCustomMvtTagArray(["新秀丽"]);
+	WiseTracker.setOrderNo("O12345677");
 	WiseTracker.setPageIdentity("ODR");
 	WiseTracker.sendTransaction();
 </script>
@@ -289,6 +295,7 @@ WiseTracker.sendTransaction();
 	WiseTracker.setOrderQuantityArray([2, 1]);
 	WiseTracker.setOrderAmountArray([650, 27]);
 	WiseTracker.setOrderCustomMvtTagArray(["新秀丽", "3CE"]);
+	WiseTracker.setOrderNo("O12345678");
 	WiseTracker.setPageIdentity("ODR");
 	WiseTracker.sendTransaction();
 </script>
