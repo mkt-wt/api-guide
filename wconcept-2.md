@@ -7,9 +7,9 @@
 
 # Index
 
-* [클릭 분석 API](./wconcept.md#클릭-분석-API)
-	* [적용 예시](./wconcept.md#적용-예시)
-	* [매핑 테이블](./wconcept.md#매핑-테이블)
+* [클릭 분석 API](./wconcept-2.md#클릭-분석-API)
+	* [적용 예시](./wconcept-2.md#적용-예시)
+	* [매핑 테이블](./wconcept-2.md#매핑-테이블)
 
 
 
