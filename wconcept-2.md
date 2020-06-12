@@ -67,7 +67,7 @@ _trk_clickTrace(\"EVT\", \"[SEARCH]\");
 | 모바일웹 & APP | 메인 페이지 | 검색버튼(돋보기) | [M_SEARCH] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/05/wcon001.jpg) |
 | 모바일웹 & APP | 검색 페이지 | 하단 배너 | [M_SEARCH_BANNER] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/05/wcon004.jpg) |
 | 모바일웹 & APP | LNB | 하단 배너 | [M_LNB_BANNER] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/05/wcon005.jpg) |
-| 하기 사항은 2020년 6월 12일에 추가하였습니다. |
+| 하기 사항은 | 2020년 6월 12일에 | 추가하였습니다. |
 | PC | 필터 메뉴 | 'FILTER+' 버튼 | [filter] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/06/wcon_pc.png) |
 | PC | 필터 메뉴 | 'CATEGORY' 버튼 | [filter_category] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/06/wcon_pc.png) |
 | PC | 필터 메뉴 | 'BRAND' 버튼 | [filter_brand] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/06/wcon_pc.png) |
