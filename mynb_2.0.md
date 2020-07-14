@@ -136,10 +136,10 @@
 
 <script type="text/javascript">
 	var purchase = new Object(); 
-	purchase["ordNo"] = "tr012345"
-	purchase["curcy"] = "KRW"
+	purchase["ordNo"] = "tr012345";
+	purchase["curcy"] = "KRW";
 	let product1 = new Object();
-	product1["pnc"] = "asdf123"
+	product1["pnc"] = "asdf123";
 	product1["pncNm"] = "NB 우먼스 클래스 3개월 패키지";
 	product1["amt"] = 550000;
 	product1["ea"] = 1;
