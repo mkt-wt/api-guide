@@ -17,6 +17,7 @@
 * [Universal Link 설정](./mynb_2.0.md#Universal-Link-설정)
 * [와이즈트래커 2.0 SDK 추가](./mynb_2.0.md#와이즈트래커-20-SDK-추가)
 * [인앱 이벤트 API 추가](./mynb_2.0.md#인앱-이벤트-API-추가)
+	* [구매](./mynb_2.0.md#구매)
 	* [로그인](./mynb_2.0.md#로그인)
 	* [회원가입](./mynb_2.0.md#회원가입)
 	* [메뉴 클릭 측정](./mynb_2.0.md#메뉴-클릭-측정)
@@ -31,9 +32,9 @@
 	* [기부 완료 측정](./mynb_2.0.md#기부-완료-측정)
 	* [스트라바 포인트 전환 완료 측정](./mynb_2.0.md#스트라바-포인트-전환-완료-측정)
 	* [우먼스 클래스 & 우먼스클래스 이용권 버튼 클릭 측정](./mynb_2.0.md#우먼스-클래스-&-우먼스클래스-이용권-버튼-클릭-측정)
-
 * [화면별 페이지뷰 측정용 API 추가](./mynb_2.0.md#화면별-페이지뷰-측정용-API-추가)
 	* [매핑 테이블](./mynb_2.0.md#매핑-테이블-1)
+	* [상품 화면](./mynb_2.0.md#상품-화면)
 	* [로그인 화면](./mynb_2.0.md#로그인-화면---Hybrid)
 	* [회원가입 화면](./mynb_2.0.md#회원가입-화면---Hybrid)
 	* [포인트 화면](./mynb_2.0.md#포인트-화면---Hybrid)
@@ -43,6 +44,8 @@
 	* [기타 화면](./mynb_2.0.md#기타-화면---Hybrid)
 	* [네이티브 화면](./mynb_2.0.md#네이티브-화면)
 * [웹 컨버전 스크립트 추가](./mynb_2.0.md#웹-컨버전-스크립트-추가)
+  * [웹 SDK 추가]()
+  * [구매 측정]()
 
 
 
@@ -66,6 +69,86 @@
 ## 인앱 이벤트 API 추가
 
 유저가 앱 내에서 발생시킨 행동을 *인앱 이벤트* 라고 부르며 인앱 이벤트 API는 발생한 인앱 이벤트를 측정하는 역할을 합니다. 아래 내용을 참고하여 API를 적용해 주시기 바랍니다.
+
+
+
+### 구매
+
+유저가 우먼스 클래스, 우먼스 클래스 이용권, NBRC에 대해 비용을 지불하는 것을 '구매'로 간주합니다. 구매 완료 화면에 아래 코드를 추가해 주세요.
+
+
+
+#### 주의사항
+
+구매 완료 화면에 기 적용된 와이즈트래커 코드가 있을 것입니다. 해당 코드를 아래 내용으로 업데이트 해주시기 바랍니다.
+
+
+
+#### 측정 API
+
+**Hybrid**
+
+``` javascript
+<script type="wisetracker/text" id="wiseTracker">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
+	WiseTracker.setOrderProductArray(["상품ID"]);
+	WiseTracker.setOrderQuantityArray([구매수량]);
+	WiseTracker.setOrderAmountArray([구매금액]);
+	WiseTracker.setOrderNo("주문번호");
+	WiseTracker.setPageIdentity("ODR");
+	WiseTracker.sendTransaction();
+</script>
+
+<script type="text/javascript">
+	var purchase = new Object(); 
+	purchase["ordNo"] = "주문번호"
+	purchase["curcy"] = "KRW"
+	let product1 = new Object();
+	product1["pnc"] = "상품ID"
+	product1["pncNm"] = "상품명"
+	product1["amt"] = 구매금액
+	product1["ea"] = 구매수량
+	var productArray = new Array();
+	productArray.append(product1)
+	purchase["product"] = productArray
+	DOT.logPurchase(purchase)
+</script>
+```
+
+
+
+#### 적용예시
+
+*NB 우먼스 클래스 3개월 패키지* 상품을 구매한 경우 구매 완료 화면에 다음과 같이 적용
+
+**Hybrid**
+
+``` javascript
+<script type="wisetracker/text" id="wiseTracker">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
+	WiseTracker.setOrderProductArray(["asdf123"]);
+	WiseTracker.setOrderQuantityArray([1]);
+	WiseTracker.setOrderAmountArray([550000]);
+	WiseTracker.setOrderNo("tr012345");
+	WiseTracker.setPageIdentity("ODR");
+	WiseTracker.sendTransaction();
+</script>
+
+<script type="text/javascript">
+	var purchase = new Object(); 
+	purchase["ordNo"] = "tr012345"
+	purchase["curcy"] = "KRW"
+	let product1 = new Object();
+	product1["pnc"] = "asdf123"
+	product1["pncNm"] = "NB 우먼스 클래스 3개월 패키지"
+	product1["amt"] = 550000
+	product1["ea"] = 1
+	var productArray = new Array();
+	productArray.append(product1)
+	purchase["product"] = productArray
+	DOT.logPurchase(purchase)
+</script>
+```
 
 
 
@@ -968,8 +1051,6 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	// 클릭된 상품의 상품ID로 replace 필요
 	event["pncNm"] = "상품명"
 	// 클릭된 상품의 상품명으로 replace 필요
-	event["pg1"] = "카테고리명"
-	// '카테고리명' 부분은 '우먼스클래스', '우먼스클래스 이용권' 둘 중 하나로 replace 필요
 	event["contents_path"] = "sports^상품명^버튼타입"
 	// '버튼타입' 부분은 '신청하기', '공유' 둘 중 하나로 replace 필요
 </script>
@@ -992,7 +1073,6 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	event["pi"] = "PDV"
 	event["pnc"] = "qwer123"
 	event["pncNm"] = "한강 피크닉_SUP WORKOUT"
-	event["pg1"] = "우먼스클래스"
 	event["contents_path"] = "sports^한강 피크닉_SUP WORKOUT^신청하기"
 	DOT.logEvent(event);
 </script>
@@ -1015,7 +1095,6 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	event["pi"] = "PDV"
 	event["pnc"] = "asdf123"
 	event["pncNm"] = "NB 우먼스 클래스 6개월 패키지"
-	event["pg1"] = "우먼스클래스 이용권"
 	event["contents_path"] = "sports^NB 우먼스 클래스 6개월 패키지^공유"
 	DOT.logEvent(event);
 </script>
@@ -1088,6 +1167,65 @@ API 적용 중 각 화면의 '화면코드'를 입력하는 부분이 있습니�
 | 51 | 주문서 | ODF | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/ODF.jpg) |
 | 52 | 바코드 | barcode | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/barcode.jpg) |
 | 53 | 설정 | setting | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/setting.jpg) |
+
+
+
+### 상품 화면
+
+MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용권, NBRC를 의미합니다(유료 결제가 가능한 것들). 우먼스 클래스, 우먼스 클래스 이용권, NBRC 상세화면 내에 아래 코드를 추가해 주세요.
+
+
+
+#### 주의사항
+
+상기 화면에 기 적용된 와이즈트래커 코드가 있을 것입니다. 해당 코드를 아래 내용으로 업데이트 해주시기 바랍니다.
+
+
+
+#### 측정 API
+
+``` javascript
+<script type="wisetracker/text" id="wiseTracker">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
+	WiseTracker.setProduct("상품ID", "상품명");
+	// '상품ID'와 '상품명'은 해당 화면에 노출된 상품의 ID와 명칭으로 replace 필요
+	WiseTracker.setPageIdentity("PDV");
+</script>
+
+<script type="text/javascript">
+	var screen = new Object(); 
+	screen["pi"] = "PDV";
+	var product = new Object();
+	product["pnc"] = "상품ID";
+	product["pncNm"] = "상품명";
+	// '상품ID'와 '상품명'은 해당 화면에 노출된 상품의 ID와 명칭으로 replace 필요
+	screen["product"] = product;
+	DOT.logScreen(screen);
+</script>
+```
+
+
+
+#### 적용예시
+
+'7월 케틀벨 워크아웃(2회)' 우먼스 클래스의 화면 내에 경우 다음과 같이 적용
+
+``` javascript
+<script type="wisetracker/text" id="wiseTracker">
+    WiseTracker.setProduct("zxc123", "7월 케틀벨 워크아웃(2회)");
+    WiseTracker.setPageIdentity("PDV");
+</script>
+
+<script type="text/javascript">
+	var screen = new Object(); 
+	screen["pi"] = "PDV";
+	var product = new Object();
+	product["pnc"] = "zxc123";
+	product["pncNm"] = "7월 케틀벨 워크아웃(2회)";
+	screen["product"] = product;
+	DOT.logScreen(screen);
+</script>
+```
 
 
 
@@ -1468,6 +1606,8 @@ DOT.logScreen(screen)
 
 '바코드' 화면 내에 경우 다음과 같이 적용
 
+
+
 **Android**
 
 ``` java
@@ -1504,5 +1644,80 @@ let screen = NSMutableDictionary()
 screen["event"] = "menu"
 screen["pi"] = "barcode"
 DOT.logScreen(screen)
+```
+
+
+
+
+## 웹 컨버전 스크립트 추가
+
+MyNB 앱 내의 링크를 클릭해 온라인샵으로 랜딩된 후 발생하는 구매 전환을 측정하기 위해 다음 두가지 작업이 필요합니다.
+
+
+
+### 웹 SDK 추가
+
+온라인샵(m.nbkorea.com)에 와이즈트래커 웹 SDK를 아래와 같이 추가합니다. 사이트 전역에 include 되어야 합니다.
+
+``` html
+<head>
+...
+<script src="https://cdn.wisetracker.co.kr/wa/js/wiseWebTrack.js"></script>
+</head>
+```
+
+
+
+그리고 사이트 모든 페이지의 `$(document).ready()` 내에서 와이즈트래커 초기화 함수를 호출해 주시기 바랍니다.
+
+``` javascript
+$(document).ready(function(){
+	_wiseWebTrack.init();
+	// webTracker 초기화
+});
+```
+
+
+
+### 구매 측정
+
+온라인샵의 구매 완료 화면에 아래 코드를 추가해 주세요.
+
+
+
+**측정 API**
+
+``` javascript
+_wiseWebTrack.js2sSendToServer({
+		PAGES:[{"pi":"ODR"}],
+		REVENUE:[{"ea":"구매수량","amt":"구매금액","pnc":"상품ID","ordNo":"주문번호"}]
+});
+```
+
+
+
+**적용예시 1**
+
+*NB X T&T FLIPFLOP* 1개를 구매한 경우 구매 완료 화면에 다음과 같이 적용
+
+``` javascript
+_wiseWebTrack.js2sSendToServer({
+		PAGES:[{"pi":"ODR"}],
+		REVENUE:[{"ea":"1","amt":"44000","pnc":"NBRJAF410B","ordNo":"tr123456"}]
+});
+```
+
+
+
+**적용예시 2**
+
+*NB X T&T FLIPFLOP* 1개와 *ML850KL1* 2개를 구매한 경우 구매 완료 화면에 다음과 같이 적용
+
+``` javascript
+_wiseWebTrack.js2sSendToServer({
+		PAGES:[{"pi":"ODR"}],
+		REVENUE:[{"ea":"1;2","amt":"44000;278000","pnc":"NBRJAF410B;NBPDAS192Q","ordNo":"tr98765"}]
+    	// 세미콜론을 구분자로 사용하여 하나의 value 내에 복수의 정보를 입력하게 됨
+});
 ```
 
