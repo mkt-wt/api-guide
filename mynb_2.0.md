@@ -88,7 +88,7 @@
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setOrderProductArray(["상품ID"]);
