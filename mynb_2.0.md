@@ -256,7 +256,7 @@ DOT.setUser(
 	DOT.logEvent(event); //로그인 이벤트 측정
 
 	DOT.setUser(User.setGender("성별")
-					.setAge("연령대")); //유저 정보 측정
+		.setAge("연령대")); //유저 정보 측정
 </script>
 ```
 
@@ -275,9 +275,9 @@ eventMap.put("loginTp", "NB_account");
 DOT.logEvent(eventMap);
 
 User user = new User.Builder()
-					.setGender("female") //매핑 테이블 참고
-					.setAge("20s") //매핑 테이블 참고
-					.build();
+		.setGender("female") //매핑 테이블 참고
+		.setAge("20s") //매핑 테이블 참고
+		.build();
 DOT.setUser(user);
 ```
 
@@ -330,7 +330,7 @@ DOT.setUser(
 	DOT.logEvent(event);
 
 	DOT.setUser(User.setGender("female") //매핑 테이블 참고
-					.setAge("20s")); //매핑 테이블 참고
+		.setAge("20s")); //매핑 테이블 참고
 </script>
 ```
 
