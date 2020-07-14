@@ -1671,7 +1671,7 @@ MyNB 앱 내의 링크를 클릭해 온라인샵으로 랜딩된 후 발생하�
 그리고 사이트 모든 페이지의 `$(document).ready()` 내에서 와이즈트래커 초기화 함수를 호출해 주시기 바랍니다.
 
 ``` javascript
-$(document).ready(function(){
+$(document).ready(function({_wtno:10028,_wthst:"trk.wisetracker.co.kr",_wtufn:"ALL"}){
 	_wiseWebTrack.init();
 	// webTracker 초기화
 });
@@ -1717,7 +1717,7 @@ _wiseWebTrack.js2sSendToServer({
 _wiseWebTrack.js2sSendToServer({
 		PAGES:[{"pi":"ODR"}],
 		REVENUE:[{"ea":"1;2","amt":"44000;278000","pnc":"NBRJAF410B;NBPDAS192Q","ordNo":"tr98765"}]
-    	// 세미콜론을 구분자로 사용하여 하나의 value 내에 복수의 정보를 입력하게 됨
+		// 세미콜론을 구분자로 사용하여 하나의 value 내에 복수의 정보를 입력하게 됨
 });
 ```
 
