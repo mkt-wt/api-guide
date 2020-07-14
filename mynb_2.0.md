@@ -9,7 +9,7 @@
 
 적용 중 발생하는 문의사항은 아래 담당자에게 연락 주시기 바랍니다.
 
-> 허원철, fornew21c@wisetracker.co.kr
+> 허원철 팀장, fornew21c@wisetracker.co.kr
 
 
 
