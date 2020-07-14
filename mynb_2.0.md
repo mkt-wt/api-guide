@@ -1257,7 +1257,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 적용예시
 
-'비밀번호 찾기' 화면 내에 경우 다음과 같이 적용
+'비밀번호 찾기' 화면 내에 다음과 같이 적용
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
@@ -1302,7 +1302,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 적용예시
 
-'약관동의(영문) ' 화면 내에 경우 다음과 같이 적용
+'약관동의(영문) ' 화면 내에 다음과 같이 적용
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
@@ -1347,7 +1347,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 적용예시
 
-'퀴즈 상세 ' 화면 내에 경우 다음과 같이 적용
+'퀴즈 상세 ' 화면 내에 다음과 같이 적용
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
@@ -1444,7 +1444,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 적용예시
 
-'NBRC 리스트' 화면 내에 경우 다음과 같이 적용
+'NBRC 리스트' 화면 내에 다음과 같이 적용
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
@@ -1489,7 +1489,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 적용예시
 
-'멤버십 등급' 화면 내에 경우 다음과 같이 적용
+'멤버십 등급' 화면 내에 다음과 같이 적용
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
@@ -1533,7 +1533,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 적용예시
 
-'홈' 화면 내에 경우 다음과 같이 적용
+'홈' 화면 내에 다음과 같이 적용
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
@@ -1604,7 +1604,7 @@ DOT.logScreen(screen)
 
 #### 적용예시
 
-'바코드' 화면 내에 경우 다음과 같이 적용
+'바코드' 화면 내에 다음과 같이 적용
 
 
 
