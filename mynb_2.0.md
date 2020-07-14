@@ -111,7 +111,7 @@
 	var productArray = new Array();
 	productArray.append(product1)
 	purchase["product"] = productArray
-	DOT.logPurchase(purchase)
+	DOT.logPurchase(purchase);
 </script>
 ```
 
@@ -146,7 +146,7 @@
 	var productArray = new Array();
 	productArray.append(product1)
 	purchase["product"] = productArray
-	DOT.logPurchase(purchase)
+	DOT.logPurchase(purchase);
 </script>
 ```
 
@@ -421,7 +421,7 @@ WiseTracker.sendClickData("EVT", eventName: "메뉴_메뉴명칭")
 	event["event"] = "click_menu"
 	event["click_method"] = "메뉴명칭"
 	// '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
-	DOT.logEvent(event)
+	DOT.logEvent(event);
 </script>
 ```
 
@@ -485,7 +485,7 @@ WiseTracker.sendClickData("EVT", eventName: "메뉴_Ranking")
 	var event = new Object(); 
 	event["event"] = "click_menu"
 	event["click_method"] = "Ranking"
-	DOT.logEvent(event)
+	DOT.logEvent(event);
 </script>
 ```
 
@@ -605,7 +605,7 @@ let event = NSMutableDictionary()
 event["event"] = "home"
 event["pi"] = "home"
 event["contents_path"] = "home^상단배너^N-CLAY로 즐거운 여름 만들기"
-DOT.logEvent(event)
+DOT.logEvent(event);
 ```
 
 
