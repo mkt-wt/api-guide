@@ -101,16 +101,16 @@
 
 <script type="text/javascript">
 	var purchase = new Object(); 
-	purchase["ordNo"] = "주문번호"
-	purchase["curcy"] = "KRW"
+	purchase["ordNo"] = "주문번호";
+	purchase["curcy"] = "KRW";
 	let product1 = new Object();
-	product1["pnc"] = "상품ID"
-	product1["pncNm"] = "상품명"
-	product1["amt"] = 구매금액
-	product1["ea"] = 구매수량
+	product1["pnc"] = "상품ID";
+	product1["pncNm"] = "상품명";
+	product1["amt"] = 구매금액;
+	product1["ea"] = 구매수량;
 	var productArray = new Array();
-	productArray.append(product1)
-	purchase["product"] = productArray
+	productArray.append(product1);
+	purchase["product"] = productArray;
 	DOT.logPurchase(purchase);
 </script>
 ```
@@ -140,12 +140,12 @@
 	purchase["curcy"] = "KRW"
 	let product1 = new Object();
 	product1["pnc"] = "asdf123"
-	product1["pncNm"] = "NB 우먼스 클래스 3개월 패키지"
-	product1["amt"] = 550000
-	product1["ea"] = 1
+	product1["pncNm"] = "NB 우먼스 클래스 3개월 패키지";
+	product1["amt"] = 550000;
+	product1["ea"] = 1;
 	var productArray = new Array();
-	productArray.append(product1)
-	purchase["product"] = productArray
+	productArray.append(product1);
+	purchase["product"] = productArray;
 	DOT.logPurchase(purchase);
 </script>
 ```
@@ -324,7 +324,7 @@ DOT.setUser(
 
 ``` html
 <script type="text/javascript">
-	var event = new Object(); 
+	var event = new Object();
 	event["event"] = "login_complete";
 	event["loginTp"] = "NB_account"
 	DOT.logEvent(event);
@@ -348,7 +348,7 @@ DOT.setUser(
 
 ``` html
 <script type="text/javascript">
-    var event = new Object(); 
+    var event = new Object();
     event["event"] = "signup_complete";
 	event["signupTp"] = "NB_account";
     DOT.logEvent(event);
@@ -417,9 +417,9 @@ DOT.logEvent(event)
 WiseTracker.sendClickData("EVT", eventName: "메뉴_메뉴명칭")
 // '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
 
-	var event = new Object(); 
-	event["event"] = "click_menu"
-	event["click_method"] = "메뉴명칭"
+	var event = new Object();
+	event["event"] = "click_menu";
+	event["click_method"] = "메뉴명칭";
 	// '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
 	DOT.logEvent(event);
 </script>
@@ -480,11 +480,11 @@ DOT.logEvent(event)
 
 ``` html
 <script type="text/javascript">
-WiseTracker.sendClickData("EVT", eventName: "메뉴_Ranking")
+WiseTracker.sendClickData("EVT", eventName: "메뉴_Ranking");
 
-	var event = new Object(); 
-	event["event"] = "click_menu"
-	event["click_method"] = "Ranking"
+	var event = new Object();
+	event["event"] = "click_menu";
+	event["click_method"] = "Ranking";
 	DOT.logEvent(event);
 </script>
 ```
@@ -630,15 +630,15 @@ DOT.logEvent(event);
 	// '이벤트제목' 부분은 실제 이벤트 제목으로 replace 필요
 	// '버튼타입' 부분은 클릭된 버튼에 따라 '좋아요', '공유', '랜딩버튼'으로 replace 필요
 
-	var event = new Object(); 
-	event["event"] = "click_button"
-	event["pi"] = "event"
-	event["eventNm"] = "이벤트제목"
+	var event = new Object();
+	event["event"] = "click_button";
+	event["pi"] = "event";
+	event["eventNm"] = "이벤트제목";
 	// '이벤트제목'부분은 실제 이벤트 제목으로 replace 필요
-	event["버튼코드"] = "1"
+	event["버튼코드"] = "1";
 	// '버튼코드'는 아래 주석을 참고하여 replace 필요
 	// 좋아요 버튼 클릭시 g25, 공유 버튼 클릭시 g26, 온라인샵으로 랜딩시키는 버튼 클릭시 g27
-	event["contents_path"] = "event^이벤트제목^버튼타입"
+	event["contents_path"] = "event^이벤트제목^버튼타입";
 	// value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 	// '이벤트제목' 부분은 실제 이벤트 제목으로 replace 필요
 	// '버튼타입' 부분은 클릭된 버튼에 따라 '좋아요', '공유', '랜딩버튼'으로 replace 필요
@@ -662,10 +662,10 @@ DOT.logEvent(event);
 
 	var event = new Object(); 
 	event["event"] = "click_button"
-	event["pi"] = "event"
-	event["eventNm"] = "이벤트"
-	event["g25"] = "1"
-	event["contents_path"] = "event^이벤트^좋아요"
+	event["pi"] = "event";
+	event["eventNm"] = "이벤트";
+	event["g25"] = "1";
+	event["contents_path"] = "event^이벤트^좋아요";
 	DOT.logEvent(event);
 </script>
 ```
@@ -691,15 +691,15 @@ DOT.logEvent(event);
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 	// '버튼타입' 부분은 클릭된 버튼에 따라 '유튜브조회', '랜딩버튼'으로 replace 필요
 
-	var event = new Object(); 
-	event["event"] = "click_button"
-	event["pi"] = "post"
-	event["contentNm"] = "포스트제목"
+	var event = new Object();
+	event["event"] = "click_button";
+	event["pi"] = "post";
+	event["contentNm"] = "포스트제목";
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
-	event["버튼코드"] = "1"
+	event["버튼코드"] = "1";
 	// '버튼코드'는 아래 주석을 참고하여 replace 필요
 	// 유튜브조회 버튼 클릭시 g28, 온라인샵으로 랜딩시키는 버튼 클릭시 g27
-	event["contents_path"] = "post^포스트제목^버튼타입"
+	event["contents_path"] = "post^포스트제목^버튼타입";
 	// value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 	// '포스트제목' 부분은 실제 이벤트 제목으로 replace 필요
 	// '버튼타입' 부분은 클릭된 버튼에 따라 '유튜브조회', '랜딩버튼'으로 replace 필요
@@ -722,11 +722,11 @@ DOT.logEvent(event);
 	WiseTracker.sendClickData("EVT", "POST_포스트제목_랜딩버튼");
 
 	var event = new Object(); 
-	event["event"] = "click_button"
-	event["pi"] = "post"
-	event["contentNm"] = "MS327 Review"
-	event["g27"] = "1"
-	event["contents_path"] = "post^MS327 Review^랜딩버튼"
+	event["event"] = "click_button";
+	event["pi"] = "post";
+	event["contentNm"] = "MS327 Review";
+	event["g27"] = "1";
+	event["contents_path"] = "post^MS327 Review^랜딩버튼";
 	DOT.logEvent(event);
 </script>
 ```
@@ -749,13 +749,13 @@ DOT.logEvent(event);
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 
 	var event = new Object(); 
-	event["event"] = "click_item"
-	event["pi"] = "post"
-	event["pnc"] = "상품ID"
+	event["event"] = "click_item";
+	event["pi"] = "post";
+	event["pnc"] = "상품ID";
 	// 클릭된 상품의 상품ID로 replace 필요
-	event["pncNm"] = "상품명"
+	event["pncNm"] = "상품명";
 	// 클릭된 상품의 상품명으로 replace 필요
-	event["contents_path"] = "post^포스트제목^상품클릭"
+	event["contents_path"] = "post^포스트제목^상품클릭";
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 	DOT.logEvent(event);
 </script>
@@ -776,11 +776,11 @@ DOT.logEvent(event);
 	WiseTracker.sendClickData("EVT", "POST_Short Sleeve, Short Summer_상품클릭");
 
 	var event = new Object(); 
-	event["event"] = "click_item"
-	event["pi"] = "post"
-	event["pnc"] = "abc123"
-	event["pncNm"] = "UNI 데이지팩 등판 데이지 반팔티"
-	event["contents_path"] = "post^Short Sleeve, Short Summer^상품클릭"
+	event["event"] = "click_item";
+	event["pi"] = "post";
+	event["pnc"] = "abc123";
+	event["pncNm"] = "UNI 데이지팩 등판 데이지 반팔티";
+	event["contents_path"] = "post^Short Sleeve, Short Summer^상품클릭";
 	DOT.logEvent(event);
 </script>
 ```
@@ -803,13 +803,13 @@ DOT.logEvent(event);
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 
 	var event = new Object(); 
-	event["event"] = "add_to_wishlist"
-	event["pi"] = "post"
-	event["pnc"] = "상품ID"
+	event["event"] = "add_to_wishlist";
+	event["pi"] = "post";
+	event["pnc"] = "상품ID";
 	// 클릭된 상품의 상품ID로 replace 필요
-	event["pncNm"] = "상품명"
+	event["pncNm"] = "상품명";
 	// 클릭된 상품의 상품명으로 replace 필요
-	event["contents_path"] = "post^포스트제목^관심상품등록"
+	event["contents_path"] = "post^포스트제목^관심상품등록";
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 	DOT.logEvent(event);
 </script>
@@ -829,12 +829,12 @@ DOT.logEvent(event);
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POST_불쾌지수를 낮추는 가장 부드러운 방법_관심상품등록");
 
-	var event = new Object(); 
-	event["event"] = "add_to_wishlist"
-	event["pi"] = "post"
-	event["pnc"] = "abc123"
-	event["pncNm"] = "NB X T&T FLIPFLOP / SD5601GBK"
-	event["contents_path"] = "post^불쾌지수를 낮추는 가장 부드러운 방법^관심상품등록"
+	var event = new Object();
+	event["event"] = "add_to_wishlist";
+	event["pi"] = "post";
+	event["pnc"] = "abc123";
+	event["pncNm"] = "NB X T&T FLIPFLOP / SD5601GBK";
+	event["contents_path"] = "post^불쾌지수를 낮추는 가장 부드러운 방법^관심상품등록";
 	DOT.logEvent(event);
 </script>
 ```
@@ -856,13 +856,13 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	WiseTracker.sendClickData("EVT", "POINTS_투데이아이템");
 
 	var event = new Object(); 
-	event["event"] = "click_item"
-	event["pi"] = "points"
-	event["pnc"] = "상품ID"
+	event["event"] = "click_item";
+	event["pi"] = "points";
+	event["pnc"] = "상품ID";
 	// 클릭된 상품의 상품ID로 replace 필요
-	event["pncNm"] = "상품명"
+	event["pncNm"] = "상품명";
 	// 클릭된 상품의 상품명으로 replace 필요
-	event["contents_path"] = "points^투데이아이템^상품명"
+	event["contents_path"] = "points^투데이아이템^상품명";
 	// '상품명' 부분은 실제 상품의 명칭으로 replace 필요
 	DOT.logEvent(event);
 </script>
@@ -885,10 +885,10 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	WiseTracker.sendClickData("EVT", "POINTS_퀴즈명_랜딩버튼");
 	// '퀴즈명' 부분은 실제 퀴즈의 제목으로 replace 필요
 
-	var event = new Object(); 
-	event["event"] = "click_button"
-	event["quizNm"] = "퀴즈명"
-	event["contents_path"] = "points^퀴즈명^랜딩버튼"
+	var event = new Object();
+	event["event"] = "click_button";
+	event["quizNm"] = "퀴즈명";
+	event["contents_path"] = "points^퀴즈명^랜딩버튼";
 	// '퀴즈명' 부분은 실제 상품의 명칭으로 replace 필요
 	DOT.logEvent(event);
 </script>
@@ -914,14 +914,14 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	WiseTracker.sendClickData("EVT", "POINTS_전환완료_전환타입");
 	// '전환타입' 부분은 '상품쿠폰', '액티비티쿠폰' 둘 중 하나로 replace 필요
 
-	var event = new Object(); 
-	event["event"] = "전환타입"
+	var event = new Object();
+	event["event"] = "전환타입";
 	// '전환타입' 부분은 반드시 아래 두 가지 중 하나를 사용
 	/*
 		상품쿠폰이 정상적으로 전환 완료된 경우 == product_coupon_complete
 		액티비티쿠폰이 정상적으로 전환 완료된 경우 == activity_coupon_complete
 	*/
-	event["contents_path"] = "points^전환타입^쿠폰종류"
+	event["contents_path"] = "points^전환타입^쿠폰종류";
 	// value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 	// '전환타입' 부분은 '상품쿠폰', '액티비티쿠폰' 둘 중 하나로 replace 필요
 	// '쿠폰종류' 부분은 상품 또는 액티비티 쿠폰의 금액(1만원, 2만원 등)으로 replace 필요
@@ -942,8 +942,8 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	WiseTracker.sendClickData("EVT", "POINTS_전환완료_상품쿠폰");
 
 	var event = new Object(); 
-	event["event"] = "product_coupon_complete"
-	event["contents_path"] = "points^상품쿠폰^3만원"
+	event["event"] = "product_coupon_complete";
+	event["contents_path"] = "points^상품쿠폰^3만원";
 	DOT.logEvent(event);
 </script>
 ```
@@ -965,11 +965,11 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	WiseTracker.sendClickData("EVT", "POINTS_기부_캠페인명");
 	// '캠페인명' 부분은 실제 기부캠페인의 제목으로 replace 필요
 
-	var event = new Object(); 
-	event["event"] = "donation_complete"
-	event["campaignNm"] = "캠페인명"
+	var event = new Object();
+	event["event"] = "donation_complete";
+	event["campaignNm"] = "캠페인명";
 	// '캠페인명' 부분은 실제 기부캠페인의 제목으로 replace 필요
-	event["contents_path"] = "points^기부^캠페인명"
+	event["contents_path"] = "points^기부^캠페인명";
 	// '캠페인명' 부분은 실제 기부캠페인의 제목으로 replace 필요
 	DOT.logEvent(event);
 </script>
@@ -987,10 +987,10 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POINTS_기부_혼자가 아닌 우리의 힘으로, 리커버리 야구단");
 
-	var event = new Object(); 
-	event["event"] = "donation_complete"
-	event["campaignNm"] = "혼자가 아닌 우리의 힘으로, 리커버리 야구단"
-	event["contents_path"] = "points^기부^혼자가 아닌 우리의 힘으로, 리커버리 야구단"
+	var event = new Object();
+	event["event"] = "donation_complete";
+	event["campaignNm"] = "혼자가 아닌 우리의 힘으로, 리커버리 야구단";
+	event["contents_path"] = "points^기부^혼자가 아닌 우리의 힘으로, 리커버리 야구단";
 	DOT.logEvent(event);
 </script>
 ```
@@ -1011,9 +1011,9 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "SPORTS_스트라바_전환완료");
 
-	var event = new Object(); 
-	event["event"] = "strava_exchange_complete"
-	event["contents_path"] = "sports^스트라바^전환완료"
+	var event = new Object();
+	event["event"] = "strava_exchange_complete";
+	event["contents_path"] = "sports^스트라바^전환완료";
 	DOT.logEvent(event);
 </script>
 ```
@@ -1040,18 +1040,18 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	// '버튼타입' 부분은 '신청하기', '공유' 둘 중 하나로 replace 필요
 
 	var event = new Object(); 
-	event["event"] = "타입"
+	event["event"] = "타입";
 	// '타입' 부분은 아래 주석을 참고하여 replace 필요
 	/*
 		신청하기인 경우 == checkout
 		공유인 경우 == share
 	*/
-	event["pi"] = "PDV"
-	event["pnc"] = "상품ID"
+	event["pi"] = "PDV";
+	event["pnc"] = "상품ID";
 	// 클릭된 상품의 상품ID로 replace 필요
-	event["pncNm"] = "상품명"
+	event["pncNm"] = "상품명";
 	// 클릭된 상품의 상품명으로 replace 필요
-	event["contents_path"] = "sports^상품명^버튼타입"
+	event["contents_path"] = "sports^상품명^버튼타입";
 	// '버튼타입' 부분은 '신청하기', '공유' 둘 중 하나로 replace 필요
 </script>
 ```
@@ -1069,11 +1069,11 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	WiseTracker.sendClickData("EVT", "SPORTS_한강 피크닉_SUP WORKOUT_신청하기");
 
 	var event = new Object();
-	event["event"] = "checkout"
-	event["pi"] = "PDV"
-	event["pnc"] = "qwer123"
-	event["pncNm"] = "한강 피크닉_SUP WORKOUT"
-	event["contents_path"] = "sports^한강 피크닉_SUP WORKOUT^신청하기"
+	event["event"] = "checkout";
+	event["pi"] = "PDV";
+	event["pnc"] = "qwer123";
+	event["pncNm"] = "한강 피크닉_SUP WORKOUT";
+	event["contents_path"] = "sports^한강 피크닉_SUP WORKOUT^신청하기";
 	DOT.logEvent(event);
 </script>
 ```
@@ -1091,11 +1091,11 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	WiseTracker.sendClickData("EVT", "SPORTS_NB 우먼스 클래스 6개월 패키지_공유");
 
 	var event = new Object();
-	event["event"] = "share"
-	event["pi"] = "PDV"
-	event["pnc"] = "asdf123"
-	event["pncNm"] = "NB 우먼스 클래스 6개월 패키지"
-	event["contents_path"] = "sports^NB 우먼스 클래스 6개월 패키지^공유"
+	event["event"] = "share";
+	event["pi"] = "PDV";
+	event["pnc"] = "asdf123";
+	event["pncNm"] = "NB 우먼스 클래스 6개월 패키지";
+	event["contents_path"] = "sports^NB 우먼스 클래스 6개월 패키지^공유";
 	DOT.logEvent(event);
 </script>
 ```
@@ -1193,7 +1193,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 </script>
 
 <script type="text/javascript">
-	var screen = new Object(); 
+	var screen = new Object();
 	screen["pi"] = "PDV";
 	var product = new Object();
 	product["pnc"] = "상품ID";
@@ -1217,7 +1217,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 </script>
 
 <script type="text/javascript">
-	var screen = new Object(); 
+	var screen = new Object();
 	screen["pi"] = "PDV";
 	var product = new Object();
 	product["pnc"] = "zxc123";
@@ -1564,7 +1564,7 @@ WiseTracker.setPageIdentity("화면코드");
 // '화면코드'는 반드시 매핑 테이블 참고
 
 Map<String, Object> pageMap = new HashMap<>();
-pageMap.put("event", "menu")
+pageMap.put("event", "menu");
 pageMap.put("pi", "화면코드");
 // '화면코드'는 반드시 매핑 테이블 참고
 DOT.logScreen(pageMap);
@@ -1614,7 +1614,7 @@ DOT.logScreen(screen)
 WiseTracker.setPageIdentity("barcode");
 
 Map<String, Object> pageMap = new HashMap<>();
-pageMap.put("event", "menu")
+pageMap.put("event", "menu");
 pageMap.put("pi", "barcode");
 // '화면코드'는 반드시 매핑 테이블 참고
 DOT.logScreen(pageMap);
