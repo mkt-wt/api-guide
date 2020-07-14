@@ -123,7 +123,7 @@
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setOrderProductArray(["asdf123"]);
@@ -248,7 +248,7 @@ DOT.setUser(
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	var event = new Object(); 
 	event["event"] = "login_complete";
@@ -322,7 +322,7 @@ DOT.setUser(
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	var event = new Object(); 
 	event["event"] = "login_complete";
@@ -346,7 +346,7 @@ DOT.setUser(
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
     var event = new Object(); 
     event["event"] = "signup_complete";
@@ -412,7 +412,7 @@ DOT.logEvent(event)
 
 **Hybrid**
 
-``` swift
+``` html
 <script type="text/javascript">
 WiseTracker.sendClickData("EVT", eventName: "메뉴_메뉴명칭")
 // '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
@@ -478,7 +478,7 @@ DOT.logEvent(event)
 
 **Hybrid**
 
-``` swift
+``` html
 <script type="text/javascript">
 WiseTracker.sendClickData("EVT", eventName: "메뉴_Ranking")
 
@@ -624,7 +624,7 @@ DOT.logEvent(event)
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "EVENT_이벤트제목_버튼타입");
 	// '이벤트제목' 부분은 실제 이벤트 제목으로 replace 필요
@@ -656,7 +656,7 @@ DOT.logEvent(event)
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "EVENT_이벤트_좋아요");
 
@@ -685,7 +685,7 @@ DOT.logEvent(event)
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POST_포스트제목_버튼타입");
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
@@ -717,7 +717,7 @@ DOT.logEvent(event)
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POST_포스트제목_랜딩버튼");
 
@@ -743,7 +743,7 @@ DOT.logEvent(event)
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POST_포스트제목_상품클릭");
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
@@ -771,7 +771,7 @@ DOT.logEvent(event)
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POST_Short Sleeve, Short Summer_상품클릭");
 
@@ -797,7 +797,7 @@ DOT.logEvent(event)
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POST_포스트제목_관심상품등록");
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
@@ -825,7 +825,7 @@ DOT.logEvent(event)
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POST_불쾌지수를 낮추는 가장 부드러운 방법_관심상품등록");
 
@@ -851,7 +851,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POINTS_투데이아이템");
 
@@ -880,7 +880,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POINTS_퀴즈명_랜딩버튼");
 	// '퀴즈명' 부분은 실제 퀴즈의 제목으로 replace 필요
@@ -909,7 +909,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POINTS_전환완료_전환타입");
 	// '전환타입' 부분은 '상품쿠폰', '액티비티쿠폰' 둘 중 하나로 replace 필요
@@ -937,7 +937,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POINTS_전환완료_상품쿠폰");
 
@@ -960,7 +960,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POINTS_기부_캠페인명");
 	// '캠페인명' 부분은 실제 기부캠페인의 제목으로 replace 필요
@@ -983,7 +983,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "POINTS_기부_혼자가 아닌 우리의 힘으로, 리커버리 야구단");
 
@@ -1007,7 +1007,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "SPORTS_스트라바_전환완료");
 
@@ -1033,7 +1033,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "SPORTS_상품명_버튼타입");
 	// '상품명' 부분은 클릭된 상품의 상품명으로 replace 필요
@@ -1064,7 +1064,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "SPORTS_한강 피크닉_SUP WORKOUT_신청하기");
 
@@ -1086,7 +1086,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` javascript
+``` html
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", "SPORTS_NB 우먼스 클래스 6개월 패키지_공유");
 
@@ -1184,7 +1184,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 측정 API
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setProduct("상품ID", "상품명");
@@ -1210,7 +1210,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 '7월 케틀벨 워크아웃(2회)' 우먼스 클래스의 화면 내에 경우 다음과 같이 적용
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
     WiseTracker.setProduct("zxc123", "7월 케틀벨 워크아웃(2회)");
     WiseTracker.setPageIdentity("PDV");
@@ -1237,7 +1237,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 측정 API
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
     WiseTracker.setPageIdentity("화면코드");
@@ -1259,7 +1259,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 '비밀번호 찾기' 화면 내에 경우 다음과 같이 적용
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
     WiseTracker.setPageIdentity("mypass");
 </script>
@@ -1282,7 +1282,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 측정 API
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
     WiseTracker.setPageIdentity("화면코드");
@@ -1304,7 +1304,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 '약관동의(영문) ' 화면 내에 경우 다음과 같이 적용
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
     WiseTracker.setPageIdentity("join01e");
 </script>
@@ -1327,7 +1327,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 측정 API
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
     WiseTracker.setPageIdentity("화면코드");
@@ -1349,7 +1349,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 '퀴즈 상세 ' 화면 내에 경우 다음과 같이 적용
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
     WiseTracker.setPageIdentity("quiz");
 </script>
@@ -1372,7 +1372,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 측정 API
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
     WiseTracker.setPageIdentity("화면코드");
@@ -1398,7 +1398,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 측정 API
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
     WiseTracker.setPageIdentity("화면코드");
@@ -1424,7 +1424,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 측정 API
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
     WiseTracker.setPageIdentity("화면코드");
@@ -1446,7 +1446,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 'NBRC 리스트' 화면 내에 경우 다음과 같이 적용
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
     WiseTracker.setPageIdentity("nbrclist");
 </script>
@@ -1469,7 +1469,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 측정 API
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
     WiseTracker.setPageIdentity("화면코드");
@@ -1491,7 +1491,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 '멤버십 등급' 화면 내에 경우 다음과 같이 적용
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
     WiseTracker.setPageIdentity("levelup");
 </script>
@@ -1514,7 +1514,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 #### 측정 API
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
     WiseTracker.setPageIdentity("화면코드");
@@ -1535,7 +1535,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 '홈' 화면 내에 경우 다음과 같이 적용
 
-``` javascript
+``` html
 <script type="wisetracker/text" id="wiseTracker">
     WiseTracker.setPageIdentity("home");
 </script>
