@@ -637,7 +637,7 @@ DOT.logEvent(event);
 	// '이벤트제목'부분은 실제 이벤트 제목으로 replace 필요
 	event["버튼코드"] = "1";
 	// '버튼코드'는 아래 주석을 참고하여 replace 필요
-	// 좋아요 버튼 클릭시 g26, 공유 버튼 클릭시 g27, 온라인샵으로 랜딩시키는 버튼 클릭시 g28
+	// 좋아요 버튼 클릭시 g29, 공유 버튼 클릭시 g30, 온라인샵으로 랜딩시키는 버튼 클릭시 g31
 	event["contents_path"] = "event^이벤트제목^버튼타입";
 	// value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 	// '이벤트제목' 부분은 실제 이벤트 제목으로 replace 필요
@@ -664,7 +664,7 @@ DOT.logEvent(event);
 	event["event"] = "click_button"
 	event["pi"] = "event";
 	event["eventNm"] = "이벤트";
-	event["g27"] = "1";
+	event["g29"] = "1";
 	event["contents_path"] = "event^이벤트^좋아요";
 	DOT.logEvent(event);
 </script>
@@ -698,7 +698,7 @@ DOT.logEvent(event);
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 	event["버튼코드"] = "1";
 	// '버튼코드'는 아래 주석을 참고하여 replace 필요
-	// 유튜브조회 버튼 클릭시 g29, 온라인샵으로 랜딩시키는 버튼 클릭시 g30
+	// 유튜브조회 버튼 클릭시 g32, 온라인샵으로 랜딩시키는 버튼 클릭시 g33
 	event["contents_path"] = "post^포스트제목^버튼타입";
 	// value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 	// '포스트제목' 부분은 실제 이벤트 제목으로 replace 필요
@@ -725,7 +725,7 @@ DOT.logEvent(event);
 	event["event"] = "click_button";
 	event["pi"] = "post";
 	event["contentNm"] = "MS327 Review";
-	event["g30"] = "1";
+	event["g33"] = "1";
 	event["contents_path"] = "post^MS327 Review^랜딩버튼";
 	DOT.logEvent(event);
 </script>
