@@ -1671,8 +1671,8 @@ MyNB 앱 내의 링크를 클릭해 온라인샵으로 랜딩된 후 발생하�
 그리고 사이트 모든 페이지의 `$(document).ready()` 내에서 와이즈트래커 초기화 함수를 호출해 주시기 바랍니다.
 
 ``` javascript
-$(document).ready(function({_wtno:10028,_wthst:"trk.wisetracker.co.kr",_wtufn:"ALL"}){
-	_wiseWebTrack.init();
+$(document).ready(function(){
+	_wiseWebTrack.init({_wtno:10028,_wthst:"trk.wisetracker.co.kr",_wtufn:"ALL"});
 	// webTracker 초기화
 });
 ```
