@@ -1194,6 +1194,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 <script type="text/javascript">
 	var screen = new Object();
+	screen["event"] = "view_product";
 	screen["pi"] = "PDV";
 	var product = new Object();
 	product["pnc"] = "상품ID";
@@ -1218,6 +1219,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 <script type="text/javascript">
 	var screen = new Object();
+	screen["event"] = "view_product";
 	screen["pi"] = "PDV";
 	var product = new Object();
 	product["pnc"] = "zxc123";
