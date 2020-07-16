@@ -10,6 +10,7 @@
 * [클릭 분석 API](./wconcept-2.md#클릭-분석-API)
 	* [적용 예시](./wconcept-2.md#적용-예시)
 	* [매핑 테이블](./wconcept-2.md#매핑-테이블)
+	* [매핑 테이블 - 20200714](./wconcept-2.md#매핑-테이블---2020714)
 
 
 
@@ -76,3 +77,27 @@ _trk_clickTrace(\"EVT\", \"[SEARCH]\");
 | PC | 필터 메뉴 | 'COLOR' 버튼 | [filter_color] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/06/wcon_pc.png) |
 | PC | 필터 메뉴 | 'DISCOUNT' 버튼 | [filter_discount] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/06/wcon_pc.png) |
 | 모바일웹 & APP | 필터 메뉴 | 'FILTER' 버튼 | [M_filter] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/06/wcon_mo.png) |
+
+
+
+#### 매핑 테이블 - 20200714
+
+본 매핑 테이블은 2020년 7월 14일 요청 사항에 대응하는 내용만을 다루고 있습니다.
+
+
+| 분류 | 대상 | 객체 | name | 참고 설명 |
+| --- | --- | --- | --- | --- |
+| 모바일웹 & APP | 메인 페이지 | 메뉴 버튼(햄버거) | [MENU] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/009.png) |
+| 모바일웹 & APP | 메인 페이지 | 로고 | [LOGO] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/009.png) |
+| 모바일웹 & APP | 메인 페이지 | 검색 버튼(돋보기) | [SR] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/009.png) |
+| 모바일웹 & APP | 메인 페이지 | 장바구니 버튼 | [CART] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/009.png) |
+| 모바일웹 & APP | 메인 페이지 | 액션바 홈버튼 | [A_HOME] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/009.png) |
+| 모바일웹 & APP | 메인 페이지 | 액션바 히스토리 버튼 | [A_SR] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/009.png) |
+| 모바일웹 & APP | 메인 페이지 | 액션바 하트 버튼 | [A_H] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/009.png) |
+| 모바일웹 & APP | 메인 페이지 | 액션바 마이 버튼 | [A_MY] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/009.png) |
+| 모바일웹 & APP | 메인 페이지 | 액션바 WOMEN 버튼 | [A_BT_W] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/009.png) |
+| 모바일웹 & APP | LNB | LNB WOMEN | [L_W] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
+| 모바일웹 & APP | LNB | LNB MEN | [L_M] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
+| 모바일웹 & APP | LNB | LNB NEW | [L_NEW] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
+| 모바일웹 & APP | LNB | LNB 배너 A | [L_BA_1] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
+| 모바일웹 & APP | LNB | LNB 배너 B | [L_BA_1] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
