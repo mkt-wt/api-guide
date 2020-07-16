@@ -1758,7 +1758,7 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
     WiseTracker.setPageIdentity("home");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
 	var screen = new Object();
 	screen["pi"] = "home";
 	DOT.logScreen(screen);
