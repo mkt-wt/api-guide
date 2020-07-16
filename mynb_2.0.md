@@ -31,7 +31,8 @@
 	* [포인트 사용 완료 측정](./mynb_2.0.md#포인트-사용-완료-측정)
 	* [기부 완료 측정](./mynb_2.0.md#기부-완료-측정)
 	* [스트라바 포인트 전환 완료 측정](./mynb_2.0.md#스트라바-포인트-전환-완료-측정)
-	* [우먼스 클래스 & 우먼스클래스 이용권 버튼 클릭 측정](./mynb_2.0.md#우먼스-클래스--우먼스클래스-이용권-버튼-클릭-측정)
+	* [우먼스 클래스 & 우먼스클래스 이용권 신청하기 측정](./mynb_2.0.md#우먼스-클래스--우먼스클래스-이용권-신청하기-측정)
+	* [우먼스 클래스 & 우먼스클래스 이용권 공유하기 측정](./mynb_2.0.md#우먼스-클래스--우먼스클래스-이용권-공유하기-측정)
 * [화면별 페이지뷰 측정용 API 추가](./mynb_2.0.md#화면별-페이지뷰-측정용-API-추가)
 	* [매핑 테이블](./mynb_2.0.md#매핑-테이블-1)
 	* [상품 화면](./mynb_2.0.md#상품-화면)
@@ -195,16 +196,16 @@
 **Android**
 
 ``` java
-Map<String, Object> eventMap = new HashMap<>();
-eventMap.put("event", "login_complete");
-eventMap.put("loginTp", "NB_account");
-DOT.logEvent(eventMap); //로그인 이벤트 측정
-
 User user = new User.Builder()
 					.setGender("성별")
 					.setAge("연령대")
 					.build();
 DOT.setUser(user); //유저 정보 측정
+
+Map<String, Object> eventMap = new HashMap<>();
+eventMap.put("event", "login_complete");
+eventMap.put("loginTp", "NB_account");
+DOT.logEvent(eventMap); //로그인 이벤트 측정
 ```
 
 
@@ -212,17 +213,17 @@ DOT.setUser(user); //유저 정보 측정
 **iOS - Objective-C**
 
 ``` objectivec
-NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-[event setValue:@"login_complete" forKey:@"event"];
-[event setValue:@"NB_account" forKey:@"loginTp"];
-[DOT logEvent:event]; //로그인 이벤트 측정
-
 [DOT setUser:
 	[User builder:^(User *user) {
 		[user setGender:@"성별"];
 		[user setAge:@"연령대"];
 	}]
 ]; //유저 정보 측정
+
+NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
+[event setValue:@"login_complete" forKey:@"event"];
+[event setValue:@"NB_account" forKey:@"loginTp"];
+[DOT logEvent:event]; //로그인 이벤트 측정
 ```
 
 
@@ -230,11 +231,6 @@ NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 **iOS - Swift**
 
 ``` swift
-let event = NSMutableDictionary()
-event["event"] = "login_complete"
-event["loginTp"] = "NB_account"
-DOT.logEvent(event) //로그인 이벤트 측정
-
 DOT.setUser(
 	User.builder({ (builder) in
 		let user = builder as! User
@@ -242,6 +238,11 @@ DOT.setUser(
 		user.age = "연령대"
 	})
 )
+
+let event = NSMutableDictionary()
+event["event"] = "login_complete"
+event["loginTp"] = "NB_account"
+DOT.logEvent(event) //로그인 이벤트 측정
 ```
 
 
@@ -250,13 +251,13 @@ DOT.setUser(
 
 ``` html
 <script type="text/javascript">
+	DOT.setUser(User.setGender("성별")
+			.setAge("연령대")); //유저 정보 측정
+
 	var event = new Object(); 
 	event["event"] = "login_complete";
 	event["loginTp"] = "NB_account";
 	DOT.logEvent(event); //로그인 이벤트 측정
-
-	DOT.setUser(User.setGender("성별")
-		.setAge("연령대")); //유저 정보 측정
 </script>
 ```
 
@@ -269,16 +270,16 @@ DOT.setUser(
 **Android**
 
 ``` java
-Map<String, Object> eventMap = new HashMap<>();
-eventMap.put("event", "login_complete");
-eventMap.put("loginTp", "NB_account");
-DOT.logEvent(eventMap);
-
 User user = new User.Builder()
 		.setGender("female") //매핑 테이블 참고
 		.setAge("20s") //매핑 테이블 참고
 		.build();
 DOT.setUser(user);
+
+Map<String, Object> eventMap = new HashMap<>();
+eventMap.put("event", "login_complete");
+eventMap.put("loginTp", "NB_account");
+DOT.logEvent(eventMap);
 ```
 
 
@@ -286,17 +287,17 @@ DOT.setUser(user);
 **iOS - Objective-C**
 
 ``` objectivec
-NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-[event setValue:@"login_complete" forKey:@"event"];
-[event setValue:@"NB_account" forKey:@"loginTp"];
-[DOT logEvent:event];
-
 [DOT setUser:
 	[User builder:^(User *user) {
 		[user setGender:@"female"]; //매핑 테이블 참고
 		[user setAge:@"20s"]; //매핑 테이블 참고
 	}]
 ];
+
+NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
+[event setValue:@"login_complete" forKey:@"event"];
+[event setValue:@"NB_account" forKey:@"loginTp"];
+[DOT logEvent:event];
 ```
 
 
@@ -304,11 +305,6 @@ NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 **iOS - Swift**
 
 ``` swift
-let event = NSMutableDictionary()
-event["event"] = "login_complete"
-event["loginTp"] = "NB_account"
-DOT.logEvent(event)
-
 DOT.setUser(
 	User.builder({ (builder) in
 		let user = builder as! User
@@ -316,6 +312,11 @@ DOT.setUser(
 		user.age = "20s" //매핑 테이블 참고
 	})
 )
+
+let event = NSMutableDictionary()
+event["event"] = "login_complete"
+event["loginTp"] = "NB_account"
+DOT.logEvent(event)
 ```
 
 
@@ -324,13 +325,13 @@ DOT.setUser(
 
 ``` html
 <script type="text/javascript">
+	DOT.setUser(User.setGender("female") //매핑 테이블 참고
+			.setAge("20s")); //매핑 테이블 참고
+			
 	var event = new Object();
 	event["event"] = "login_complete";
 	event["loginTp"] = "NB_account"
 	DOT.logEvent(event);
-
-	DOT.setUser(User.setGender("female") //매핑 테이블 참고
-		.setAge("20s")); //매핑 테이블 참고
 </script>
 ```
 
@@ -373,7 +374,7 @@ WiseTracker.sendClickData("EVT", "메뉴_메뉴명칭");
 
 Map<String, Object> eventMap = new HashMap<>();
 eventMap.put("event", "click_menu");
-eventMap.put("click_method", "메뉴명칭");
+eventMap.put("menuNm", "메뉴명칭");
 // '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
 DOT.logEvent(eventMap);
 ```
@@ -388,7 +389,7 @@ DOT.logEvent(eventMap);
 
 NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 [event setValue:@"click_menu" forKey:@"event"];
-[event setValue:@"메뉴명칭" forKey:@"click_method"];
+[event setValue:@"메뉴명칭" forKey:@"menuNm"];
 // '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
 [DOT logEvent:logEvent];
 ```
@@ -403,7 +404,7 @@ WiseTracker.sendClickData("EVT", eventName: "메뉴_메뉴명칭")
 
 let event = NSMutableDictionary()
 event["event"] = "click_menu"
-event["click_method"] = "메뉴명칭"
+event["menuNm"] = "메뉴명칭"
 // '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
 DOT.logEvent(event)
 ```
@@ -419,7 +420,7 @@ WiseTracker.sendClickData("EVT", eventName: "메뉴_메뉴명칭")
 
 	var event = new Object();
 	event["event"] = "click_menu";
-	event["click_method"] = "메뉴명칭";
+	event["menuNm"] = "메뉴명칭";
 	// '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
 	DOT.logEvent(event);
 </script>
@@ -440,7 +441,7 @@ WiseTracker.sendClickData("EVT", "메뉴_NBPLAY");
 
 Map<String, Object> eventMap = new HashMap<>();
 eventMap.put("event", "click_menu");
-eventMap.put("click_method", "NBPLAY");
+eventMap.put("menuNm", "NBPLAY");
 DOT.logEvent(eventMap);
 ```
 
@@ -453,7 +454,7 @@ DOT.logEvent(eventMap);
 
 NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 [event setValue:@"click_menu" forKey:@"event"];
-[event setValue:@"NBPLAY" forKey:@"click_method"];
+[event setValue:@"NBPLAY" forKey:@"menuNm"];
 [DOT logEvent:logEvent];
 ```
 
@@ -466,7 +467,7 @@ WiseTracker.sendClickData("EVT", eventName: "메뉴_NBPLAY")
 
 let event = NSMutableDictionary()
 event["event"] = "click_menu"
-event["click_method"] = "NBPLAY"
+event["menuNm"] = "NBPLAY"
 DOT.logEvent(event)
 ```
 
@@ -484,7 +485,7 @@ WiseTracker.sendClickData("EVT", eventName: "메뉴_Ranking");
 
 	var event = new Object();
 	event["event"] = "click_menu";
-	event["click_method"] = "Ranking";
+	event["menuNm"] = "Ranking";
 	DOT.logEvent(event);
 </script>
 ```
@@ -513,8 +514,9 @@ WiseTracker.sendClickData("EVT", "HOME_타입_배너명칭");
 // '배너명칭' 부분은 실제 배너명칭으로 replace 필요
 
 Map<String, Object> eventMap = new HashMap<>();
-eventMap.put("event", "home");
-eventMap.put("pi", "home");
+eventMap.put("event", "click_banner");
+eventMap.put("bannerNm", "배너명칭");
+// '배너명칭' 부분은 실제 배너명칭으로 replace 필요
 eventMap.put("contents_path", "home^타입^배너명칭");
 // value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 // '타입' 부분은 클릭된 배너의 위치에 따라 '상단배너' 또는 '기획전배너'로 replace 필요
@@ -532,8 +534,8 @@ DOT.logEvent(eventMap);
 // '배너명칭' 부분은 실제 배너명칭으로 replace 필요
 
 NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-[event setValue:@"home" forKey:@"event"];
-[event setValue:@"home" forKey:@"pi"];
+[event setValue:@"click_banner" forKey:@"event"];
+[event setValue:@"배너명칭" forKey:@"bannerNm"];
 [event setValue:@"home^타입^배너명칭" forKey:@"contents_path"];
 // value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 // '타입' 부분은 클릭된 배너의 위치에 따라 '상단배너' 또는 '기획전배너'로 replace 필요
@@ -551,8 +553,8 @@ WiseTracker.sendClickData("EVT", eventName: "HOME_타입_배너명칭")
 // '배너명칭' 부분은 실제 배너명칭으로 replace 필요
 
 let event = NSMutableDictionary()
-event["event"] = "home"
-event["pi"] = "home"
+event["event"] = "click_banner"
+event["bannerNm"] = "배너명칭"
 event["contents_path"] = "home^타입^배너명칭"
 // value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 // '타입' 부분은 클릭된 배너의 위치에 따라 '상단배너' 또는 '기획전배너'로 replace 필요
@@ -574,8 +576,8 @@ DOT.logEvent(event)
 WiseTracker.sendClickData("EVT", "HOME_상단배너_N-CLAY로 즐거운 여름 만들기");
 
 Map<String, Object> eventMap = new HashMap<>();
-eventMap.put("event", "home");
-eventMap.put("pi", "home");
+eventMap.put("event", "click_banner");
+eventMap.put("bannerNm", "N-CLAY로 즐거운 여름 만들기");
 eventMap.put("contents_path", "home^상단배너^N-CLAY로 즐거운 여름 만들기");
 DOT.logEvent(eventMap);
 ```
@@ -588,8 +590,8 @@ DOT.logEvent(eventMap);
 [WiseTracker sendClickData:@"EVT" eventName:@"HOME_상단배너_N-CLAY로 즐거운 여름 만들기"];
 
 NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-[event setValue:@"home" forKey:@"event"];
-[event setValue:@"home" forKey:@"pi"];
+[event setValue:@"click_banner" forKey:@"event"];
+[event setValue:@"N-CLAY로 즐거운 여름 만들기" forKey:@"bannerNm"];
 [event setValue:@"home^상단배너^N-CLAY로 즐거운 여름 만들기" forKey:@"contents_path"];
 [DOT logEvent:logEvent];
 ```
@@ -602,8 +604,8 @@ NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 WiseTracker.sendClickData("EVT", eventName: "HOME_상단배너_N-CLAY로 즐거운 여름 만들기")
 
 let event = NSMutableDictionary()
-event["event"] = "home"
-event["pi"] = "home"
+event["event"] = "click_banner"
+event["bannerNm"] = "N-CLAY로 즐거운 여름 만들기"
 event["contents_path"] = "home^상단배너^N-CLAY로 즐거운 여름 만들기"
 DOT.logEvent(event);
 ```
@@ -626,22 +628,20 @@ DOT.logEvent(event);
 
 ``` html
 <script type="text/javascript">
-	WiseTracker.sendClickData("EVT", "EVENT_이벤트제목_버튼타입");
+	WiseTracker.sendClickData("EVT", "EVENT_이벤트제목_버튼명칭");
 	// '이벤트제목' 부분은 실제 이벤트 제목으로 replace 필요
-	// '버튼타입' 부분은 클릭된 버튼에 따라 '좋아요', '공유', '랜딩버튼'으로 replace 필요
+	// '버튼명칭' 부분은 클릭된 버튼에 따라 '좋아요', '공유', '랜딩버튼'으로 replace 필요
 
 	var event = new Object();
 	event["event"] = "click_button";
-	event["pi"] = "event";
+	event["buttonNm"] = "버튼명칭";
+	// '버튼명칭' 부분은 클릭된 버튼에 따라 '좋아요', '공유', '랜딩버튼'으로 replace 필요
 	event["eventNm"] = "이벤트제목";
 	// '이벤트제목'부분은 실제 이벤트 제목으로 replace 필요
-	event["버튼코드"] = "1";
-	// '버튼코드'는 아래 주석을 참고하여 replace 필요
-	// 좋아요 버튼 클릭시 g29, 공유 버튼 클릭시 g30, 온라인샵으로 랜딩시키는 버튼 클릭시 g31
-	event["contents_path"] = "event^이벤트제목^버튼타입";
+	event["contents_path"] = "event^이벤트제목^버튼명칭";
 	// value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 	// '이벤트제목' 부분은 실제 이벤트 제목으로 replace 필요
-	// '버튼타입' 부분은 클릭된 버튼에 따라 '좋아요', '공유', '랜딩버튼'으로 replace 필요
+	// '버튼명칭' 부분은 클릭된 버튼에 따라 '좋아요', '공유', '랜딩버튼'으로 replace 필요
 	DOT.logEvent(event);
 </script>
 ```
@@ -650,7 +650,7 @@ DOT.logEvent(event);
 
 #### 적용예시
 
-유저가 '이벤트' 이벤트의 좋아요 버튼을 클릭한 경우 다음과 같이 적용
+유저가 '맴버스위크 My Pick 이벤트' 이벤트의 좋아요 버튼을 클릭한 경우 다음과 같이 적용
 
 
 
@@ -658,14 +658,13 @@ DOT.logEvent(event);
 
 ``` html
 <script type="text/javascript">
-	WiseTracker.sendClickData("EVT", "EVENT_이벤트_좋아요");
+	WiseTracker.sendClickData("EVT", "EVENT_맴버스위크 My Pick 이벤트_좋아요");
 
 	var event = new Object(); 
 	event["event"] = "click_button"
-	event["pi"] = "event";
-	event["eventNm"] = "이벤트";
-	event["g29"] = "1";
-	event["contents_path"] = "event^이벤트^좋아요";
+	event["buttonNm"] = "좋아요";
+	event["eventNm"] = "맴버스위크 My Pick 이벤트";
+	event["contents_path"] = "event^맴버스위크 My Pick 이벤트^좋아요";
 	DOT.logEvent(event);
 </script>
 ```
@@ -687,22 +686,20 @@ DOT.logEvent(event);
 
 ``` html
 <script type="text/javascript">
-	WiseTracker.sendClickData("EVT", "POST_포스트제목_버튼타입");
+	WiseTracker.sendClickData("EVT", "POST_포스트제목_버튼명칭");
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
-	// '버튼타입' 부분은 클릭된 버튼에 따라 '유튜브조회', '랜딩버튼'으로 replace 필요
+	// '버튼명칭' 부분은 클릭된 버튼에 따라 '유튜브조회', '랜딩버튼'으로 replace 필요
 
 	var event = new Object();
 	event["event"] = "click_button";
-	event["pi"] = "post";
+	event["buttonNm"] = "버튼명칭";
+	// '버튼명칭' 부분은 클릭된 버튼에 따라 '유튜브조회', '랜딩버튼'으로 replace 필요
 	event["contentNm"] = "포스트제목";
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
-	event["버튼코드"] = "1";
-	// '버튼코드'는 아래 주석을 참고하여 replace 필요
-	// 유튜브조회 버튼 클릭시 g32, 온라인샵으로 랜딩시키는 버튼 클릭시 g33
-	event["contents_path"] = "post^포스트제목^버튼타입";
+	event["contents_path"] = "post^포스트제목^버튼명칭";
 	// value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 	// '포스트제목' 부분은 실제 이벤트 제목으로 replace 필요
-	// '버튼타입' 부분은 클릭된 버튼에 따라 '유튜브조회', '랜딩버튼'으로 replace 필요
+	// '버튼명칭' 부분은 클릭된 버튼에 따라 '유튜브조회', '랜딩버튼'으로 replace 필요
 	DOT.logEvent(event);
 </script>
 ```
@@ -719,13 +716,12 @@ DOT.logEvent(event);
 
 ``` html
 <script type="text/javascript">
-	WiseTracker.sendClickData("EVT", "POST_포스트제목_랜딩버튼");
+	WiseTracker.sendClickData("EVT", "POST_MS327 Review_랜딩버튼");
 
 	var event = new Object(); 
 	event["event"] = "click_button";
-	event["pi"] = "post";
+	event["buttonNm"] = "랜딩버튼";
 	event["contentNm"] = "MS327 Review";
-	event["g33"] = "1";
 	event["contents_path"] = "post^MS327 Review^랜딩버튼";
 	DOT.logEvent(event);
 </script>
@@ -750,11 +746,10 @@ DOT.logEvent(event);
 
 	var event = new Object(); 
 	event["event"] = "click_item";
-	event["pi"] = "post";
-	event["pnc"] = "상품ID";
-	// 클릭된 상품의 상품ID로 replace 필요
-	event["pncNm"] = "상품명";
-	// 클릭된 상품의 상품명으로 replace 필요
+	event["itemNm"] = "아이템명";
+	// '아이템명'은 클릭된 상품의 상품명으로 replace 필요
+	event["contentNm"] = "포스트제목";
+	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 	event["contents_path"] = "post^포스트제목^상품클릭";
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 	DOT.logEvent(event);
@@ -777,9 +772,8 @@ DOT.logEvent(event);
 
 	var event = new Object(); 
 	event["event"] = "click_item";
-	event["pi"] = "post";
-	event["pnc"] = "abc123";
-	event["pncNm"] = "UNI 데이지팩 등판 데이지 반팔티";
+	event["itemNm"] = "UNI 데이지팩 등판 데이지 반팔티";
+	event["contentNm"] = "Short Sleeve, Short Summer";
 	event["contents_path"] = "post^Short Sleeve, Short Summer^상품클릭";
 	DOT.logEvent(event);
 </script>
@@ -804,11 +798,10 @@ DOT.logEvent(event);
 
 	var event = new Object(); 
 	event["event"] = "add_to_wishlist";
-	event["pi"] = "post";
-	event["pnc"] = "상품ID";
-	// 클릭된 상품의 상품ID로 replace 필요
-	event["pncNm"] = "상품명";
-	// 클릭된 상품의 상품명으로 replace 필요
+	event["itemNm"] = "아이템명";
+	// '아이템명'은 위시리스트에 등록된 상품의 상품명으로 replace 필요
+	event["contentNm"] = "포스트제목";
+	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 	event["contents_path"] = "post^포스트제목^관심상품등록";
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 	DOT.logEvent(event);
@@ -831,9 +824,8 @@ DOT.logEvent(event);
 
 	var event = new Object();
 	event["event"] = "add_to_wishlist";
-	event["pi"] = "post";
-	event["pnc"] = "abc123";
-	event["pncNm"] = "NB X T&T FLIPFLOP / SD5601GBK";
+	event["itemNm"] = "NB X T&T FLIPFLOP / SD5601GBK";
+	event["contentNm"] = "불쾌지수를 낮추는 가장 부드러운 방법";
 	event["contents_path"] = "post^불쾌지수를 낮추는 가장 부드러운 방법^관심상품등록";
 	DOT.logEvent(event);
 </script>
@@ -857,11 +849,9 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 	var event = new Object(); 
 	event["event"] = "click_item";
-	event["pi"] = "points";
-	event["pnc"] = "상품ID";
-	// 클릭된 상품의 상품ID로 replace 필요
-	event["pncNm"] = "상품명";
-	// 클릭된 상품의 상품명으로 replace 필요
+	event["itemNm"] = "[투데이아이템] 아이템명";
+	// '아이템명'은 클릭된 상품의 상품명으로 replace 필요
+	// '[투데이아이템]'은 prefix의 역할을 하며 고정값임
 	event["contents_path"] = "points^투데이아이템^상품명";
 	// '상품명' 부분은 실제 상품의 명칭으로 replace 필요
 	DOT.logEvent(event);
@@ -887,7 +877,8 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 	var event = new Object();
 	event["event"] = "click_button";
-	event["quizNm"] = "퀴즈명";
+	event["seriseNm"] = "퀴즈명";
+	// '퀴즈명' 부분은 실제 퀴즈의 제목으로 replace 필요
 	event["contents_path"] = "points^퀴즈명^랜딩버튼";
 	// '퀴즈명' 부분은 실제 상품의 명칭으로 replace 필요
 	DOT.logEvent(event);
@@ -915,16 +906,14 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	// '전환타입' 부분은 '상품쿠폰', '액티비티쿠폰' 둘 중 하나로 replace 필요
 
 	var event = new Object();
-	event["event"] = "전환타입";
-	// '전환타입' 부분은 반드시 아래 두 가지 중 하나를 사용
-	/*
-		상품쿠폰이 정상적으로 전환 완료된 경우 == product_coupon_complete
-		액티비티쿠폰이 정상적으로 전환 완료된 경우 == activity_coupon_complete
-	*/
-	event["contents_path"] = "points^전환타입^쿠폰종류";
+	event["event"] = "use_credit";
+	event["creditNm"] = "전환타입_쿠폰금액";
+	// '전환타입' 부분은 '상품쿠폰', '액티비티쿠폰' 둘 중 하나로 replace 필요
+	// '쿠폰금액' 부분은 상품 또는 액티비티 쿠폰의 금액(1만원, 2만원 등)으로 replace 필요
+	event["contents_path"] = "points^전환타입^쿠폰금액";
 	// value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
 	// '전환타입' 부분은 '상품쿠폰', '액티비티쿠폰' 둘 중 하나로 replace 필요
-	// '쿠폰종류' 부분은 상품 또는 액티비티 쿠폰의 금액(1만원, 2만원 등)으로 replace 필요
+	// '쿠폰금액' 부분은 상품 또는 액티비티 쿠폰의 금액(10000, 20000)으로 replace 필요
 	DOT.logEvent(event);
 </script>
 ```
@@ -942,8 +931,9 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	WiseTracker.sendClickData("EVT", "POINTS_전환완료_상품쿠폰");
 
 	var event = new Object(); 
-	event["event"] = "product_coupon_complete";
-	event["contents_path"] = "points^상품쿠폰^3만원";
+	event["event"] = "use_credit";
+	event["creditNm"] = "상품쿠폰_30000";
+	event["contents_path"] = "points^상품쿠폰^30000";
 	DOT.logEvent(event);
 </script>
 ```
@@ -1012,7 +1002,8 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	WiseTracker.sendClickData("EVT", "SPORTS_스트라바_전환완료");
 
 	var event = new Object();
-	event["event"] = "strava_exchange_complete";
+	event["event"] = "use_credit";
+	event["creditNm"] = "strava";
 	event["contents_path"] = "sports^스트라바^전환완료";
 	DOT.logEvent(event);
 </script>
@@ -1020,12 +1011,9 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 
 
-### 우먼스 클래스 & 우먼스클래스 이용권 버튼 클릭 측정
+### 우먼스 클래스 & 우먼스클래스 이용권 신청하기 측정
 
-우먼스 클래스와 우먼스 클래스 이용권 화면에 있는 아래 두가지 버튼이 버튼이 클릭되는 시점에 아래 코드를 추가해 주세요.
-
-* 신청하기
-* 공유
+우먼스 클래스와 우먼스 클래스 이용권 화면에 있는 신청하기 버튼이 클릭되는 시점에 아래 코드를 추가해 주세요.
 
 
 
@@ -1035,30 +1023,24 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 ``` html
 <script type="text/javascript">
-	WiseTracker.sendClickData("EVT", "SPORTS_상품명_버튼타입");
+	WiseTracker.sendClickData("EVT", "SPORTS_상품명_신청하기");
 	// '상품명' 부분은 클릭된 상품의 상품명으로 replace 필요
-	// '버튼타입' 부분은 '신청하기', '공유' 둘 중 하나로 replace 필요
 
 	var event = new Object(); 
-	event["event"] = "타입";
-	// '타입' 부분은 아래 주석을 참고하여 replace 필요
-	/*
-		신청하기인 경우 == checkout
-		공유인 경우 == share
-	*/
-	event["pi"] = "PDV";
+	event["event"] = "checkout";
 	event["pnc"] = "상품ID";
 	// 클릭된 상품의 상품ID로 replace 필요
 	event["pncNm"] = "상품명";
 	// 클릭된 상품의 상품명으로 replace 필요
-	event["contents_path"] = "sports^상품명^버튼타입";
-	// '버튼타입' 부분은 '신청하기', '공유' 둘 중 하나로 replace 필요
+	event["contents_path"] = "sports^상품명^신청하기";
+	// '상품명' 부분은 클릭된 상품의 상품명으로 replace 필요
+	DOT.logEvent(event);
 </script>
 ```
 
 
 
-#### 적용예시 1
+#### 적용예시
 
 *한강 피크닉_SUP WORKOUT* 클래스의 신청하기 버튼을 클릭한 경우 다음과 같이 적용
 
@@ -1070,7 +1052,6 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 	var event = new Object();
 	event["event"] = "checkout";
-	event["pi"] = "PDV";
 	event["pnc"] = "qwer123";
 	event["pncNm"] = "한강 피크닉_SUP WORKOUT";
 	event["contents_path"] = "sports^한강 피크닉_SUP WORKOUT^신청하기";
@@ -1080,7 +1061,35 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 
 
-#### 적용예시 2
+### 우먼스 클래스 & 우먼스클래스 이용권 공유하기 측정
+
+우먼스 클래스와 우먼스 클래스 이용권 화면에 있는 공유하기 버튼이 클릭되는 시점에 아래 코드를 추가해 주세요.
+
+
+
+#### 측정 API
+
+**Hybrid**
+
+``` html
+<script type="text/javascript">
+	WiseTracker.sendClickData("EVT", "SPORTS_상품명_공유");
+	// '상품명' 부분은 클릭된 상품의 상품명으로 replace 필요
+
+	var event = new Object(); 
+	event["event"] = "share";
+	event["pnc"] = "상품ID";
+	// 클릭된 상품의 상품ID로 replace 필요
+	event["pncNm"] = "상품명";
+	// 클릭된 상품의 상품명으로 replace 필요
+	event["contents_path"] = "sports^상품명^공유";
+	// '상품명' 부분은 클릭된 상품의 상품명으로 replace 필요
+</script>
+```
+
+
+
+#### 적용예시
 
 *NB 우먼스 클래스 6개월 패키지* 이용권의 공유 버튼을 클릭한 경우 다음과 같이 적용
 
@@ -1092,7 +1101,6 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 	var event = new Object();
 	event["event"] = "share";
-	event["pi"] = "PDV";
 	event["pnc"] = "asdf123";
 	event["pncNm"] = "NB 우먼스 클래스 6개월 패키지";
 	event["contents_path"] = "sports^NB 우먼스 클래스 6개월 패키지^공유";
