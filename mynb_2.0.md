@@ -98,8 +98,8 @@
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setOrderProductArray(["상품ID"]);
-	WiseTracker.setOrderQuantityArray([구매수량]);
-	WiseTracker.setOrderAmountArray([구매금액]);
+	WiseTracker.setOrderQuantityArray([구매수량]); // float
+	WiseTracker.setOrderAmountArray([구매금액]); // float
 	WiseTracker.setOrderNo("주문번호");
 	WiseTracker.setPageIdentity("ODR");
 	WiseTracker.sendTransaction();
@@ -112,8 +112,8 @@
 	let product1 = new Object();
 	product1["pnc"] = "상품ID";
 	product1["pncNm"] = "상품명";
-	product1["amt"] = 구매금액;
-	product1["ea"] = 구매수량;
+	product1["amt"] = 구매금액; // float
+	product1["ea"] = 구매수량; // float
 	var productArray = new Array();
 	productArray.append(product1);
 	purchase["product"] = productArray;
@@ -202,9 +202,9 @@
 
 ``` java
 User user = new User.Builder()
-				.setGender("성별")
-				.setAge("연령대")
-				.build();
+		.setGender("성별")
+		.setAge("연령대")
+		.build();
 DOT.setUser(user); //유저 정보 측정
 
 Map<String, Object> eventMap = new HashMap<>();
@@ -257,7 +257,7 @@ DOT.logEvent(event) //로그인 이벤트 측정
 ``` html
 <script type="text/javascript">
 	DOT.setUser(User.setGender("성별")
-		.setAge("연령대")); //유저 정보 측정
+	.setAge("연령대")); //유저 정보 측정
 
 	var event = new Object(); 
 	event["event"] = "login_complete";
@@ -420,8 +420,8 @@ DOT.logEvent(event)
 
 ``` html
 <script type="text/javascript">
-WiseTracker.sendClickData("EVT", eventName: "메뉴_메뉴명칭")
-// '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
+	WiseTracker.sendClickData("EVT", eventName: "메뉴_메뉴명칭")
+	// '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
 
 	var event = new Object();
 	event["event"] = "click_menu";
@@ -486,7 +486,7 @@ DOT.logEvent(event)
 
 ``` html
 <script type="text/javascript">
-WiseTracker.sendClickData("EVT", eventName: "메뉴_Ranking");
+	WiseTracker.sendClickData("EVT", eventName: "메뉴_Ranking");
 
 	var event = new Object();
 	event["event"] = "click_menu";
@@ -916,7 +916,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	event["credit_name"] = "전환타입";
 	// '전환타입' 부분은 '상품쿠폰', '액티비티쿠폰' 둘 중 하나로 replace 필요
 	// '쿠폰금액' 부분은 상품 또는 액티비티 쿠폰의 금액(1만원, 2만원 등)으로 replace 필요
-	event["g@@"] = 쿠폰금액; // intiger
+	event["g2"] = 쿠폰금액; // float
 	// '쿠폰금액' 부분은 상품 또는 액티비티 쿠폰의 금액(1만원, 2만원 등)으로 replace 필요
 	event["contents_path"] = "points^전환타입^쿠폰금액";
 	// value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
@@ -941,7 +941,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 	var event = new Object(); 
 	event["event"] = "use_credit";
 	event["credit_name"] = "상품쿠폰";
-	event["g@@"] = 30000;
+	event["g2"] = 30000;
 	event["contents_path"] = "points^상품쿠폰^30000";
 	DOT.logEvent(event);
 </script>
