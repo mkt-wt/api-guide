@@ -105,7 +105,8 @@
 	WiseTracker.sendTransaction();
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var purchase = new Object(); 
 	purchase["ordNo"] = "주문번호";
 	purchase["curcy"] = "KRW";
@@ -131,7 +132,6 @@
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setOrderProductArray(["asdf123"]);
 	WiseTracker.setOrderQuantityArray([1]);
 	WiseTracker.setOrderAmountArray([550000]);
@@ -140,7 +140,7 @@
 	WiseTracker.sendTransaction();
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
 	var purchase = new Object(); 
 	purchase["ordNo"] = "tr012345";
 	purchase["curcy"] = "KRW";
@@ -353,7 +353,8 @@ DOT.logEvent(event)
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var event = new Object();
 	event["event"] = "signup_complete";
 	event["signupTp"] = "NB_account";
@@ -1209,7 +1210,8 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 	WiseTracker.setPageIdentity("PDV");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "view_product";
 	screen["pi"] = "PDV";
@@ -1230,11 +1232,11 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setProduct("zxc123", "7월 케틀벨 워크아웃(2회)");
-    WiseTracker.setPageIdentity("PDV");
+	WiseTracker.setProduct("zxc123", "7월 케틀벨 워크아웃(2회)");
+	WiseTracker.setPageIdentity("PDV");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
 	var screen = new Object();
 	screen["event"] = "view_product";
 	screen["pi"] = "PDV";
@@ -1259,11 +1261,12 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
-    WiseTracker.setPageIdentity("화면코드");
-    // '화면코드'는 반드시 매핑 테이블 참고
+	WiseTracker.setPageIdentity("화면코드");
+	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "login";
 	screen["pi"] = "화면코드";
@@ -1280,10 +1283,11 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("mypass");
+	WiseTracker.setPageIdentity("mypass");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "login";
 	screen["pi"] = "mypass";
@@ -1304,11 +1308,12 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
-    WiseTracker.setPageIdentity("화면코드");
-    // '화면코드'는 반드시 매핑 테이블 참고
+	WiseTracker.setPageIdentity("화면코드");
+	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "signup";
 	screen["pi"] = "화면코드";
@@ -1325,10 +1330,11 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("join01e");
+	WiseTracker.setPageIdentity("join01e");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "signup";
 	screen["pi"] = "join01e";
@@ -1349,11 +1355,12 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
-    WiseTracker.setPageIdentity("화면코드");
-    // '화면코드'는 반드시 매핑 테이블 참고
+	WiseTracker.setPageIdentity("화면코드");
+	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "point";
 	screen["pi"] = "화면코드";
@@ -1370,10 +1377,11 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("cal01");
+	WiseTracker.setPageIdentity("cal01");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "point";
 	screen["pi"] = "cal01";
@@ -1392,10 +1400,11 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("quiz");
+	WiseTracker.setPageIdentity("quiz");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "point";
 	screen["pi"] = "quiz";
@@ -1413,10 +1422,11 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("quiz");
+	WiseTracker.setPageIdentity("quiz");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "point";
 	screen["pi"] = "quiz";
@@ -1436,10 +1446,11 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("donation");
+	WiseTracker.setPageIdentity("donation");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "point";
 	screen["pi"] = "donation";
@@ -1457,10 +1468,11 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("donation");
+	WiseTracker.setPageIdentity("donation");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "point";
 	screen["pi"] = "donation";
@@ -1482,10 +1494,11 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
-    WiseTracker.setPageIdentity("postlist");
+	WiseTracker.setPageIdentity("postlist");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "post";
 	screen["pi"] = "postlist";
@@ -1506,10 +1519,11 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
-    WiseTracker.setPageIdentity("post");
+	WiseTracker.setPageIdentity("post");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "post";
 	screen["pi"] = "post";
@@ -1527,10 +1541,11 @@ MS327 Review 포스트 내에 다음 코드 추가
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("post");
+	WiseTracker.setPageIdentity("post");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "post";
 	screen["pi"] = "post";
@@ -1552,10 +1567,11 @@ MS327 Review 포스트 내에 다음 코드 추가
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
-    WiseTracker.setPageIdentity("evtlist");
+	WiseTracker.setPageIdentity("evtlist");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "event";
 	screen["pi"] = "evtlist";
@@ -1576,10 +1592,11 @@ MS327 Review 포스트 내에 다음 코드 추가
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
-    WiseTracker.setPageIdentity("event");
+	WiseTracker.setPageIdentity("event");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "event";
 	screen["pi"] = "event";
@@ -1597,10 +1614,11 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("event");
+	WiseTracker.setPageIdentity("event");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "event";
 	screen["pi"] = "event";
@@ -1622,11 +1640,12 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
-    WiseTracker.setPageIdentity("화면코드");
-    // '화면코드'는 반드시 매핑 테이블 참고
+	WiseTracker.setPageIdentity("화면코드");
+	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "sports";
 	screen["pi"] = "화면코드";
@@ -1643,10 +1662,11 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("nbrclist");
+	WiseTracker.setPageIdentity("nbrclist");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "sports";
 	screen["pi"] = "nbrclist";
@@ -1667,11 +1687,12 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
-    WiseTracker.setPageIdentity("화면코드");
-    // '화면코드'는 반드시 매핑 테이블 참고
+	WiseTracker.setPageIdentity("화면코드");
+	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "menu";
 	screen["pi"] = "화면코드";
@@ -1688,10 +1709,11 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
-    WiseTracker.setPageIdentity("levelup");
+	WiseTracker.setPageIdentity("levelup");
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["event"] = "menu";
 	screen["pi"] = "levelup";
@@ -1712,11 +1734,12 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 ``` html
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
-    WiseTracker.setPageIdentity("화면코드");
-    // '화면코드'는 반드시 매핑 테이블 참고
+	WiseTracker.setPageIdentity("화면코드");
+	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
+// 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
 	screen["pi"] = "화면코드";
 	// '화면코드'는 반드시 매핑 테이블 참고
