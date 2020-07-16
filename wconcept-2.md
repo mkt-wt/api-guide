@@ -100,4 +100,4 @@ _trk_clickTrace(\"EVT\", \"[SEARCH]\");
 | 모바일웹 & APP | LNB | LNB MEN | [L_M] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
 | 모바일웹 & APP | LNB | LNB NEW | [L_NEW] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
 | 모바일웹 & APP | LNB | LNB 배너 A | [L_BA_1] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
-| 모바일웹 & APP | LNB | LNB 배너 B | [L_BA_1] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
+| 모바일웹 & APP | LNB | LNB 배너 B | [L_BB_1] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
