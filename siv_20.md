@@ -737,14 +737,16 @@ function addToCart() {
 	product1["product_id"] = "${productId}";
 	product1["product_name"] = "${productName}";
 	product1["brand_name"] = "${brandName}";
-	product1["quantity"] = ${quantity}; // intiger
 	// 장바구니에 추가된 상품의 코드, 명칭, 브랜드명으로 치환
+	product1["quantity"] = ${quantity}; // intiger
 	
 	var product2 = new Object();
 	product2["product_id"] = "${productId}";
 	product2["product_name"] = "${productName}";
 	product2["brand_name"] = "${brandName}";
 	// 장바구니에 추가된 상품의 코드, 명칭, 브랜드명으로 치환
+	product2["quantity"] = ${quantity}; // intiger
+	
 	
 	var productArray = new Array();
 	productArray.push(product1);
@@ -1428,12 +1430,14 @@ function addToCart() {
 	product1["product_name"] = "${productName}";
 	product1["brand_name"] = "${brandName}";
 	// 쇼핑백 화면에 존재하는 상품의 코드, 명칭, 브랜드명으로 치환
+	product1["quantity"] = ${quantity};
 	
 	var product2 = new Object();
 	product2["product_id"] = "${productId}";
 	product2["product_name"] = "${productName}";
 	product2["brand_name"] = "${brandName}";
 	// 쇼핑백 화면에 존재하는 코드, 명칭, 브랜드명으로 치환
+	product2["quantity"] = ${quantity};
 	
 	var productArray = new Array();
 	productArray.push(product1);
@@ -1459,6 +1463,7 @@ function addToCart() {
 	product1["product_id"] = "2005272626";
 	product1["product_name"] = "5AC 패밀리 백";
 	product1["brand_name"] = "MASION MARGIELA";
+	product1["quantity"] = 1;
 	screen["product"] = product1;
 	DOT.logScreen(screen);
 </script>
@@ -1477,10 +1482,12 @@ function addToCart() {
 	product1["product_id"] = "2005272626";
 	product1["product_name"] = "5AC 패밀리 백";
 	product1["brand_name"] = "MASION MARGIELA";
+	product1["quantity"] = 2;
 	var product2 = new Object();
 	product2["product_id"] = "01P0000116871";
 	product2["product_name"] = "아쿠아 디 콜로니아 - 프리지아";
 	product2["brand_name"] = "SANTA MARIA NOBELLA";
+	product2["quantity"] = 2;
 	var productArray = new Array();
 	productArray.push(product1);
 	productArray.push(product2);
