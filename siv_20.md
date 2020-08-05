@@ -1968,20 +1968,19 @@ SDK와 API가 올바르게 적용 되었는지 확인하기 위해서는 아래 
 
 ### AOS
 
-AndroidManifest.xml 파일에 아래 메타 데이터 태그를 추가합니다.
+string.xml 파일 dotAuthorizationKey 값에 아래와 같이 적용합니다.
 
-``` kotlin
-<meta-data android:name="WiseTrackerLogState" android:value="true" />
-// 개발용 테스트 앱에는 true로, 배포용 앱에는 false로 설정
+``` xml
+<item name="isDebug">true</item>
 ```
+
+
 
 ### iOS
 
-Info.plist 파일에 아래 그림과 같이 값을 추가 합니다.
-
-![iOS Debug Mode](http://www.wisetracker.co.kr/wp-content/uploads/2019/05/ios-debug.png)
+info.plist의 dotAuthorizationKey값 중 isDebug를 true로 세팅합니다.
 
 ``` swift
-<key>WiseTrackerLogState</key>
-<string>true</string>
+<key>isDebug</key>
+	<string>true</string>
 ```
