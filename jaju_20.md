@@ -78,7 +78,7 @@ function joinJajuClub() {
 	alert("자주클럽에 가입 되었습니다.");
 	var event = new Object();
 	event["event"] = "signup_jajuclub";
-    event["g102"] = 1;
+	event["g102"] = 1;
 	DOT.logEvent(event);
 }
 ```
