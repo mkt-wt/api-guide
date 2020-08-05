@@ -395,11 +395,11 @@ function productShare() {
 	var event = new Object();
 	event["event"] = "w_share";
 	event["share_type"] = "product";
-    var product = new Object();
+	var product = new Object();
 	product["product_id"] = "01P0000020576";
 	product["product_name"] = "마스터 다용도 삼각 집게";
 	product["brand_name"] = "J1";
-    event["product"] = product;
+	event["product"] = product;
 	DOT.logEvent(event);
 }
 
@@ -454,13 +454,13 @@ onclick="productShare()"
 
 ``` javascript
 function addToCart() {
-    var event = new Object();
-    event["event"] = "w_add_to_wishlist";
-    var product1 = new Object();
+	var event = new Object();
+	event["event"] = "w_add_to_wishlist";
+	var product1 = new Object();
 	product1["product_id"] = "01P0000256908";
 	product1["product_name"] = "안전 면봉_80P";
 	product1["brand_name"] = "J1";
-    event["product"] = product1;
+	event["product"] = product1;
 	DOT.logEvent(event);
 }
 ```
@@ -473,18 +473,18 @@ function addToCart() {
 function addToCart() {
 	var event = new Object();
 	event["event"] = "w_add_to_wishlist";
-    var product1 = new Object();
+	var product1 = new Object();
 	product1["product_id"] = "01P0000256908";
 	product1["product_name"] = "안전 면봉_80P";
 	product1["brand_name"] = "J1";
-    var product2 = new Object();
+	var product2 = new Object();
 	product2["product_id"] = "01P0000281899";
 	product2["product_name"] = "전신 스트레칭 폼 롤러 90cm";
 	product2["brand_name"] = "J1";
-    var productArray = new Array();
+	var productArray = new Array();
 	productArray.push(product1);
 	productArray.push(product2);
-    event["product"] = productArray;
+	event["product"] = productArray;
 	DOT.logEvent(event);
 }
 ```
@@ -537,12 +537,12 @@ function addToCart() {
 function addToCart() {
 	var event = new Object();
 	event["event"] = "w_add_to_cart";
-    var product1 = new Object();
+	var product1 = new Object();
 	product1["product_id"] = "01P0000256908";
 	product1["product_name"] = "안전 면봉_80P";
 	product1["brand_name"] = "J1";
-    product1["qunatity"] = 2;
-    event["product"] = product1;
+	product1["qunatity"] = 2;
+	event["product"] = product1;
 	DOT.logEvent(event);
 }
 ```
@@ -555,20 +555,20 @@ function addToCart() {
 function addToCart() {
 	var event = new Object();
 	event["event"] = "w_add_to_cart";
-    var product1 = new Object();
+	var product1 = new Object();
 	product1["product_id"] = "01P0000256908";
 	product1["product_name"] = "안전 면봉_80P";
 	product1["brand_name"] = "J1";
-    product1["qunatity"] = 2;
-    var product2 = new Object();
+	product1["qunatity"] = 2;
+	var product2 = new Object();
 	product2["product_id"] = "01P0000281899";
 	product2["product_name"] = "전신 스트레칭 폼 롤러 90cm";
 	product2["brand_name"] = "J1";
-    product2["qunatity"] = 1;
-    var productArray = new Array();
+	product2["qunatity"] = 1;
+	var productArray = new Array();
 	productArray.push(product1);
 	productArray.push(product2);
-    event["product"] = productArray;
+	event["product"] = productArray;
 	DOT.logEvent(event);
 }
 ```
