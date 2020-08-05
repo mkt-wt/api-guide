@@ -188,8 +188,8 @@ DOT.setUser(User.setGender("${genderCode}")
 	.setAttr1("${attr1Code}")
 	.setAttr2("${attr2Code}")
 	.setAttr3("${attr3Code}")
-    .setAttr4("${유저의실제연령}")
-    .setAttr5("${attr5Code}"));
+	.setAttr4("${유저의실제연령}")
+	.setAttr5("${attr5Code}"));
 	// 매핑 테이블을 참고하여 치환
 
 var event = new Object();
@@ -209,8 +209,8 @@ DOT.setUser(User.setGender("female")
 	.setAge("30-34")
 	.setAttr1("member")
 	.setAttr2("gold")
-    .setAttr3("black")
-    .setAttr4("31")
+	.setAttr3("black")
+	.setAttr4("31")
 	.setAttr3("opt-in"));
 
 var event = new Object();
