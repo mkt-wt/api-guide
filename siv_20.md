@@ -1083,15 +1083,15 @@ function addToCart() {
 
 ### 매핑 테이블
 
-| 번호 | 카테고리 화면 | pageId   | 설명                                                      |
-| :--: | ------------- | -------- | --------------------------------------------------------- |
-|  1   | 여성패션      | women    | 여성패션의 하위 카테고리 화면에도 동일한 pageId 적용      |
-|  2   | 남성패션      | men      | 남성패션의 하위 카테고리 화면에도 동일한 pageId 적용      |
-|  3   | 잡화          | acc      | 잡화의 하위 카테고리 화면에도 동일한 pageId 적용          |
-|  4   | 아동          | kids     | 아동의 하위 카테고리 화면에도 동일한 pageId 적용          |
-|  5   | 뷰티          | beauty   | 뷰티의 하위 카테고리 화면에도 동일한 pageId 적용          |
-|  6   | 생활          | living   | 생활의 하위 카테고리 화면에도 동일한 pageId 적용          |
-|  7   | 가구/인테리어 | interior | 가구/인테리어의 하위 카테고리 화면에도 동일한 pageId 적용 |
+| 번호 | 카테고리 화면 | eventId (고정값)   | pageId | 설명 |
+| :--: | --- | --- | --- | --- |
+|  1   | 여성패션      | w_view_category | women    | 여성패션의 하위 카테고리 화면에도 동일한 pageId 적용      |
+|  2   | 남성패션      | w_view_category | men      | 남성패션의 하위 카테고리 화면에도 동일한 pageId 적용      |
+|  3   | 잡화          | w_view_category | acc      | 잡화의 하위 카테고리 화면에도 동일한 pageId 적용          |
+|  4   | 아동          | w_view_category | kids     | 아동의 하위 카테고리 화면에도 동일한 pageId 적용          |
+|  5   | 뷰티          | w_view_category | beauty   | 뷰티의 하위 카테고리 화면에도 동일한 pageId 적용          |
+|  6   | 생활          | w_view_category | living   | 생활의 하위 카테고리 화면에도 동일한 pageId 적용          |
+|  7   | 가구/인테리어 | w_view_category | interior | 가구/인테리어의 하위 카테고리 화면에도 동일한 pageId 적용 |
 
 
 
