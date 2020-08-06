@@ -9,9 +9,11 @@
 
 * [클릭 분석 API](./wconcept-2.md#클릭-분석-API)
 	* [적용 예시](./wconcept-2.md#적용-예시)
+	<!--
 	* [매핑 테이블](./wconcept-2.md#매핑-테이블)
-	* [매핑 테이블 - 20200714](./wconcept-2.md#매핑-테이블---20200714)
-
+	* [매핑 테이블 - 20200714](./wconcept-2.md#매핑-테이블---2020714)
+-->
+	* [매핑 테이블 - 20200802](./wconcept-2.md#매핑-테이블---2020802)
 
 
 ## 클릭 분석 API
@@ -51,7 +53,7 @@ WiseTracker.sendClickData("EVT", "[M_SEARCH]");
 _trk_clickTrace(\"EVT\", \"[SEARCH]\");
 // name은 매핑 테이블 참고
 ```
-
+<!--
 
 #### 매핑 테이블
 
@@ -100,4 +102,29 @@ _trk_clickTrace(\"EVT\", \"[SEARCH]\");
 | 모바일웹 & APP | LNB | LNB MEN | [L_M] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
 | 모바일웹 & APP | LNB | LNB NEW | [L_NEW] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
 | 모바일웹 & APP | LNB | LNB 배너 A | [L_BA_1] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
-| 모바일웹 & APP | LNB | LNB 배너 B | [L_BB_1] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
+| 모바일웹 & APP | LNB | LNB 배너 B | [L_BA_1] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/010.png) |
+
+-->
+
+#### 매핑 테이블 - 20200802
+
+본 매핑 테이블은 2020년 8월 2일 요청 사항에 대응하는 내용만을 다루고 있습니다.
+
+| 분류 | 대상 | 객체 | name | 참고 설명 |
+| --- | --- | --- | --- | --- |
+| 모바일웹 & APP | Women 메인 > What's New | TODAY MORE | [W_NEW] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/004.png) |
+| 모바일웹 & APP | Women 메인 > What's New | APPAREL | [W_NEW_APP] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/004.png) |
+| 모바일웹 & APP | Women 메인 > What's New | BAG | [W_NEW_BAG] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/22020/08/004.png) |
+| 모바일웹 & APP | Women 메인 > What's New | SHOES | [W_NEW_SH] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/004.png) |
+| 모바일웹 & APP | Women 메인 > What's New | ACC | [W_NEW_ACC] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/004.png) |
+| 모바일웹 & APP | Women 메인 > What's New | BEAUTY& | [W_NEW_B] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/004.png) |
+| 모바일웹 & APP | Women 메인 > What's New | LIFEWEAR | [W_NEW_LW] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/004.png) |
+| 모바일웹 & APP | Women 메인 > What's New | LIFE | [W_NEW_L] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/004.png) |
+| 모바일웹 & APP | Men 메인 > What's New | LIFE | [M_NEW] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/005.png) |
+| 모바일웹 & APP | Men 메인 > What's New | APPAREL | [M_NEW_APP] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/005.png) |
+| 모바일웹 & APP | Men 메인 > What's New | BAG | [M_NEW_BAG] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/005.png) |
+| 모바일웹 & APP | Men 메인 > What's New | SHOES | [M_NEW_SH] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/005.png) |
+| 모바일웹 & APP | Men 메인 > What's New | ACC | [M_NEW_ACC] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/005.png) |
+| 모바일웹 & APP | Men 메인 > What's New | BEAUTY& | [M_NEW_B] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/005.png) |
+| 모바일웹 & APP | Men 메인 > What's New | LIFEWEAR | [M_NEW_LW] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/005.png) |
+| 모바일웹 & APP | Men 메인 > What's New | LIFE | [M_NEW_L] | [참고 이미지](http://www.wisetracker.co.kr/wp-content/uploads/2020/08/005.png) |
