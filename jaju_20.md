@@ -849,20 +849,20 @@ function addToCart() {
 
 ### 매핑 테이블
 
-| 번호 | 카테고리 | pageId | pageId |
-| :--: | --- | --- | --- |
-|  1   | 에슬레져      | athleisure | 에슬레져 하위 카테고리 화면에도 동일한 pageId 적용      |
-|  2   | 헬스/뷰티      | hnb   | 헬스/뷰티 하위 카테고리 화면에도 동일한 pageId 적용      |
-|  3   | 언더웨어       | underwear | 언더웨어 하위 카테고리 화면에도 동일한 pageId 적용          |
-|  4   | 슬립웨어       | sleepwear | 슬립웨어 하위 카테고리 화면에도 동일한 pageId 적용          |
-|  5   | 패션         | fashion | 패션 하위 카테고리 화면에도 동일한 pageId 적용          |
-|  6   | 홈데코        | homedeco | 홈데코 하위 카테고리 화면에도 동일한 pageId 적용          |
-|  7   | 가전 | appliance | 가전 하위 카테고리 화면에도 동일한 pageId 적용 |
-|  8   | 침구 | bedding | 침구 하위 카테고리 화면에도 동일한 pageId 적용 |
-|  9   | 주방 | kitchen | 주방 하위 카테고리 화면에도 동일한 pageId 적용 |
-|  10   | 욕실 | bath | 욕실 하위 카테고리 화면에도 동일한 pageId 적용 |
-|  11   | 가구수납 | furniture | 가구수납 하위 카테고리 화면에도 동일한 pageId 적용 |
-|  12   | 트래블 | travel | 트래블 하위 카테고리 화면에도 동일한 pageId 적용 |
+| 번호 | 카테고리 | eventId (고정값) | pageId | 설명 |
+| :--: | --- | --- | --- | --- |
+|  1   | 에슬레져      | w_view_catrgory | athleisure | 에슬레져 하위 카테고리 화면에도 동일한 pageId 적용      |
+|  2   | 헬스/뷰티      | w_view_catrgory | hnb   | 헬스/뷰티 하위 카테고리 화면에도 동일한 pageId 적용      |
+|  3   | 언더웨어       | w_view_catrgory | underwear | 언더웨어 하위 카테고리 화면에도 동일한 pageId 적용          |
+|  4   | 슬립웨어       | w_view_catrgory | sleepwear | 슬립웨어 하위 카테고리 화면에도 동일한 pageId 적용          |
+|  5   | 패션         | w_view_catrgory | fashion | 패션 하위 카테고리 화면에도 동일한 pageId 적용          |
+|  6   | 홈데코        | w_view_catrgory | homedeco | 홈데코 하위 카테고리 화면에도 동일한 pageId 적용          |
+|  7   | 가전 | w_view_catrgory | appliance | 가전 하위 카테고리 화면에도 동일한 pageId 적용 |
+|  8   | 침구 | w_view_catrgory | bedding | 침구 하위 카테고리 화면에도 동일한 pageId 적용 |
+|  9   | 주방 | w_view_catrgory | kitchen | 주방 하위 카테고리 화면에도 동일한 pageId 적용 |
+|  10   | 욕실 | w_view_catrgory | bath | 욕실 하위 카테고리 화면에도 동일한 pageId 적용 |
+|  11   | 가구수납 | w_view_catrgory | furniture | 가구수납 하위 카테고리 화면에도 동일한 pageId 적용 |
+|  12   | 트래블 | w_view_catrgory | travel | 트래블 하위 카테고리 화면에도 동일한 pageId 적용 |
 
 
 
