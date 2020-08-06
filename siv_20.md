@@ -111,7 +111,7 @@ function joinJajuClub() {
 	alert("자주클럽에 가입 되었습니다.");
 	var event = new Object();
 	event["event"] = "join_jajuclub";
-	event["g102"] = 1;
+	event["g101"] = 1;
 	DOT.logEvent(event);
 }
 ```
@@ -161,7 +161,7 @@ function joinBtyClub() {
 <script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "add_to_mybrand";
-	event["g100"] = 1;
+	event["g103"] = 1;
 	event["brand_name"] = "${brandName}";
 	// brandName 은 마이 브랜드로 추가된 브랜드의 명칭으로 치환
 	DOT.logEvent(event);
@@ -177,7 +177,7 @@ function joinBtyClub() {
 ``` javascript
 var event = new Object();
 event["event"] = "add_to_mybrand";
-event["g100"] = 1;
+event["g103"] = 1;
 event["brand_name"] = "Byredo";
 DOT.logEvent(event);
 // 특정 브랜드가 마이 브랜드로 등록된 조건문에 위 코드 추가 
