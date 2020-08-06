@@ -111,7 +111,7 @@ function joinJajuClub() {
 	alert("자주클럽에 가입 되었습니다.");
 	var event = new Object();
 	event["event"] = "join_jajuclub";
-    event["g102"] = 1;
+	event["g102"] = 1;
 	DOT.logEvent(event);
 }
 ```
@@ -135,7 +135,7 @@ function joinBtyClub() {
 	alert("뷰티클럽에 가입 되었습니다.");
 	var event = new Object();
 	event["event"] = "join_beautyclub";
-    event["g102"] = 1;
+	event["g102"] = 1;
 	DOT.logEvent(event);
 }
 ```
@@ -526,11 +526,11 @@ function productShare() {
 	var event = new Object();
 	event["event"] = "w_share";
 	event["share_type"] = "product";
-    var product = new Object();
+	var product = new Object();
 	product["product_id"] = "2003258434";
 	product["product_name"] = "브로 레인지파인더 케이스";
 	product["brand_name"] = "J.LINDEBERG";
-    event["product"] = product;
+	event["product"] = product;
 	DOT.logEvent(event);
 }
 
@@ -683,13 +683,13 @@ onclick="magazineShare()"
 
 ``` javascript
 function addToCart() {
-    var event = new Object();
-    event["event"] = "w_add_to_wishlist";
-    var product1 = new Object();
+	var event = new Object();
+	event["event"] = "w_add_to_wishlist";
+	var product1 = new Object();
 	product1["product_id"] = "1903174091";
 	product1["product_name"] = "호일 로고 배너 반팔 티셔츠";
 	product1["brand_name"] = "ED HARDY";
-    event["product"] = product1;
+	event["product"] = product1;
 	DOT.logEvent(event);
 }
 ```
@@ -702,18 +702,18 @@ function addToCart() {
 function addToCart() {
 	var event = new Object();
 	event["event"] = "w_add_to_wishlist";
-    var product1 = new Object();
+	var product1 = new Object();
 	product1["product_id"] = "1903174091";
 	product1["product_name"] = "호일 로고 배너 반팔 티셔츠";
 	product1["brand_name"] = "ED HARDY";
-    var product2 = new Object();
+	var product2 = new Object();
 	product2["product_id"] = "2003258435";
 	product2["product_name"] = "브로 볼 케이스";
 	product2["brand_name"] = "J.LINDEBERG";
-    var productArray = new Array();
+	var productArray = new Array();
 	productArray.push(product1);
 	productArray.push(product2);
-    event["product"] = productArray;
+	event["product"] = productArray;
 	DOT.logEvent(event);
 }
 ```
@@ -767,12 +767,12 @@ function addToCart() {
 function addToCart() {
 	var event = new Object();
 	event["event"] = "w_add_to_cart";
-    var product1 = new Object();
+	var product1 = new Object();
 	product1["product_id"] = "1903174091";
 	product1["product_name"] = "호일 로고 배너 반팔 티셔츠";
 	product1["brand_name"] = "ED HARDY";
-    product1["qunatity"] = 2;
-    event["product"] = product1;
+	product1["qunatity"] = 2;
+	event["product"] = product1;
 	DOT.logEvent(event);
 }
 ```
@@ -785,20 +785,20 @@ function addToCart() {
 function addToCart() {
 	var event = new Object();
 	event["event"] = "w_add_to_cart";
-    var product1 = new Object();
+	var product1 = new Object();
 	product1["product_id"] = "1903174091";
 	product1["product_name"] = "호일 로고 배너 반팔 티셔츠";
 	product1["brand_name"] = "ED HARDY";
-    product1["qunatity"] = 2;
-    var product2 = new Object();
+	product1["qunatity"] = 2;
+	var product2 = new Object();
 	product2["product_id"] = "2003258435";
 	product2["product_name"] = "브로 볼 케이스";
 	product2["brand_name"] = "J.LINDEBERG";
-    product2["qunatity"] = 1;
-    var productArray = new Array();
+	product2["qunatity"] = 1;
+	var productArray = new Array();
 	productArray.push(product1);
 	productArray.push(product2);
-    event["product"] = productArray;
+	event["product"] = productArray;
 	DOT.logEvent(event);
 }
 ```
@@ -1670,12 +1670,12 @@ onclick="menuClick()"
 function clickItem() {
 	var event = new Object();
 	event["event"] = "w_click_banner";
-    event["banner_name"] = "main_v";
-    /*
-    	이벤트 배너가 아니므로 아래 코드는 적용하지 않음
+	event["banner_name"] = "main_v";
+	/*
+	이벤트 배너가 아니므로 아래 코드는 적용하지 않음
     	
-   		event["event_id"] = "${eventId}";
-		event["event_name"] = "${eventName}";
+	event["event_id"] = "${eventId}";
+	event["event_name"] = "${eventName}";
 	
 	*/
 	event["shop_id"] = "2003014479";
@@ -1871,11 +1871,11 @@ function reStockClick() {
 	var event = new Object();
 	event["event"] = "notice_instock";
 	event["g103"] = 1;
-    var product = new Object();
+	var product = new Object();
 	product["product_id"] = "1912230695";
 	product["product_name"] = "탑 스티치 히든 벨티드 코드";
 	product["brand_name"] = "MARNI";
-    event["product"] = product;
+	event["product"] = product;
 	DOT.logEvent(event);
 }
 
