@@ -1052,7 +1052,7 @@ SDK와 API가 올바르게 적용 되었는지 확인하기 위해서는 아래 
 
 ### AOS
 
-string.xml 파일 dotAuthorizationKey 값에 아래와 같이 적용합니다.
+string.xml 파일 `dotAuthorizationKey` 값에 아래와 같이 적용합니다.
 
 ``` xml
 <item name="isDebug">true</item>
@@ -1062,7 +1062,7 @@ string.xml 파일 dotAuthorizationKey 값에 아래와 같이 적용합니다.
 
 ### iOS
 
-info.plist의 dotAuthorizationKey값 중 isDebug를 true로 세팅합니다.
+info.plist의 `dotAuthorizationKey`값 중 `isDebug`를 `true`로 세팅합니다.
 
 ``` swift
 <key>isDebug</key>
