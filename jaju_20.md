@@ -516,7 +516,7 @@ function addToCart() {
 	product2["product_name"] = "${productName}";
 	product2["brand_name"] = "${brandCode}";
 	// 장바구니에 추가된 상품의 코드, 명칭, 브랜드코드로 치환
-	product1["quantity"] = ${quantity}; // intiger
+	product2["quantity"] = ${quantity}; // intiger
 	
 	var productArray = new Array();
 	productArray.push(product1);
