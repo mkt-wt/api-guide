@@ -1062,7 +1062,7 @@ function addToCart() {
 
 
 
-유저가 매거진 회원가입 본인인증 화면을 조회한 경우 해당 화면 내에 아래와 같이 적용
+유저가 회원가입 본인인증 화면을 조회한 경우 해당 화면 내에 아래와 같이 적용
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker2">
