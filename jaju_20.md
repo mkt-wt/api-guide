@@ -904,7 +904,7 @@ function addToCart() {
 
 
 
-유저가 *에슬레져 > 상의* 카테고리를 조회한 경우 해당 화면에 아래와 같이 적용
+유저가 *에슬레저 > 상의* 카테고리를 조회한 경우 해당 화면에 아래와 같이 적용
 
 ``` html
 <script type="wisetracker/text" id="wiseTracker2">
