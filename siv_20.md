@@ -1850,7 +1850,7 @@ onclick="popupClick()"
 ```javascript
 var event = new Object();
 event["event"] = "notice_instock";
-event["g103"] = 1;
+event["g104"] = 1;
 var product = new Object();
 product["product_id"] = "${productId}";
 product["product_name"] = "${productName}";
@@ -1870,7 +1870,7 @@ DOT.logEvent(event);
 function reStockClick() {
 	var event = new Object();
 	event["event"] = "notice_instock";
-	event["g103"] = 1;
+	event["g104"] = 1;
 	var product = new Object();
 	product["product_id"] = "1912230695";
 	product["product_name"] = "탑 스티치 히든 벨티드 코드";
