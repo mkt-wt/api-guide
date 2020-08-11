@@ -110,13 +110,13 @@
 	var purchase = new Object(); 
 	purchase["ordNo"] = "주문번호";
 	purchase["curcy"] = "KRW";
-	let product1 = new Object();
+	var product1 = new Object();
 	product1["pnc"] = "상품ID";
 	product1["pncNm"] = "상품명";
 	product1["amt"] = 구매금액; // float
 	product1["ea"] = 구매수량; // float
 	var productArray = new Array();
-	productArray.append(product1);
+	productArray.push(product1);
 	purchase["product"] = productArray;
 	DOT.logPurchase(purchase);
 </script>
@@ -144,13 +144,13 @@
 	var purchase = new Object(); 
 	purchase["ordNo"] = "tr012345";
 	purchase["curcy"] = "KRW";
-	let product1 = new Object();
+	var product1 = new Object();
 	product1["pnc"] = "asdf123";
 	product1["pncNm"] = "NB 우먼스 클래스 3개월 패키지";
 	product1["amt"] = 550000;
 	product1["ea"] = 1;
 	var productArray = new Array();
-	productArray.append(product1);
+	productArray.push(product1);
 	purchase["product"] = productArray;
 	DOT.logPurchase(purchase);
 </script>
