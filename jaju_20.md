@@ -211,7 +211,7 @@ DOT.setUser(User.setGender("female")
 	.setAttr2("gold")
 	.setAttr3("black")
 	.setAttr4("31")
-	.setAttr3("opt-in"));
+	.setAttr5("opt-in"));
 
 var event = new Object();
 event["event"] = "w_login_complete";
