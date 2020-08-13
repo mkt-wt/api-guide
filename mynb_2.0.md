@@ -1051,6 +1051,7 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
+``` html
 //V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POINTS_기부_캠페인명");
