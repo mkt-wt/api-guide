@@ -95,6 +95,7 @@
 **Hybrid**
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setOrderProductArray(["상품ID"]);
@@ -105,6 +106,7 @@
 	WiseTracker.sendTransaction();
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var purchase = new Object(); 
@@ -131,6 +133,7 @@
 **Hybrid**
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setOrderProductArray(["asdf123"]);
 	WiseTracker.setOrderQuantityArray([1]);
@@ -140,6 +143,7 @@
 	WiseTracker.sendTransaction();
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 	var purchase = new Object(); 
 	purchase["ordNo"] = "tr012345";
@@ -329,7 +333,7 @@ DOT.logEvent(event)
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+<script type="wisetracker/text" id="wiseTracker2">
 	DOT.setUser(User.setGender("female") //매핑 테이블 참고
 		.setAge("20s")); //매핑 테이블 참고
 			
@@ -375,9 +379,12 @@ DOT.logEvent(event)
 **Android**
 
 ``` java
+//V1
 WiseTracker.sendClickData("EVT", "메뉴_메뉴명칭");
 // '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
 
+
+//V2
 Map<String, Object> eventMap = new HashMap<>();
 eventMap.put("event", "click_menu");
 eventMap.put("menu_name", "메뉴명칭");
@@ -390,9 +397,12 @@ DOT.logEvent(eventMap);
 **iOS - Objective-C**
 
 ``` objectivec
+//V1
 [WiseTracker sendClickData:@"EVT" eventName:@"메뉴_메뉴명칭"];
 // '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
 
+
+//V2
 NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 [event setValue:@"click_menu" forKey:@"event"];
 [event setValue:@"메뉴명칭" forKey:@"menu_name"];
@@ -405,9 +415,12 @@ NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 **iOS - Swift**
 
 ``` swift
+//V1
 WiseTracker.sendClickData("EVT", eventName: "메뉴_메뉴명칭")
 // '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
 
+
+//V2
 let event = NSMutableDictionary()
 event["event"] = "click_menu"
 event["menu_name"] = "메뉴명칭"
@@ -420,10 +433,15 @@ DOT.logEvent(event)
 **Hybrid**
 
 ``` html
+//V1
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", eventName: "메뉴_메뉴명칭")
 	// '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
+</script>
 
+
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "click_menu";
 	event["menu_name"] = "메뉴명칭";
@@ -443,8 +461,11 @@ DOT.logEvent(event)
 **Android**
 
 ``` java
+//V1
 WiseTracker.sendClickData("EVT", "메뉴_NBPLAY");
 
+
+//V2
 Map<String, Object> eventMap = new HashMap<>();
 eventMap.put("event", "click_menu");
 eventMap.put("menu_name", "NBPLAY");
@@ -456,8 +477,11 @@ DOT.logEvent(eventMap);
 **iOS - Objective-C**
 
 ``` objectivec
+//V1
 [WiseTracker sendClickData:@"EVT" eventName:@"메뉴_NBPLAY"];
 
+
+//V2
 NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 [event setValue:@"click_menu" forKey:@"event"];
 [event setValue:@"NBPLAY" forKey:@"menu_name"];
@@ -469,8 +493,10 @@ NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 **iOS - Swift**
 
 ``` swift
+//V1
 WiseTracker.sendClickData("EVT", eventName: "메뉴_NBPLAY")
 
+//V2
 let event = NSMutableDictionary()
 event["event"] = "click_menu"
 event["menu_name"] = "NBPLAY"
@@ -486,9 +512,13 @@ DOT.logEvent(event)
 **Hybrid**
 
 ``` html
+//V1
 <script type="text/javascript">
 	WiseTracker.sendClickData("EVT", eventName: "메뉴_Ranking");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "click_menu";
 	event["menu_name"] = "Ranking";
@@ -515,10 +545,13 @@ DOT.logEvent(event)
 **Android**
 
 ``` java
+//V1
 WiseTracker.sendClickData("EVT", "HOME_타입_배너명칭");
 // '타입' 부분은 클릭된 배너의 위치에 따라 '상단배너' 또는 '기획전배너'로 replace 필요
 // '배너명칭' 부분은 실제 배너명칭으로 replace 필요
 
+
+//V2
 Map<String, Object> eventMap = new HashMap<>();
 eventMap.put("event", "click_banner");
 eventMap.put("banner_name", "배너명칭");
@@ -535,10 +568,12 @@ DOT.logEvent(eventMap);
 **iOS - Objective-C**
 
 ``` objectivec
+//V1
 [WiseTracker sendClickData:@"EVT" eventName:@"HOME_타입_배너명칭"];
 // '타입' 부분은 클릭된 배너의 위치에 따라 '상단배너' 또는 '기획전배너'로 replace 필요
 // '배너명칭' 부분은 실제 배너명칭으로 replace 필요
 
+//V2
 NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 [event setValue:@"click_banner" forKey:@"event"];
 [event setValue:@"배너명칭" forKey:@"banner_name"];
@@ -554,10 +589,13 @@ NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 **iOS - Swift**
 
 ``` swift
+//V1
 WiseTracker.sendClickData("EVT", eventName: "HOME_타입_배너명칭")
 // '타입' 부분은 클릭된 배너의 위치에 따라 '상단배너' 또는 '기획전배너'로 replace 필요
 // '배너명칭' 부분은 실제 배너명칭으로 replace 필요
 
+
+//V2
 let event = NSMutableDictionary()
 event["event"] = "click_banner"
 event["banner_name"] = "배너명칭"
@@ -579,8 +617,11 @@ DOT.logEvent(event)
 **Android**
 
 ``` java
+//V1
 WiseTracker.sendClickData("EVT", "HOME_상단배너_N-CLAY로 즐거운 여름 만들기");
 
+
+//V2
 Map<String, Object> eventMap = new HashMap<>();
 eventMap.put("event", "click_banner");
 eventMap.put("banner_name", "N-CLAY로 즐거운 여름 만들기");
@@ -593,8 +634,11 @@ DOT.logEvent(eventMap);
 **iOS - Objective-C**
 
 ``` objectivec
+//V1
 [WiseTracker sendClickData:@"EVT" eventName:@"HOME_상단배너_N-CLAY로 즐거운 여름 만들기"];
 
+
+//V2
 NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 [event setValue:@"click_banner" forKey:@"event"];
 [event setValue:@"N-CLAY로 즐거운 여름 만들기" forKey:@"banner_name"];
@@ -602,13 +646,14 @@ NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 [DOT logEvent:logEvent];
 ```
 
-
-
 **iOS - Swift**
 
 ``` swift
+//V1
 WiseTracker.sendClickData("EVT", eventName: "HOME_상단배너_N-CLAY로 즐거운 여름 만들기")
 
+
+//V2
 let event = NSMutableDictionary()
 event["event"] = "click_banner"
 event["banner_name"] = "N-CLAY로 즐거운 여름 만들기"
@@ -633,11 +678,15 @@ DOT.logEvent(event);
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "EVENT_이벤트제목_버튼명칭");
 	// '이벤트제목' 부분은 실제 이벤트 제목으로 replace 필요
 	// '버튼명칭' 부분은 클릭된 버튼에 따라 '좋아요', '공유', '랜딩버튼'으로 replace 필요
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "click_button";
 	event["button_name"] = "버튼명칭";
@@ -652,8 +701,6 @@ DOT.logEvent(event);
 </script>
 ```
 
-
-
 #### 적용예시
 
 유저가 '맴버스위크 My Pick 이벤트' 이벤트의 좋아요 버튼을 클릭한 경우 다음과 같이 적용
@@ -663,9 +710,13 @@ DOT.logEvent(event);
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "EVENT_맴버스위크 My Pick 이벤트_좋아요");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object(); 
 	event["event"] = "click_button"
 	event["button_name"] = "좋아요";
@@ -691,11 +742,15 @@ DOT.logEvent(event);
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POST_포스트제목_버튼명칭");
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
 	// '버튼명칭' 부분은 클릭된 버튼에 따라 '유튜브조회', '랜딩버튼'으로 replace 필요
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "click_button";
 	event["button_name"] = "버튼명칭";
@@ -721,9 +776,13 @@ DOT.logEvent(event);
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POST_MS327 Review_랜딩버튼");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object(); 
 	event["event"] = "click_button";
 	event["button_name"] = "랜딩버튼";
@@ -746,10 +805,14 @@ DOT.logEvent(event);
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POST_포스트제목_상품클릭");
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object(); 
 	event["event"] = "click_item";
 	event["item_name"] = "아이템명";
@@ -773,9 +836,13 @@ DOT.logEvent(event);
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POST_Short Sleeve, Short Summer_상품클릭");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object(); 
 	event["event"] = "click_item";
 	event["item_name"] = "UNI 데이지팩 등판 데이지 반팔티";
@@ -798,10 +865,14 @@ DOT.logEvent(event);
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POST_포스트제목_관심상품등록");
 	// '포스트제목' 부분은 실제 포스트의 제목으로 replace 필요
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object(); 
 	event["event"] = "add_to_wishlist";
 	event["item_name"] = "아이템명";
@@ -825,9 +896,13 @@ DOT.logEvent(event);
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POST_불쾌지수를 낮추는 가장 부드러운 방법_관심상품등록");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "add_to_wishlist";
 	event["item_name"] = "NB X T&T FLIPFLOP / SD5601GBK";
@@ -850,9 +925,13 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POINTS_투데이아이템");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object(); 
 	event["event"] = "click_item";
 	event["item_name"] = "[투데이아이템] 아이템명";
@@ -877,10 +956,14 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POINTS_퀴즈명_랜딩버튼");
 	// '퀴즈명' 부분은 실제 퀴즈의 제목으로 replace 필요
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "click_button";
 	event["button_name"] = "랜딩버튼";
@@ -908,10 +991,14 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POINTS_전환완료_전환타입");
 	// '전환타입' 부분은 '상품쿠폰', '액티비티쿠폰' 둘 중 하나로 replace 필요
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "use_credit";
 	event["credit_name"] = "전환타입";
@@ -936,9 +1023,13 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POINTS_전환완료_상품쿠폰");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object(); 
 	event["event"] = "use_credit";
 	event["credit_name"] = "상품쿠폰";
@@ -960,11 +1051,14 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 
 **Hybrid**
 
-``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POINTS_기부_캠페인명");
 	// '캠페인명' 부분은 실제 기부캠페인의 제목으로 replace 필요
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "donation_complete";
 	event["campaign_name"] = "캠페인명";
@@ -984,9 +1078,13 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "POINTS_기부_혼자가 아닌 우리의 힘으로, 리커버리 야구단");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "donation_complete";
 	event["campaign_name"] = "혼자가 아닌 우리의 힘으로, 리커버리 야구단";
@@ -1008,9 +1106,13 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "SPORTS_스트라바_전환완료");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "use_credit";
 	event["credit_name"] = "strava";
@@ -1032,10 +1134,14 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "SPORTS_상품명_신청하기");
 	// '상품명' 부분은 클릭된 상품의 상품명으로 replace 필요
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object(); 
 	event["event"] = "checkout";
 	event["pnc"] = "상품ID";
@@ -1057,9 +1163,13 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "SPORTS_한강 피크닉_SUP WORKOUT_신청하기");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "checkout";
 	event["pnc"] = "qwer123";
@@ -1082,10 +1192,14 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "SPORTS_상품명_공유");
 	// '상품명' 부분은 클릭된 상품의 상품명으로 replace 필요
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object(); 
 	event["event"] = "share";
 	event["pnc"] = "상품ID";
@@ -1106,9 +1220,13 @@ Point 탭에 있는 투데아아이템의 '상품 보러 가기' 버튼이 클�
 **Hybrid**
 
 ``` html
-<script type="text/javascript">
+//V1
+<script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.sendClickData("EVT", "SPORTS_NB 우먼스 클래스 6개월 패키지_공유");
+</script>
 
+//V2
+<script type="wisetracker/text" id="wiseTracker2">
 	var event = new Object();
 	event["event"] = "share";
 	event["pnc"] = "asdf123";
@@ -1203,6 +1321,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setProduct("상품ID", "상품명");
@@ -1210,6 +1329,7 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 	WiseTracker.setPageIdentity("PDV");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1231,11 +1351,13 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 '7월 케틀벨 워크아웃(2회)' 우먼스 클래스의 화면 내에 경우 다음과 같이 적용
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setProduct("zxc123", "7월 케틀벨 워크아웃(2회)");
 	WiseTracker.setPageIdentity("PDV");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 	var screen = new Object();
 	screen["event"] = "view_product";
@@ -1259,12 +1381,14 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setPageIdentity("화면코드");
 	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1282,10 +1406,12 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 '비밀번호 찾기' 화면 내에 다음과 같이 적용
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("mypass");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1306,12 +1432,14 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setPageIdentity("화면코드");
 	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1329,10 +1457,12 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 '약관동의(영문) ' 화면 내에 다음과 같이 적용
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("join01e");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1353,12 +1483,14 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setPageIdentity("화면코드");
 	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1376,10 +1508,12 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 'MyNB 출석체크 ' 화면 내에 다음과 같이 적용
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("cal01");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1399,10 +1533,12 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("quiz");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1421,10 +1557,12 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 '16회차' 퀴즈의 상세 화면에 다음과 같이 적용
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("quiz");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1445,10 +1583,12 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("donation");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1467,10 +1607,12 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 '러닝을 좋아하는 15살 주원이 이야기' 캠페인의 상세 화면에 다음과 같이 적용
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("donation");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1492,11 +1634,13 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setPageIdentity("postlist");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1517,11 +1661,13 @@ MyNB 앱에서의 상품이란 우먼스 클래스, 우먼스 클래스 이용�
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setPageIdentity("post");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1565,11 +1711,13 @@ MS327 Review 포스트 내에 다음 코드 추가
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setPageIdentity("evtlist");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1590,11 +1738,13 @@ MS327 Review 포스트 내에 다음 코드 추가
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setPageIdentity("event");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1613,10 +1763,12 @@ MS327 Review 포스트 내에 다음 코드 추가
 MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("event");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1638,12 +1790,14 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setPageIdentity("화면코드");
 	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1661,10 +1815,12 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 'NBRC 리스트' 화면 내에 다음과 같이 적용
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("nbrclist");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1685,12 +1841,14 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setPageIdentity("화면코드");
 	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1708,10 +1866,12 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 '멤버십 등급' 화면 내에 다음과 같이 적용
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 	WiseTracker.setPageIdentity("levelup");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1732,12 +1892,14 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 #### 측정 API
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	WiseTracker.setPageIdentity("화면코드");
 	// '화면코드'는 반드시 매핑 테이블 참고
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var screen = new Object();
@@ -1754,10 +1916,12 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 '홈' 화면 내에 다음과 같이 적용
 
 ``` html
+//V1
 <script type="wisetracker/text" id="wiseTracker">
     WiseTracker.setPageIdentity("home");
 </script>
 
+//V2
 <script type="wisetracker/text" id="wiseTracker2">
 	var screen = new Object();
 	screen["pi"] = "home";
@@ -1778,9 +1942,11 @@ MEMBERS WEEK 이벤트 상세화면 내에 다음 코드 추가
 **Android**
 
 ``` java
+//V1
 WiseTracker.setPageIdentity("화면코드");
 // '화면코드'는 반드시 매핑 테이블 참고
 
+//V2
 Map<String, Object> pageMap = new HashMap<>();
 pageMap.put("event", "menu");
 pageMap.put("pi", "화면코드");
@@ -1793,9 +1959,11 @@ DOT.logScreen(pageMap);
 **iOS - Objective-C**
 
 ``` objectivec
+//V1
 [WiseTracker setPageIdentity:@"화면코드"];
 // '화면코드'는 반드시 매핑 테이블 참고
 
+//V2
 NSMutableDictionary *screen = [[NSMutableDictionary alloc] init];
 [screen setValue:@"menu" forKey:@"event"];
 [screen setValue:@"화면코드" forKey:@"pi"];
@@ -1808,9 +1976,12 @@ NSMutableDictionary *screen = [[NSMutableDictionary alloc] init];
 **iOS - Swift**
 
 ``` swift
+//V1
 WiseTracker.setPageIdentity("화면코드")
 // '화면코드'는 반드시 매핑 테이블 참고
 
+
+//V2
 let screen = NSMutableDictionary()
 screen["event"] = "menu"
 screen["pi"] = "화면코드"
@@ -1829,8 +2000,10 @@ DOT.logScreen(screen)
 **Android**
 
 ``` java
+//V1
 WiseTracker.setPageIdentity("barcode");
 
+//V2
 Map<String, Object> pageMap = new HashMap<>();
 pageMap.put("event", "menu");
 pageMap.put("pi", "barcode");
@@ -1843,8 +2016,10 @@ DOT.logScreen(pageMap);
 **iOS - Objective-C**
 
 ``` objectivec
+//V1
 [WiseTracker setPageIdentity:@"barcode"];
 
+//V2
 NSMutableDictionary *screen = [[NSMutableDictionary alloc] init];
 [screen setValue:@"menu" forKey:@"event"];
 [screen setValue:@"barcode" forKey:@"pi"];
@@ -1856,8 +2031,10 @@ NSMutableDictionary *screen = [[NSMutableDictionary alloc] init];
 **iOS - Swift**
 
 ``` swift
+//V1
 WiseTracker.setPageIdentity("barcode")
 
+//v2
 let screen = NSMutableDictionary()
 screen["event"] = "menu"
 screen["pi"] = "barcode"
