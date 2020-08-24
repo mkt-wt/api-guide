@@ -33,7 +33,7 @@ WiseTracker.sendClickData("EVT", "name");
 **PC & 모바일웹용 코드**
 
 ``` javascript
-_trk_clickTrace(\"EVT\", \"name\");
+_trk_clickTrace("EVT", "name");
 // name은 매핑 테이블 참고
 ```
 
@@ -51,7 +51,7 @@ WiseTracker.sendClickData("EVT", "[M_SEARCH]");
 유저가 PC 웹사이트의 메인 페이지 상단에 있는 검색버튼(돋보기)을 클릭하는 경우, 클릭이 발생한 시점에 아래 코드 추가.
 
 ``` javascript
-_trk_clickTrace(\"EVT\", \"[SEARCH]\");
+_trk_clickTrace("EVT", "[SEARCH]");
 // name은 매핑 테이블 참고
 ```
 <!--
