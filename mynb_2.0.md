@@ -1290,7 +1290,7 @@ API 적용 중 각 화면의 '화면코드'를 입력하는 부분이 있습니�
 | 37 | 쿠폰 교환하기 | coupon0 | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/coupon0.jpg) |
 | 38 | 마이 액티비티 | activity | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/activity.jpg) |
 | 39 | 사용 안내 | guide | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/guide.jpg) |
-| 40 | 포인트 사용안내 | activity | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/ptguide.jpg) |
+| 40 | 포인트 사용안내 | ptguide | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/ptguide.jpg) |
 | 41 | 고객센터 | cs | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/cs.jpg) |
 | 42 | A/S | service | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/service.jpg) |
 | 43 | 공지사항 | notice | [링크](http://www.wisetracker.co.kr/wp-content/uploads/2020/07/notice.jpg) |
