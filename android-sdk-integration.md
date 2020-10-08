@@ -212,11 +212,11 @@ Facebook의 App Ads Helper로 *Deferred Deep Linking* 을 테스트 함으로써
 
 ![fb03](http://www.wisetracker.co.kr/wp-content/uploads/2018/01/fb116.jpg)
 
-5) 테스트 단말기의 Facebook 앱에 알림이 전송됩니다. 이 알림을 클릭하여 **앱 설치를 시작**합니다.
+5) 테스트 단말기의 Facebook 앱에 알림이 전송됩니다. 해당 알림를 탭하면 플레이스토어로 진입 할 것입니다. 플레이스토어에서 앱을 다운로드 받지 마시고, 6)번 단계로 진행하십시오.
 
 ![fb04](http://www.wisetracker.co.kr/wp-content/uploads/2018/01/fb117.png)
 
-6) 설치한 앱을 실행합니다. Facebook에 입력한 커스텀 스키마가 아래 그림처럼 logcat에서 보인다면 
+6) 안드로이드 스튜디오를 통해 해당 앱을 실행하고 로그를 확인 합니다. Facebook에 입력한 커스텀 스키마가 아래 그림처럼 logcat에서 보인다면 페이스북 앱 설치 광고에 대한 분석이 가능합니다. 
 
 ![fb05](http://www.wisetracker.co.kr/wp-content/uploads/2018/01/fb118.png)
 
@@ -226,11 +226,13 @@ Facebook의 App Ads Helper로 *Deferred Deep Linking* 을 테스트 함으로써
 
 **앱 참여형 광고 테스트**
 
-(7) 앱 참여 광고를 진행하는 경우 이미 앱을 설치한 사용자가 광고를 클릭하여 앱을 실행하는 시점에 페이스북 광고에 등록한 딥 링크값이 동작하는지 여부를 확인하면 됩니다.
+() 앱 참여 광고를 진행하는 경우 이미 앱을 설치한 사용자가 광고를 클릭하여 앱을 실행하는 시점에 페이스북 광고에 등록한 딥 링크값이 동작하는지 여부를 확인하면 됩니다.
 
-(8) 앱 참여 광고 등록 시 사용한 딥 링크를 Send Deep Link 영역에 입력 후 Send to Android 버튼을 클릭합니다. 이 때 Send Deferred는 반드시 체크 해제되어 있어야 합니다.
+8) 앱 참여 광고 등록 시 사용한 딥 링크를 Send Deep Link 영역에 입력 후 Send to Android 버튼을 클릭합니다. 이 때 Send Deferred는 반드시 체크 해제되어 있어야 합니다.
 
-(9) Send to Android 버튼 클릭 시, 로그인 된 페이스북 계정에 테스트를 위한 앱 참여 광고 링크가 발급됩니다. 해당 링크를 클릭하여 앱을 실행합니다.
+9) 테스트 단말기의 Facebook 앱에 알림이 전송됩니다. 해당 링크를 클릭하여 앱을 실행합니다.
+
+10) Facebook에 입력한 커스텀 스키마가 아래 그림처럼 logcat에서 보인다면 페이스북 앱  광고에 대한 분석이 가능합니다. 
 
 
 
