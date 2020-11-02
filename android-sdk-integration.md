@@ -19,8 +19,8 @@
 dependencies {
 	implementation fileTree(dir: 'libs', include: ['*.jar'])
 	....
-	implementation 'com.sdk.wisetracker.base:base_module:0.0.8' // wisetracker base
-	implementation 'com.sdk.wisetracker.new_dot:new_dot_module:0.0.8' // wisetracker core
+	implementation 'com.sdk.wisetracker.base:base_module:0.0.14' // wisetracker base
+	implementation 'com.sdk.wisetracker.new_dot:new_dot_module:0.0.14' // wisetracker core
 }
 ```
 
@@ -79,7 +79,7 @@ dependencies {
 
 ### Activity 감지를 위한 설정 추가
 
-`onResume`에 `onStartPage`를 추가해주세요.
+화면(Activity) 전환을 분석하기 위한 설정입니다. `onResume`에 `onStartPage`를 추가해주세요.
 
 ``` java
 @Override
