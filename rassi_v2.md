@@ -130,13 +130,13 @@ purchaseMap.put("transaction_id", "${transactionId}");
 purchaseMap.put("currency", "KRW");
 
 Map<String, Object> productMap = new HashMap<>();
-purchaseMap.put("product_id", "${productId}");
-purchaseMap.put("product_name", "${productName}");
-purchaseMap.put("product_subtype_a", "${subtypeName}");
-purchaseMap.put("category_id_a", "${categoryId}");
-purchaseMap.put("category_name_a", "${categoryName}");
-purchaseMap.put("quantity", ${quantity}); // int
-purchaseMap.put("revenue", ${revenue}); // double
+productMap.put("product_id", "${productId}");
+productMap.put("product_name", "${productName}");
+productMap.put("product_subtype_a", "${subtypeName}");
+productMap.put("category_id_a", "${categoryId}");
+productMap.put("category_name_a", "${categoryName}");
+productMap.put("quantity", ${quantity}); // int
+productMap.put("revenue", ${revenue}); // double
 
 purchaseMap.put("product", productMap);
 DOT.logPurchase(purchaseMap);
@@ -154,13 +154,13 @@ purchaseMap.put("transaction_id", "TR20201001ABC");
 purchaseMap.put("currency", "KRW");
 
 Map<String, Object> productMap = new HashMap<>();
-purchaseMap.put("product_id", "ac_pr.a01");
-purchaseMap.put("product_name", "프리미엄");
-purchaseMap.put("product_subtype_a", "정기결제");
-purchaseMap.put("category_id_a", "ac");
-purchaseMap.put("category_name_a", "계정");
-purchaseMap.put("quantity", 1);
-purchaseMap.put("revenue", 59800);
+productMap.put("product_id", "ac_pr.a01");
+productMap.put("product_name", "프리미엄");
+productMap.put("product_subtype_a", "정기결제");
+productMap.put("category_id_a", "ac");
+productMap.put("category_name_a", "계정");
+productMap.put("quantity", 1);
+productMap.put("revenue", 59800);
 
 purchaseMap.put("product", productMap);
 DOT.logPurchase(purchaseMap);
