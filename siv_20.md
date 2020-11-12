@@ -771,7 +771,7 @@ function addToCart() {
 	product1["product_id"] = "1903174091";
 	product1["product_name"] = "호일 로고 배너 반팔 티셔츠";
 	product1["brand_name"] = "ED HARDY";
-	product1["qunatity"] = 2;
+	product1["quantity"] = 2;
 	event["product"] = product1;
 	DOT.logEvent(event);
 }
@@ -789,12 +789,12 @@ function addToCart() {
 	product1["product_id"] = "1903174091";
 	product1["product_name"] = "호일 로고 배너 반팔 티셔츠";
 	product1["brand_name"] = "ED HARDY";
-	product1["qunatity"] = 2;
+	product1["quantity"] = 2;
 	var product2 = new Object();
 	product2["product_id"] = "2003258435";
 	product2["product_name"] = "브로 볼 케이스";
 	product2["brand_name"] = "J.LINDEBERG";
-	product2["qunatity"] = 1;
+	product2["quantity"] = 1;
 	var productArray = new Array();
 	productArray.push(product1);
 	productArray.push(product2);
