@@ -20,7 +20,11 @@
 
 ## SDK 추가
 
+**중요사항 1**
 링크 내용 중 가장 마지막에 있는 *Facebook 광고 성과 측정* 을 제외한 나머지 모든 항목들은 필수 설정이니 꼭 적용해 주시기 바랍니다. 만약 Facebook 유료 광고를 집행하실 계획이시라면 맨 마지막에 있는 *Facebook 광고 성과 측정* 도 적용해 주셔야 합니다.
+
+**중요사항 2**
+SDK 적용 중에 *AuthorizationKey를 등록* 하는 설정이 있습니다. 개고집 앱은 10305 를 key로 등록해 주시면 됩니다. (AOS/iOS 공통)
 
 * [Android SDK 설치 가이드](http://document.wisetracker.co.kr/v2/docs/sdk/android/android-install-guide)
 * [iOS SDK 설치 가이드](http://document.wisetracker.co.kr/v2/docs/sdk/ios/ios-install-guide)
