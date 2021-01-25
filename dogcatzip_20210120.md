@@ -256,11 +256,11 @@ DOT.logScreen(screen);
 **Flutter**
 
 ```dart
-var screen = {};
-screen["event"] = "w_event_participated";
-screen["event_id"] = "75"; // 해당 이벤트의 고유한 key 값 입력
-screen["event_name"] = "이벤트 명칭";
-screen["page_id"] = "event detail";
+var event = {};
+event["event"] = "w_event_participated";
+event["event_id"] = "75"; // 해당 이벤트의 고유한 key 값 입력
+event["event_name"] = "이벤트 명칭";
+event["page_id"] = "event detail";
 DOT.logEvent(event);
 ```
 
@@ -271,11 +271,11 @@ DOT.logEvent(event);
 **Flutter**
 
 ```dart
-var screen = {};
-screen["event"] = "w_event_participated";
-screen["event_id"] = "이벤트 고유번호";
-screen["event_name"] = "아미오 사료 샘플 배송비 체험";
-screen["page_id"] = "event detail";
+var event = {};
+event["event"] = "w_event_participated";
+event["event_id"] = "이벤트 고유번호";
+event["event_name"] = "아미오 사료 샘플 배송비 체험";
+event["page_id"] = "event detail";
 DOT.logEvent(event);
 ```
 
