@@ -139,7 +139,7 @@ user["ag"] = "반려동물 연령";
 user["ut1"] = "반려동물 종";
 user["ut2"] = "반려동물 품종";
 user["ut3"] = "반려동물 등록번호";
-DOT.setUser(user);
+DOT.setUser(json.encode(user));
 
 var event = {};
 event["event"] = "w_create_character";
