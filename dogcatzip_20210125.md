@@ -599,7 +599,7 @@ DOT.logScreen(screen);
 
 ```dart
 var event = {};
-event["event"] = "review_register";
+event["event"] = "w_review_added";
 event["page_id"] = "review register";
 event["score"] = "별점"; // 5점 만점으로 평가된 별점을 string으로 입력
 event["is_recommend"] = "추천 여부"; // true 또는 false로 입력
@@ -620,7 +620,7 @@ DOT.logEvent(event);
 
 ```dart
 var event = {};
-event["event"] = "review_register";
+event["event"] = "w_review_added";
 event["page_id"] = "review register";
 event["score"] = "5";
 event["is_recommend"] = "true";
