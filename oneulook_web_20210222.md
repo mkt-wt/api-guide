@@ -20,11 +20,11 @@
 
 ### 공통 스크립트 추가
 
-메일을 통해 별도로 전달해드린 `dop-website-sdk.txt` 파일의 확장자를 js로 변경하신 뒤, 사이트의 footer 영역에 include 해주시기 바랍니다. 아래는 공통 스크립트가 추가되었을 때의 예시입니다.
+메일을 통해 별도로 전달해드린 `10284_Insight_WebAnalytics.txt` 파일의 확장자를 js로 변경하신 뒤, 사이트의 footer 영역에 include 해주시기 바랍니다. 아래는 공통 스크립트가 추가되었을 때의 예시입니다.
 
 ```html
 <!-- footer -->
-<script src="your-site-directory/dop-website-sdk.js"></script>
+<script src="your-site-directory/10284_Insight_WebAnalytics.txt"></script>
 ```
 
 
@@ -39,24 +39,22 @@
 
 #### 매핑 테이블
 
-| 버튼 번호 | buttonName |
-| :---: | --- |
-| 1 | go_to_instagram_top |
-| 2 | become_a_model |
-| 3 | looking_for_clothes |
-| 4 | go_to_instagram_middle |
-| 5 | become_a_model_bottom |
-| 6 | looking_for_clothes_bottom |
+| 버튼 번호 | buttonName | goalNumber |
+| :---: | --- | --- |
+| 1 | 상단 인스타 아이콘 | G3 |
+| 2 | 모델 지원하기 | G4 |
+| 3 | 옷 구경 하기 | G5 |
+| 4 | 인스타에서 더 구경하기 | G6 |
+| 5 | 모델 지원하기 - 하단 | G7 |
+| 6 | 옷 구경 하기 - 하단 | G8 |
 
 
 
 #### 분석 코드
 
 ```javascript
-const wisetracker = {}
-wisetracker["event"] = "buttonName";
-wisetracker["page_id"] = "main";
-WDOT.logEvent(wisetracker);
+_trk_clickTrace("EVT", "buttonName"); // buttonName 부분을 매핑 테이블에 있는 정보로 치환
+eval('try{_trk_flashEnvView(\'_TRK_goalNumber=1\');}catch(_e){}'); // goalNumber 부분을 매핑 테이블에 있는 정보로 치환
 ```
 
 
@@ -66,10 +64,8 @@ WDOT.logEvent(wisetracker);
 메인 페이지 상단에 있는 모델 지원하기 버튼(2번 버튼)이 클릭되는 시점(클릭 이벤트)에 아래 코드 추가
 
 ```javascript
-const wisetracker = {}
-wisetracker["event"] = "become_a_model";
-wisetracker["page_id"] = "main";
-WDOT.logEvent(wisetracker);
+_trk_clickTrace("EVT", "모델 지원하기");
+eval('try{_trk_flashEnvView(\'_TRK_G4=1\');}catch(_e){}');
 ```
 
 
@@ -84,10 +80,8 @@ WDOT.logEvent(wisetracker);
 #### 분석 코드
 
 ```javascript
-const wisetracker = {}
-wisetracker["event"] = "become_a_model_atClothesPage";
-wisetracker["page_id"] = "clothes";
-WDOT.logEvent(wisetracker);
+_trk_clickTrace("EVT", "모델 지원하기 - 옷 구경하기 페이지");
+eval('try{_trk_flashEnvView(\'_TRK_G9=1\');}catch(_e){}');
 ```
 
 
@@ -102,10 +96,8 @@ WDOT.logEvent(wisetracker);
 #### 분석 코드
 
 ```javascript
-const wisetracker = {}
-wisetracker["event"] = "go_to_instagram_atSubmitCompletePage";
-wisetracker["page_id"] = "submit_complete";
-WDOT.logEvent(wisetracker);
+_trk_clickTrace("EVT", "오늘룩 인스타 구경가기 - 신청완료 페이지");
+eval('try{_trk_flashEnvView(\'_TRK_G10=1\');}catch(_e){}');
 ```
 
 
@@ -114,11 +106,11 @@ WDOT.logEvent(wisetracker);
 
 신청 완료 화면 내에 아래 코드를 추가해 주시기 바랍니다.
 
-```javascript
-const wisetracker = {}
-wisetracker["event"] = "submit_complete";
-wisetracker["page_id"] = "submit_complete";
-WDOT.logScreen(wisetracker);
+```html
+<script type="text/javascript">
+	_TRK_PI = "COMPLETE";
+	_TRK_G11 = "1";
+</script>
 ```
 
 
@@ -127,10 +119,10 @@ WDOT.logScreen(wisetracker);
 
 메인 페이지 내에 아래 코드를 추가해 주시기 바랍니다.
 
-```javascript
-const wisetracker = {}
-wisetracker["page_id"] = "main";
-WDOT.logScreen(wisetracker);
+```html
+<script type="text/javascript">
+	_TRK_PI = "MAIN";
+</script>
 ```
 
 
@@ -139,10 +131,10 @@ WDOT.logScreen(wisetracker);
 
 옷 구경 하기 페이지 내에 아래 코드를 추가해 주시기 바랍니다.
 
-```javascript
-const wisetracker = {}
-wisetracker["page_id"] = "clothes";
-WDOT.logScreen(wisetracker);
+```html
+<script type="text/javascript">
+	_TRK_PI = "CLOTHES";
+</script>
 ```
 
 
@@ -151,9 +143,9 @@ WDOT.logScreen(wisetracker);
 
 모델 신청에 필요한 정보를 입력하는 페이지 내에 아래 코드를 추가해 주시기 바랍니다.
 
-```javascript
-const wisetracker = {}
-wisetracker["page_id"] = "submit";
-WDOT.logScreen(wisetracker);
+```html
+<script type="text/javascript">
+	_TRK_PI = "SUBMIT";
+</script>
 ```
 
