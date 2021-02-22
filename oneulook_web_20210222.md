@@ -31,7 +31,7 @@
 
 ### 메인 페이지 버튼 클릭 측정
 
-아래 이미지에 있는 6개 버튼이 클릭되는 시점에, 아래 *매핑 테이블* 에 있는 `buttonName` 값을 참고하여 분석 코드를 추가해 주시면 됩니다.
+아래 이미지에 있는 6개 버튼이 클릭되는 시점에, 아래 *매핑 테이블* 에 있는 `buttonName`과 `goalNumber` 값을 참고하여 분석 코드를 추가해 주시면 됩니다.
 
 ![이미지0](http://www.wisetracker.co.kr/wp-content/uploads/2021/02/oneulook01.png)
 
