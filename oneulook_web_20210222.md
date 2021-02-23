@@ -23,7 +23,7 @@
 
 ```html
 <!-- footer -->
-<script src="your-site-directory/10284_Insight_WebAnalytics.txt"></script>
+<script src="your-site-directory/10284_Insight_WebAnalytics.js"></script>
 ```
 
 
