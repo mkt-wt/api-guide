@@ -176,7 +176,7 @@
 
 #### 매핑 테이블
 
-로그인한 유저의 성별은 아래 value로 설정해 주시기 바랍니다.
+로그인한 유저의 **성별**은 아래 value로 설정해 주시기 바랍니다.
 
 | 성별 | value |
 | --- | --- |
@@ -184,7 +184,7 @@
 | 여성 | female |
 | 기타 (남성 또는 여성이 아닌 모든 경우) | non avaliable |
 
-로그인한 유저의 연령대는 아래 value로 설정해 주시기 바랍니다.
+로그인한 유저의 **연령대**는 아래 value로 설정해 주시기 바랍니다.
 
 | 연령대 | value |
 | --- | --- |
@@ -197,6 +197,14 @@
 | 60대 | 60s |
 | 60대 이상 | over 60s |
 | 기타 | non avaliable |
+
+로그인한 유저의 로그인 유형은 아래 value로 설정해 주시기 바랍니다.
+
+| 로그인 유형 | value |
+| --- | --- |
+| MyNB 계정 | NB_account |
+| 카카오 | kakao |
+| 네이버 | naver |
 
 
 
@@ -213,7 +221,7 @@ DOT.setUser(user); //유저 정보 측정
 
 Map<String, Object> eventMap = new HashMap<>();
 eventMap.put("event", "login_complete");
-eventMap.put("loginTp", "NB_account");
+eventMap.put("loginTp", "로그인 유형");
 DOT.logEvent(eventMap); //로그인 이벤트 측정
 ```
 
@@ -231,7 +239,7 @@ DOT.logEvent(eventMap); //로그인 이벤트 측정
 
 NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 [event setValue:@"login_complete" forKey:@"event"];
-[event setValue:@"NB_account" forKey:@"loginTp"];
+[event setValue:@"로그인 유형" forKey:@"loginTp"];
 [DOT logEvent:event]; //로그인 이벤트 측정
 ```
 
@@ -250,7 +258,7 @@ DOT.setUser(
 
 let event = NSMutableDictionary()
 event["event"] = "login_complete"
-event["loginTp"] = "NB_account"
+event["loginTp"] = "로그인 유형"
 DOT.logEvent(event) //로그인 이벤트 측정
 ```
 
@@ -265,7 +273,7 @@ DOT.logEvent(event) //로그인 이벤트 측정
 
 	var event = new Object(); 
 	event["event"] = "login_complete";
-	event["loginTp"] = "NB_account";
+	event["loginTp"] = "로그인 유형";
 	DOT.logEvent(event); //로그인 이벤트 측정
 </script>
 ```
@@ -274,7 +282,7 @@ DOT.logEvent(event) //로그인 이벤트 측정
 
 #### 적용예시
 
-로그인한 유저가 20대 여성인 경우 아래와 같이 적용
+카카오 계정으로 로그인한 유저가 20대 여성인 경우 아래와 같이 적용
 
 **Android**
 
@@ -287,7 +295,7 @@ DOT.setUser(user);
 
 Map<String, Object> eventMap = new HashMap<>();
 eventMap.put("event", "login_complete");
-eventMap.put("loginTp", "NB_account");
+eventMap.put("loginTp", "kakao"); //매핑 테이블 참고
 DOT.logEvent(eventMap);
 ```
 
@@ -305,7 +313,7 @@ DOT.logEvent(eventMap);
 
 NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
 [event setValue:@"login_complete" forKey:@"event"];
-[event setValue:@"NB_account" forKey:@"loginTp"];
+[event setValue:@"kakao" forKey:@"loginTp"]; //매핑 테이블 참고
 [DOT logEvent:event];
 ```
 
@@ -324,7 +332,7 @@ DOT.setUser(
 
 let event = NSMutableDictionary()
 event["event"] = "login_complete"
-event["loginTp"] = "NB_account"
+event["loginTp"] = "kakao" //매핑 테이블 참고
 DOT.logEvent(event)
 ```
 
@@ -333,13 +341,13 @@ DOT.logEvent(event)
 **Hybrid**
 
 ``` html
-<script type="wisetracker/text" id="wiseTracker2">
+<script type="text/javascript">
 	DOT.setUser(User.setGender("female") //매핑 테이블 참고
 		.setAge("20s")); //매핑 테이블 참고
 			
 	var event = new Object();
 	event["event"] = "login_complete";
-	event["loginTp"] = "NB_account"
+	event["loginTp"] = "kakao" //매핑 테이블 참고
 	DOT.logEvent(event);
 </script>
 ```
@@ -352,6 +360,24 @@ DOT.logEvent(event)
 
 
 
+#### 주의사항
+
+어떤 유형으로 회원가입 했는지에 대해 정보를 수집하는데, 이에 사용하는 value는 아래에 있는 매핑 테이블에 명시한 것을 사용해 주세요.
+
+
+
+#### 매핑 테이블
+
+가입한 유저의 **가입 유형**은 아래 value로 설정해 주시기 바랍니다.
+
+| 가입 유형 | value      |
+| --------- | ---------- |
+| MyNB 계정 | NB_account |
+| 카카오    | kakao      |
+| 네이버    | naver      |
+
+
+
 #### 측정 API
 
 **Hybrid**
@@ -361,7 +387,39 @@ DOT.logEvent(event)
 // 스크립트 타입이 일반적인 javascript가 아님을 주의
 	var event = new Object();
 	event["event"] = "signup_complete";
-	event["signupTp"] = "NB_account";
+	event["signupTp"] = "가입유형";
+	DOT.logEvent(event);
+</script>
+```
+
+
+
+#### 적용예시
+
+MyNB 계정으로 가입한 경우 아래와 같이 적용
+
+**Hybrid**
+
+``` html
+<script type="wisetracker/text" id="wiseTracker2">
+	var event = new Object();
+	event["event"] = "signup_complete";
+	event["signupTp"] = "NB_account"; // 매핑 테이블 참고
+	DOT.logEvent(event);
+</script>
+```
+
+
+
+네이버 계정으로 가입한 경우 아래와 같이 적용
+
+**Hybrid**
+
+``` html
+<script type="wisetracker/text" id="wiseTracker2">
+	var event = new Object();
+	event["event"] = "signup_complete";
+	event["signupTp"] = "naver"; // 매핑 테이블 참고
 	DOT.logEvent(event);
 </script>
 ```
