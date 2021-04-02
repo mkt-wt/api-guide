@@ -94,6 +94,10 @@ DOT.logEvent(event);
 
 * 코드 적용 시점 - 제품 상세 화면에서 해당 버튼이 클릭되는 시점에 적용해 주세요.
 
+![이미지](http://www.wisetracker.co.kr/wp-content/uploads/2021/04/ewg_additives.png)
+
+
+
 ### 분석 코드
 
 ```dart
