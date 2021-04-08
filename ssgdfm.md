@@ -12,14 +12,15 @@ kr.co.wisetracker.insight:SDK_V1:21.3.54
 <meta-data android:name="WiseTrackerUseBaseProvider" android:value="false"></meta-data>
 ```
 
-### 3. 최초 앱 실행 시 Wisetracker.init 전에 putInitData API를 사용해 서비스 언어 설정
+### 3. 서비스 언어별 설치 분석을 위해 Wisetracker.init 전에 putFirstInitData API를 호출
 ```java
-WiseTracker.putInitData(StaticValues.PARAM_SRVC_LANG, "ServiceLanguage");
+WiseTracker.putFirstInitData("service_lang", "ServiceLanguage");
 WiseTracker.init();
 ```
-**putInitData는 반드시 init 전에 호출이 되어야 합니다.**    
-**서비스 언어별 설치 분석을 위한 설정**이며 한번 서비스 언어 설정을 하면 저희 SDK가 관련 값을 저장하고 있기 때문에    
-매번 init 때마다 서비스 언어 설정이 바뀌지 않았는데도 관련 API를 호출하실 필요는 없습니다.
+**putFirstInitData는 반드시 init 전에 위치하여야 합니다.**    
+**서비스 언어별 설치 분석을 위한 설정**이며 putFirstInitData는 <u>**최초 앱 실행 시에만 전달 받은 데이터를 서비스 언어로 설정**</u>합니다.    
+putFirstInitData를 통해 설정된 서비스 언어는 아래 4번 설정을 통해 서비스 언어를 명시적으로 변경하기 전까지 계속 유지가 됩니다.    
+위 예제 코드의 **"ServiceLanguage" 값은 샘플이며 실제 사용하시는 코드 값으로 치환**이 되어야 합니다.
 
 ### 4. 서비스 언어 변경 시점에 서비스 언어 변경 API와 새로운 새션 발급 API 호출
 ```java
