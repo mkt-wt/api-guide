@@ -36,7 +36,7 @@ podfile내 WiseTracker SDK 버전을 아래 버전으로 변경
 pod 'WiseTracker', '~> 21.3.30'
 ```
 
-### 2. 서비스 언어별 설치 분석을 위해 Wisetracker.init 전에 putFirstInitData API를 호출
+### 2. 서비스 언어별 설치 분석을 위해 Wisetracker.initEnd 전에 putFirstInitData API를 호출
 ```swift
 WiseTracker.putFirstInitData(StaticValues.param_SRVC_LANG(), value: "ServiceLanguage")
 WiseTracker.initEnd()
