@@ -46,7 +46,7 @@ WiseTracker.initEnd()
 putFirstInitData를 통해 설정된 서비스 언어는 아래 4번 설정을 통해 서비스 언어를 명시적으로 변경하기 전까지 계속 유지가 됩니다.    
 위 예제 코드의 **"ServiceLanguage" 값은 샘플이며 실제 사용하는 언어 코드 값으로 치환**이 되어야 합니다.
 
-### 4. 서비스 언어 변경 시점에 서비스 언어 변경 API와 새로운 새션 발급 API 호출
+### 3. 서비스 언어 변경 시점에 서비스 언어 변경 API와 새로운 새션 발급 API 호출
 ```swift
 WiseTracker.setServiceLanguage("ServiceLanguage");
 WiseTracker.createNewSession();
