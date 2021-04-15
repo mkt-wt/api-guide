@@ -4,7 +4,7 @@
 ### 1. SDK 버전 업데이트    
 build.gradle에 있는 Wisetracker SDK 버전을 아래 버전으로 변경
 ```
-kr.co.wisetracker.insight:SDK_V1:21.3.55
+kr.co.wisetracker.insight:SDK_V1:21.3.56
 ```
 
 ### 2. AndroidMenifest.xml에 아래 태그 추가
@@ -33,7 +33,7 @@ WiseTracker.createNewSession();
 ### 1. SDK 버전 업데이트    
 podfile내 WiseTracker SDK 버전을 아래 버전으로 변경
 ```
-pod 'WiseTracker', '~> 21.3.30'
+pod 'WiseTracker', '~> 21.3.31'
 ```
 
 ### 2. 서비스 언어별 설치 분석을 위해 Wisetracker.initEnd 전에 putFirstInitData API를 호출
