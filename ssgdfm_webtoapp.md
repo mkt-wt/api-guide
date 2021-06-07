@@ -21,12 +21,13 @@ https://test-www.ssgdfs.com/kr/event/initEventDetail?event_no=E210404297&mcd1=01
     _wiseWebTrack.init({
         _wtno:10063, // 프로파일 번호
         _wthst:"http://applog.ssgdfs.com:8080",
+        _wtufn:"ALL",
+        _cps:"IndirectInflowByWeb",
         _wts:"01",
         _wtc:"skt",
         _wtm:"common",
         _wtw:"mass",
-        _wtaffid:"ssg",
-        _cps:"IndirectInflowByWeb"
+        _wtaffid:"ssg"
     });
   });
 </script>
@@ -40,9 +41,9 @@ https://test-www.ssgdfs.com/kr/event/initEventDetail?event_no=E210404297&mcd1=01
 function moveToApp(){
     if(confirm("앱으로 이동하시겠습니까?") == true){    
         _wiseWebTrack.redirection({
+            _wtpkg:"앱 패키지명",
             _wtdl:"스토어 URL",
-            _wtal:"딥링크 URL",
-            _wtufn:"ALL" // 스토어 URL, 딥링크 URL 모두 넣는 경우 ALL, 스토어 URL만 있는 경우 DOWNLOAD, 딥링크만 있는 경우 DEEPLINK 
+            _wtal:"딥링크 URL"
         });
     }else{  
        return;
