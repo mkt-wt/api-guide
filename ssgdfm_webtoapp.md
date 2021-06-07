@@ -20,7 +20,7 @@ https://test-www.ssgdfs.com/kr/event/initEventDetail?event_no=E210404297&mcd1=01
     // webTracker 초기화.
     _wiseWebTrack.init({
         _wtno:10063, // 프로파일 번호
-        _wthst:"http://applog.ssgdfs.com:8080",
+        _wthst:"applog.ssgdfs.com:8080",
         _wtufn:"ALL",
         _cps:"IndirectInflowByWeb",
         _wts:"01",
