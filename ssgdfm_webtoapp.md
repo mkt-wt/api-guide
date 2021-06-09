@@ -42,7 +42,8 @@ function moveToApp(){
         _wiseWebTrack.redirection({
             _wtpkg:"앱 패키지명",
             _wtdl:"스토어 URL",
-            _wtal:"딥링크 URL"
+            _wtal:"딥링크 URL",
+            _iaH:"앱 없는 경우 이동될 URL"
         });
     }else{  
        return;
