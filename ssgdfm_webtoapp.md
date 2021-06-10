@@ -12,6 +12,8 @@ https://test-www.ssgdfs.com/kr/event/initEventDetail?event_no=E210404297&mcd1=01
 
 위 예시 URL로 랜딩 시에 아래와 같은 형태로 설정해주시면 됩니다. \_cps:"IndirectInflowByWeb" 값은 리포트에서 일반 광고와 웹투앱 광고를 구분하기 위해 사용되는 값으로 항상 포함되어야 합니다.
 
+전달된 광고 파라미터가 없는 경우에는 자연유입에 해당하는 데이터를 설정해주시면 됩니다.
+
 ```html
 <script>
   $(document).ready(function(){  
@@ -43,7 +45,8 @@ function moveToApp(){
             _wtpkg:"앱 패키지명",
             _wtdl:"스토어 URL",
             _wtal:"딥링크 URL",
-            _iaH:"앱 없는 경우 이동될 URL"
+            _iaH:"앱 없는 경우 이동될 URL",
+            _wtbffid:"유입 경로(main or imgsc or voicesc or qrbcsc)"
         });
     }else{  
        return;
