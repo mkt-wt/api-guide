@@ -227,24 +227,6 @@ DOT.logEvent(eventMap); //로그인 이벤트 측정
 
 
 
-**iOS - Objective-C**
-
-``` objectivec
-[DOT setUser:
-	[User builder:^(User *user) {
-		[user setGender:@"성별"];
-		[user setAge:@"연령대"];
-	}]
-]; //유저 정보 측정
-
-NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-[event setValue:@"login_complete" forKey:@"event"];
-[event setValue:@"로그인 유형" forKey:@"loginTp"];
-[DOT logEvent:event]; //로그인 이벤트 측정
-```
-
-
-
 **iOS - Swift**
 
 ``` swift
@@ -298,25 +280,6 @@ eventMap.put("event", "login_complete");
 eventMap.put("loginTp", "kakao"); //매핑 테이블 참고
 DOT.logEvent(eventMap);
 ```
-
-
-
-**iOS - Objective-C**
-
-``` objectivec
-[DOT setUser:
-	[User builder:^(User *user) {
-		[user setGender:@"female"]; //매핑 테이블 참고
-		[user setAge:@"20s"]; //매핑 테이블 참고
-	}]
-];
-
-NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-[event setValue:@"login_complete" forKey:@"event"];
-[event setValue:@"kakao" forKey:@"loginTp"]; //매핑 테이블 참고
-[DOT logEvent:event];
-```
-
 
 
 **iOS - Swift**
@@ -451,25 +414,6 @@ DOT.logEvent(eventMap);
 ```
 
 
-
-**iOS - Objective-C**
-
-``` objectivec
-//V1
-[WiseTracker sendClickData:@"EVT" eventName:@"메뉴_메뉴명칭"];
-// '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
-
-
-//V2
-NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-[event setValue:@"click_menu" forKey:@"event"];
-[event setValue:@"메뉴명칭" forKey:@"menu_name"];
-// '메뉴명칭' 부분은 실제 클릭된 메뉴명칭으로 replace 필요
-[DOT logEvent:logEvent];
-```
-
-
-
 **iOS - Swift**
 
 ``` swift
@@ -529,23 +473,6 @@ eventMap.put("event", "click_menu");
 eventMap.put("menu_name", "NBPLAY");
 DOT.logEvent(eventMap);
 ```
-
-
-
-**iOS - Objective-C**
-
-``` objectivec
-//V1
-[WiseTracker sendClickData:@"EVT" eventName:@"메뉴_NBPLAY"];
-
-
-//V2
-NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-[event setValue:@"click_menu" forKey:@"event"];
-[event setValue:@"NBPLAY" forKey:@"menu_name"];
-[DOT logEvent:logEvent];
-```
-
 
 
 **iOS - Swift**
@@ -621,29 +548,6 @@ eventMap.put("contents_path", "home^타입^배너명칭");
 DOT.logEvent(eventMap);
 ```
 
-
-
-**iOS - Objective-C**
-
-``` objectivec
-//V1
-[WiseTracker sendClickData:@"EVT" eventName:@"HOME_타입_배너명칭"];
-// '타입' 부분은 클릭된 배너의 위치에 따라 '상단배너' 또는 '기획전배너'로 replace 필요
-// '배너명칭' 부분은 실제 배너명칭으로 replace 필요
-
-//V2
-NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-[event setValue:@"click_banner" forKey:@"event"];
-[event setValue:@"배너명칭" forKey:@"banner_name"];
-[event setValue:@"home^타입^배너명칭" forKey:@"contents_path"];
-// value의 ^ 기호는 와이즈트래커에서 사용하는 구분자
-// '타입' 부분은 클릭된 배너의 위치에 따라 '상단배너' 또는 '기획전배너'로 replace 필요
-// '배너명칭' 부분은 실제 배너명칭으로 replace 필요
-[DOT logEvent:logEvent];
-```
-
-
-
 **iOS - Swift**
 
 ``` swift
@@ -685,23 +589,6 @@ eventMap.put("event", "click_banner");
 eventMap.put("banner_name", "N-CLAY로 즐거운 여름 만들기");
 eventMap.put("contents_path", "home^상단배너^N-CLAY로 즐거운 여름 만들기");
 DOT.logEvent(eventMap);
-```
-
-
-
-**iOS - Objective-C**
-
-``` objectivec
-//V1
-[WiseTracker sendClickData:@"EVT" eventName:@"HOME_상단배너_N-CLAY로 즐거운 여름 만들기"];
-
-
-//V2
-NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-[event setValue:@"click_banner" forKey:@"event"];
-[event setValue:@"N-CLAY로 즐거운 여름 만들기" forKey:@"banner_name"];
-[event setValue:@"home^상단배너^N-CLAY로 즐거운 여름 만들기" forKey:@"contents_path"];
-[DOT logEvent:logEvent];
 ```
 
 **iOS - Swift**
@@ -2014,24 +1901,6 @@ DOT.logScreen(pageMap);
 ```
 
 
-
-**iOS - Objective-C**
-
-``` objectivec
-//V1
-[WiseTracker setPageIdentity:@"화면코드"];
-// '화면코드'는 반드시 매핑 테이블 참고
-
-//V2
-NSMutableDictionary *screen = [[NSMutableDictionary alloc] init];
-[screen setValue:@"menu" forKey:@"event"];
-[screen setValue:@"화면코드" forKey:@"pi"];
-// '화면코드'는 반드시 매핑 테이블 참고
-[DOT logScreen:screen];
-```
-
-
-
 **iOS - Swift**
 
 ``` swift
@@ -2069,22 +1938,6 @@ pageMap.put("pi", "barcode");
 // '화면코드'는 반드시 매핑 테이블 참고
 DOT.logScreen(pageMap);
 ```
-
-
-
-**iOS - Objective-C**
-
-``` objectivec
-//V1
-[WiseTracker setPageIdentity:@"barcode"];
-
-//V2
-NSMutableDictionary *screen = [[NSMutableDictionary alloc] init];
-[screen setValue:@"menu" forKey:@"event"];
-[screen setValue:@"barcode" forKey:@"pi"];
-[DOT logScreen:screen];
-```
-
 
 
 **iOS - Swift**
